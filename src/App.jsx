@@ -1,4 +1,5 @@
 import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Roadmap from "./components/Roadmap";
@@ -18,6 +19,8 @@ const App = () => {
         <Team />
         <FAQ />
       </div>
+
+      <Footer />
     </main>
   );
 };
