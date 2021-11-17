@@ -13,11 +13,11 @@ body {
 }
 
 .bg-primary {
-  background: linear-gradient(to right, $primary-gradient);
+  background: linear-gradient(to right, $bg-primary-gradient);
 }
 
 .text-primary {
-  background: -webkit-linear-gradient($primary-gradient);
+  background: -webkit-linear-gradient(left, $text-primary-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
