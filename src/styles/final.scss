@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./1-normalize";
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "DisposableDroid", Georgia, serif;
+}
