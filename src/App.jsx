@@ -1,3 +1,4 @@
+import FAQ from "./components/FAQ";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Roadmap from "./components/Roadmap";
@@ -15,6 +16,7 @@ const App = () => {
         <Story />
         <Roadmap />
         <Team />
+        <FAQ />
       </div>
     </main>
   );
