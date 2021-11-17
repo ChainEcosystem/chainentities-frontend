@@ -52,6 +52,23 @@ const Story = () => {
           <img src="/images/HeroImage2.png" alt="" />
         </div>
       </div>
+
+      {/* Part 3: Why Polygon blockchain? */}
+      <div className="grid grid-cols-5">
+        <div className="col-span-2">
+          <img src="/images/HeroImage3.png" alt="" />
+        </div>
+
+        <div className="col-span-3">
+          <div>Why Polygon blockchain?</div>
+
+          <div>
+            We stand for equity, so we make it accessible for everyone to get an
+            identity and join a city asap. This way You’ll leave behind “outside
+            the wall” life. Rush and HODL, to be continued...
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
