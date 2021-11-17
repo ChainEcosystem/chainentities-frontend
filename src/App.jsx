@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Story from "./components/Story";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
 
       <div className="container mx-auto">
         <Hero />
+        <Story />
       </div>
     </main>
   );
