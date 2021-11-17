@@ -2,11 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./1-typography";
+@import "./1-variables";
+@import "./2-typography";
 
 body {
   margin: 0;
   padding: 0;
   border: 0;
   font-family: "DisposableDroid", Georgia, serif;
+}
+
+.bg-primary {
+  background: linear-gradient(to right, $primary-gradient);
+}
+
+.text-primary {
+  background: -webkit-linear-gradient($primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  padding: 8px 24px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
 }
