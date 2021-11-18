@@ -28,6 +28,11 @@
 .MintBoxContainer {
   width: 384px;
   height: 373px;
+
+  @media (min-width: 1900px) {
+    width: 414px;
+    height: 403px;
+  }
 }
 
 .MintBox,

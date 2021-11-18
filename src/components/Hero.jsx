@@ -21,7 +21,7 @@ const Hero = () => {
 
         <div className="flex mt-5">
           <button
-            className="btn-primary mr-5"
+            className="btn-primary mr-6"
             onClick={() => {
               redirectSocialLink("https://discord.gg/5qRS9KThV2");
             }}

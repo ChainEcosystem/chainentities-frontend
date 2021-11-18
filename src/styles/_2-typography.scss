@@ -30,31 +30,60 @@ p,
 button {
   font-size: 27px;
   line-height: 27px;
+  @media (min-width: 1900px) {
+    font-size: 31px;
+    line-height: 31px;
+  }
 }
 
 small {
   font-size: 22px;
   line-height: 22px;
+
+  @media (min-width: 1900px) {
+    font-size: 26px;
+    line-height: 26px;
+  }
 }
 
 .xsmall {
   font-size: 18px;
   line-height: 18px;
+
+  @media (min-width: 1900px) {
+    font-size: 22px;
+    line-height: 22px;
+  }
 }
 
 big {
   font-size: 29px;
   line-height: 29px;
+
+  @media (min-width: 1900px) {
+    font-size: 33px;
+    line-height: 33px;
+  }
 }
 
 h2 {
-  font-size: 37px;
-  line-height: 37px;
+  font-size: 33px;
+  line-height: 33px;
+
+  @media (min-width: 1900px) {
+    font-size: 41px;
+    line-height: 41px;
+  }
 }
 
 h1 {
   font-size: 40px;
   line-height: 40px;
+
+  @media (min-width: 1900px) {
+    font-size: 44px;
+    line-height: 44px;
+  }
 }
 
 .text {
