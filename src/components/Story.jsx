@@ -52,14 +52,14 @@ const Story = () => {
             creature can mark him/her/it-self with multiple Entities!
           </div>
         </div>
-        <div className="col-span-2 flex justify-center items-center">
+        <div className="col-span-2 flex justify-end items-center">
           <img src="/images/HeroImage2.png" alt="" />
         </div>
       </div>
 
       {/* Part 3: Why Polygon blockchain? */}
       <div className="grid grid-cols-5 pt-20">
-        <div className="col-span-2 flex items-center justify-center">
+        <div className="col-span-2 flex items-center justify-start">
           <img src="/images/HeroImage3.png" alt="" />
         </div>
 

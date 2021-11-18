@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer>
       {/* CTA */}
-      <div className="bg-blacked text-center py-10">
+      <div className="bg-dark text-center py-10">
         <h1 className="font-bold text-primary mb-6">
           Nothing is limited,
           <br />
@@ -19,21 +19,23 @@ const Footer = () => {
       </div>
 
       {/* Socials */}
-      <div className="container mx-auto flex justify-center items-center">
-        <div className="grid grid-cols-3 justify-center items-center text-white  py-6">
-          <small className="text-left ">
-            Contacts:{" "}
-            <a
-              href="mailto:chainecosystem@gmail.com"
-              className="transition duration-200 text-pink hover:text-white"
-            >
-              chainecosystem@gmail.com
-            </a>
-          </small>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-3 items-center w-100 text-white py-6">
+          <div className="col-span-1 flex justify-start">
+            <small className="text-left">
+              Contacts:{" "}
+              <a
+                href="mailto:chainecosystem@gmail.com"
+                className="transition duration-200 text-pink hover:text-white"
+              >
+                chainecosystem@gmail.com
+              </a>
+            </small>
+          </div>
 
-          <small className="text-center">All rights reserved.</small>
+          <small className="col-span-1 text-center">All rights reserved.</small>
 
-          <div className="flex justify-end">
+          <div className="col-span-1 flex justify-end">
             <img
               className="SocialIcon mr-5"
               src="/images/VectorTelegram.svg"
@@ -74,7 +76,7 @@ const Footer = () => {
       </div>
 
       {/* Brand name */}
-      <div className="py-3 text-center bg-blacked text-white">
+      <div className="py-3 text-center bg-dark text-white">
         <small>
           ChainEntities<span className="text-pink">.</span>
         </small>
