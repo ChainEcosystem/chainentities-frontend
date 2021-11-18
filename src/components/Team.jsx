@@ -41,7 +41,7 @@ const Team = () => {
       </div>
 
       {/* Part 2: Note */}
-      <div className="TeamNoteBox mt-5">
+      <div className="TeamNoteBox mt-10">
         <div className="text-blue">
           <big>
             We’ve got a few more niche experts, but they asked to keep their
