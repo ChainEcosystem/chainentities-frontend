@@ -21,9 +21,27 @@ const Hero = () => {
       </div>
 
       <div className="col-span-2">
-        <div className="MintContainer btn-secondary relative h-full w-full hover:opacity-100 flex justify-center items-center">
+        <div className="MintContainer h-40 w-full">
           <div className="MintContent">
-            <h3 className="text-primary">testing</h3>
+            <big className="block">ChainEntities Minted</big>
+            <h2 className="font-bold text-primary">0/4444</h2>
+            <big className="block">
+              1 Entity costs <span className="text-blue">29</span> Matic
+            </big>
+            <small className="text-divider block">Excluding gas fees</small>
+
+            <div>
+              <div className="w-5/12 p-2 flex">
+                <button className="MintCountButton">
+                  <big>+</big>
+                </button>
+
+                <big className="block">1</big>
+                <button className="MintCountButton">
+                  <big>-</big>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
