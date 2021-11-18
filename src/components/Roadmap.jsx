@@ -121,10 +121,13 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <div>
-        Note: We’ve got big plans for a future ecosystem (game, apps and some
-        exclusive projects), however some deadlines/releases can be postponed.
-        Thanks for Your support and understanding!
+      <div className="grid grid-cols-3 mt-5 gap-10">
+        <div className="col-span-2 xsmall pr-5">
+          <span className="text-blue">Note: </span>
+          We’ve got big plans for a future ecosystem (game, apps and some
+          exclusive projects), however some deadlines/releases can be postponed.
+          Thanks for Your support and understanding!
+        </div>
       </div>
     </section>
   );
