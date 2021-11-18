@@ -2,27 +2,30 @@ import React from "react";
 
 const Story = () => {
   return (
-    <section>
+    <section className="pt-24">
       {/* Part 1: New life systems */}
       <div className="grid grid-cols-5">
         <div className="col-span-2">
           <img src="/images/HeroImage1.png" alt="" />
         </div>
 
-        <div className="col-span-3">
-          <div>New life systems</div>
+        <div className="col-span-3 flex flex-col justify-center">
+          <h2 className="font-bold text-primary mb-6">New life systems</h2>
 
-          <div>
-            Somewhere around 2097 After Common Era, along with human interaction
-            with other form of life, started the building of private cross-race
-            city clusters.
-          </div>
+          <p>
+            Somewhere around 2097 After Common Era, along with human{" "}
+            <span className="text-blue">
+              interaction with other form of life
+            </span>
+            , started the building of private cross-race city clusters.
+          </p>
 
-          <div>
-            ...If You want to enter/exit the city, You have to prove Your
-            identity with help of a blockchain token. Fingerprints and Face
-            recognition for human nation are useless - they can be stolen.
-          </div>
+          <p className="mt-5">
+            ...If You want to enter/exit the city, You have to{" "}
+            <span className="text-blue">prove Your identity</span> with help of
+            a blockchain token. Fingerprints and Face recognition for human
+            nation are useless - they can be stolen.
+          </p>
         </div>
       </div>
 
