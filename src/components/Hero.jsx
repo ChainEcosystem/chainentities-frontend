@@ -20,7 +20,13 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="col-span-2">something</div>
+      <div className="col-span-2">
+        <div className="MintContainer btn-secondary relative h-full w-full hover:opacity-100 flex justify-center items-center">
+          <div className="MintContent">
+            <h3 className="text-primary">testing</h3>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
