@@ -13,7 +13,9 @@ const Team = () => {
       <div className="grid grid-cols-3 grid-rows-1 grid-flow-row items-start">
         <div className="flex flex-col justify-center items-center px-12">
           <img src="/images/Team1.png" className="m-auto" alt="" />
-          <h2 className="text-blue my-3 text-center">Alex Groapa</h2>
+          <h2 className="text-blue my-3 text-center whitespace-nowrap">
+            Alex Groapa
+          </h2>
           <p className="text-center">
             Artist & Project creator, Senior Product Designer
           </p>
@@ -21,7 +23,9 @@ const Team = () => {
 
         <div className="flex flex-col justify-center items-center px-12">
           <img src="/images/Team2.png" className="m-auto" alt="" />
-          <h2 className="text-blue my-3 text-center">Michael Mucerschi</h2>
+          <h2 className="text-blue my-3 text-center whitespace-nowrap">
+            Michael Mucerschi
+          </h2>
           <p className="text-center">
             Architect, Artist, 3D Modeler, Senior Graphic Designer
           </p>
@@ -29,7 +33,9 @@ const Team = () => {
 
         <div className="flex flex-col justify-center items-center px-12">
           <img src="/images/Team3.png" className="m-auto" alt="" />
-          <h2 className="text-blue my-3 text-center">Peter Iatco</h2>
+          <h2 className="text-blue my-3 text-center whitespace-nowrap">
+            Peter Iatco
+          </h2>
           <p className="text-center">Blockchain Developer </p>
         </div>
       </div>
