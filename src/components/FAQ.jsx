@@ -15,7 +15,6 @@ const FAQ = () => {
       </div>
 
       {/* FAQ Box 1 */}
-
       <div
         className="TeamNoteBox cursor-pointer mb-3"
         onClick={() => setIsOpened1((open) => !open)}
@@ -54,41 +53,74 @@ const FAQ = () => {
       </div>
 
       {/* FAQ Box 2 */}
-      <div className="TeamNoteBox cursor-pointer mb-3">
+      <div
+        className="TeamNoteBox cursor-pointer mb-3"
+        onClick={() => setIsOpened2((open) => !open)}
+      >
         <div className="TeamNoteBox__Button">
           <img src="/images/VectorCross.svg" alt="" />
         </div>
-        <div className="text-blue font-bold">
-          <big>Are Your NFT’s hosted?</big>
-        </div>
-        <div className="text-white mt-3 transition duration-200">
-          <ul>
-            <li>
-              <p>Yes, all tokens are IPFS hosted, they are here forever</p>
-            </li>
-          </ul>
-        </div>
+
+        <Collapsible
+          transitionTime={200}
+          onOpen={() => {
+            if (!isOpened2) setIsOpened2(true);
+          }}
+          onClose={() => {
+            if (isOpened2) setIsOpened2(false);
+          }}
+          open={isOpened2}
+          trigger={
+            <div className="text-blue font-bold">
+              <big>Are Your NFT’s hosted?</big>
+            </div>
+          }
+        >
+          <div className="text-white mt-3 transition duration-200">
+            <ul>
+              <li>
+                <p>Yes, all tokens are IPFS hosted, they are here forever</p>
+              </li>
+            </ul>
+          </div>
+        </Collapsible>
       </div>
 
       {/* FAQ Box 3 */}
-      <div className="TeamNoteBox cursor-pointer mb-3">
+      <div
+        className="TeamNoteBox cursor-pointer mb-3"
+        onClick={() => setIsOpened3((open) => !open)}
+      >
         <div className="TeamNoteBox__Button">
           <img src="/images/VectorCross.svg" alt="" />
         </div>
-        <div className="text-blue font-bold">
-          <big>What’s the blockchain You use?</big>
-        </div>
 
-        <div className="text-white mt-3 transition duration-200">
-          <ul>
-            <li>
-              <p>
-                We use Polygon Blockchain. Same security, same scalability, but
-                less gas fees for You
-              </p>
-            </li>
-          </ul>
-        </div>
+        <Collapsible
+          transitionTime={200}
+          onOpen={() => {
+            if (!isOpened3) setIsOpened3(true);
+          }}
+          onClose={() => {
+            if (isOpened3) setIsOpened3(false);
+          }}
+          open={isOpened3}
+          trigger={
+            <div className="text-blue font-bold">
+              <big>What’s the blockchain You use?</big>
+            </div>
+          }
+        >
+          <div className="text-white mt-3 transition duration-200">
+            <ul>
+              <li>
+                <p>
+                  We use Polygon Blockchain. Same security, same scalability,
+                  but less gas fees for You
+                </p>
+              </li>
+            </ul>
+          </div>
+        </Collapsible>
       </div>
     </section>
   );
