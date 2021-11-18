@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
 
       <div className="col-span-2">
-        <div className="MintContainer h-40 w-full">
+        <div className="MintContainer h-60 w-full">
           <div className="MintContent">
             <big className="block">ChainEntities Minted</big>
             <h2 className="font-bold text-primary">0/4444</h2>
@@ -31,15 +31,20 @@ const Hero = () => {
             <small className="text-divider block">Excluding gas fees</small>
 
             <div>
-              <div className="w-5/12 p-2 flex">
-                <button className="MintCountButton">
-                  <big>+</big>
-                </button>
+              <div className="w-5/12 p-2 flex justify-center items-center bg-light">
+                <div className="MintCountButtonContainer">
+                  <div className="MintCountButtonContent">
+                    <big className="text-primary">+</big>
+                  </div>
+                </div>
 
-                <big className="block">1</big>
-                <button className="MintCountButton">
-                  <big>-</big>
-                </button>
+                <big className="mx-3">1</big>
+
+                <div className="MintCountButtonContainer">
+                  <div className="MintCountButtonContent">
+                    <big className="text-primary">-</big>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

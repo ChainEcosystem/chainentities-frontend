@@ -1,4 +1,5 @@
-.MintContainer {
+.MintContainer,
+.MintCountButtonContainer {
   &:hover {
     opacity: 1 !important;
   }
@@ -17,7 +18,8 @@
   align-items: center;
 }
 
-.MintContent {
+.MintContent,
+.MintCountButtonContent {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -27,20 +29,15 @@
   height: calc(100% - 4px);
   border-radius: 3px;
   color: white;
-  padding: 22px;
+  // padding: 22px;
 }
 
-.MintCountButton {
-  &:hover {
-    opacity: 1 !important;
-  }
-
-  @extend .btn-secondary;
-
-  border: 1px solid transparent !important;
-  padding: 0 !important;
+.MintCountButtonContainer {
   height: 40px;
   width: 44px; // height * 1.108
+}
+
+.MintCountButtonContent {
   display: flex;
   justify-content: center;
   align-items: center;
