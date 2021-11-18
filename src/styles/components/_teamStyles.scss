@@ -2,4 +2,27 @@
   padding: 20px;
   border-radius: 8px;
   background-color: $dark-color;
+  position: relative;
+
+  &__Button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+
+    img {
+      transform: rotate(45deg);
+      height: 18px;
+      width: 18px;
+    }
+
+    &--active {
+      img {
+        transform: rotate(0);
+      }
+    }
+  }
 }
