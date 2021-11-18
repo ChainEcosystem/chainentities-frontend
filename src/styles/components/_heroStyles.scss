@@ -1,0 +1,10 @@
+.MintContainer {
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background: linear-gradient(to right, $primary-gradient) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  position: relative;
+}
