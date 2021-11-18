@@ -46,7 +46,7 @@ const Footer = () => {
 
           <div className="col-span-1 flex justify-end">
             <img
-              className="SocialIcon mr-5"
+              className="SocialIcon NavItemSpacing"
               src="/images/VectorTelegram.svg"
               alt=""
               onClick={() => {
@@ -55,7 +55,7 @@ const Footer = () => {
             />
 
             <img
-              className="SocialIcon mr-5"
+              className="SocialIcon NavItemSpacing"
               src="/images/VectorTwitter.svg"
               alt=""
               onClick={() => {
@@ -64,7 +64,7 @@ const Footer = () => {
             />
 
             <img
-              className="SocialIcon mr-5"
+              className="SocialIcon NavItemSpacing"
               src="/images/VectorInstagram.svg"
               alt=""
               onClick={() => {

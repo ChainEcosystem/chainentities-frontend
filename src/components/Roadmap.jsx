@@ -121,7 +121,7 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 mt-5 gap-10">
+      <div className="grid grid-cols-3 mt-6 gap-10">
         <div className="col-span-2 xsmall pr-5">
           <span className="text-blue">Note: </span>
           We’ve got big plans for a future ecosystem (game, apps and some

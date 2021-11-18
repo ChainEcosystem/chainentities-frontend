@@ -15,19 +15,19 @@ const Header = () => {
         <div className="flex-grow flex justify-end items-center">
           <a
             href="#story"
-            className="text-pink flex justify-center items-center transition duration-200 hover:text-white mr-5"
+            className="text-pink flex justify-center items-center transition duration-200 hover:text-white NavItemSpacing"
           >
             <small>The story</small>
           </a>
           <a
             href="#roadmap"
-            className="text-pink flex justify-center items-center transition duration-200 hover:text-white mr-5"
+            className="text-pink flex justify-center items-center transition duration-200 hover:text-white NavItemSpacing"
           >
             <small>Roadmap</small>
           </a>
           <a
             href="#team"
-            className="text-pink flex justify-center items-center transition duration-200 hover:text-white mr-5"
+            className="text-pink flex justify-center items-center transition duration-200 hover:text-white NavItemSpacing"
           >
             <small>Team</small>
           </a>
@@ -38,10 +38,10 @@ const Header = () => {
             <small>FAQ</small>
           </a>
 
-          <div className="NavDivider mx-5" />
+          <div className="NavDivider" />
 
           <img
-            className="SocialIcon mr-5"
+            className="SocialIcon NavItemSpacing"
             src="/images/VectorTelegram.svg"
             alt=""
             onClick={() => {
@@ -50,7 +50,7 @@ const Header = () => {
           />
 
           <img
-            className="SocialIcon mr-5"
+            className="SocialIcon NavItemSpacing"
             src="/images/VectorTwitter.svg"
             alt=""
             onClick={() => {
@@ -59,7 +59,7 @@ const Header = () => {
           />
 
           <img
-            className="SocialIcon mr-5"
+            className="SocialIcon NavItemSpacing"
             src="/images/VectorInstagram.svg"
             alt=""
             onClick={() => {

@@ -21,7 +21,7 @@ const Hero = () => {
 
         <div className="flex mt-5">
           <button
-            className="btn-primary mr-6"
+            className="btn-primary NavItemSpacing"
             onClick={() => {
               redirectSocialLink("https://discord.gg/5qRS9KThV2");
             }}
