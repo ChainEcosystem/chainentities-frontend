@@ -57,7 +57,11 @@ const FAQ = () => {
         className="TeamNoteBox cursor-pointer mb-3"
         onClick={() => setIsOpened2((open) => !open)}
       >
-        <div className="TeamNoteBox__Button">
+        <div
+          className={`TeamNoteBox__Button ${
+            isOpened2 && "TeamNoteBox__Button--active"
+          }`}
+        >
           <img src="/images/VectorCross.svg" alt="" />
         </div>
 
@@ -91,7 +95,11 @@ const FAQ = () => {
         className="TeamNoteBox cursor-pointer mb-3"
         onClick={() => setIsOpened3((open) => !open)}
       >
-        <div className="TeamNoteBox__Button">
+        <div
+          className={`TeamNoteBox__Button ${
+            isOpened3 && "TeamNoteBox__Button--active"
+          }`}
+        >
           <img src="/images/VectorCross.svg" alt="" />
         </div>
 

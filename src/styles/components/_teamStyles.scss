@@ -14,7 +14,8 @@
     color: white;
 
     img {
-      transform: rotate(45deg);
+      transition: 0.2s;
+      transform: rotate(135deg);
       height: 18px;
       width: 18px;
     }
