@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 const Hero = () => {
+  function redirectSocialLink(link) {
+    window.open(link, "_blank");
+  }
+
   const [mintCount, setMintCount] = useState(1);
 
   return (
@@ -16,8 +20,22 @@ const Hero = () => {
         </p>
 
         <div className="flex mt-5">
-          <button className="btn-primary mr-5">Opensea</button>
-          <button className="btn-secondary">Discord</button>
+          <button
+            className="btn-primary mr-5"
+            onClick={() => {
+              redirectSocialLink("https://discord.gg/5qRS9KThV2");
+            }}
+          >
+            Opensea
+          </button>
+          <button
+            className="btn-secondary"
+            onClick={() => {
+              redirectSocialLink("https://discord.gg/5qRS9KThV2");
+            }}
+          >
+            Discord
+          </button>
         </div>
       </div>
 
