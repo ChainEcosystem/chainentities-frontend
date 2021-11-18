@@ -50,7 +50,7 @@ const Team = () => {
         </div>
 
         <div className="grid grid-cols-2 my-5">
-          <ul className="col-span-1 grid grid-cols-2 grid-rows-4 text-white">
+          <ul className="col-span-1 grid grid-cols-2 grid-rows-4 gap-x-6 text-white">
             <li>Blockchain developer</li>
             <li>Game Designer</li>
             <li>FullStack Developer x3</li>
