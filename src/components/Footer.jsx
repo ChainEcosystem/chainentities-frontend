@@ -15,7 +15,16 @@ const Footer = () => {
           except for data.
         </h1>
 
-        <button className="btn-primary">Proceed to mint</button>
+        <button
+          className="btn-primary"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+            });
+          }}
+        >
+          Proceed to mint
+        </button>
       </div>
 
       {/* Socials */}
