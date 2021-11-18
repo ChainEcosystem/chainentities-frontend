@@ -38,8 +38,8 @@
 
 .MintCountButtonContainer {
   cursor: pointer;
-  height: 40px;
-  width: 44px; // height * 1.108
+  height: 38px;
+  width: calc(38px * 1.1108);
 }
 
 .MintCountButtonContent {

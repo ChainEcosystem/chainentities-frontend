@@ -23,7 +23,7 @@ const Hero = () => {
       </div>
 
       <div className="col-span-2">
-        <div className="MintContainer h-60 w-full">
+        <div className="MintContainer h-60 w-80">
           <div className="MintContent">
             <big className="block">ChainEntities Minted</big>
             <h2 className="font-bold text-primary">0/4444</h2>
@@ -32,21 +32,12 @@ const Hero = () => {
             </big>
             <small className="text-divider block">Excluding gas fees</small>
 
-            <div>
-              <div className="w-5/12 p-2 flex justify-center items-center bg-light">
-                <div
-                  className="MintCountButtonContainer"
-                  onClick={() => {
-                    setMintCount((prevCount) => prevCount + 1);
-                  }}
-                >
-                  <div className="MintCountButtonContent">
-                    <big className="text-primary">+</big>
-                  </div>
-                </div>
-
-                <big className="mx-3">{mintCount}</big>
-
+            <div className="flex items-center">
+              {/* Mint count control */}
+              <div
+                className="flex justify-center items-center bg-light w-min"
+                style={{ borderRadius: "6px", padding: "3px" }}
+              >
                 <div
                   className="MintCountButtonContainer"
                   onClick={() => {
@@ -60,7 +51,34 @@ const Hero = () => {
                     <big className="text-primary">-</big>
                   </div>
                 </div>
+
+                <div className="flex justify-center items-center w-12">
+                  <big>{mintCount}</big>
+                </div>
+
+                <div
+                  className="MintCountButtonContainer"
+                  onClick={() => {
+                    setMintCount((prevCount) => prevCount + 1);
+                  }}
+                >
+                  <div className="MintCountButtonContent">
+                    <big className="text-primary">+</big>
+                  </div>
+                </div>
               </div>
+
+              {/* Mint button */}
+              <button
+                className="btn-primary block h-full w-full"
+                style={{
+                  padding: "11px 0",
+                  width: "100px",
+                  marginLeft: "auto",
+                }}
+              >
+                Mint
+              </button>
             </div>
           </div>
         </div>
