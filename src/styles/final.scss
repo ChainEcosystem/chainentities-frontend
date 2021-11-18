@@ -93,7 +93,7 @@ li {
 .btn-primary {
   background: linear-gradient(to right, $primary-gradient);
   padding: 12px 32px;
-  border-radius: 6px;
+  border-radius: 8px;
   color: white;
   font-weight: bold;
   transition: 0.2s;
@@ -104,7 +104,7 @@ li {
 }
 
 .btn-secondary {
-  --r: 6px; /* radius */
+  --r: 8px; /* radius */
   --b: 2px; /* border width */
 
   transition: 0.2s;
