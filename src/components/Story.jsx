@@ -4,7 +4,7 @@ const Story = () => {
   return (
     <section>
       {/* Part 1: New life systems */}
-      <div className="grid grid-cols-5 pt-20">
+      <div className="grid grid-cols-5 pt-10">
         <div className="col-span-2">
           <img src="/images/HeroImage1.png" alt="" />
         </div>

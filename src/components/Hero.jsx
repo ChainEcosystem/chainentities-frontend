@@ -4,7 +4,7 @@ const Hero = () => {
   const [mintCount, setMintCount] = useState(1);
 
   return (
-    <section className="grid grid-cols-5">
+    <section className="HeroSection grid grid-cols-5">
       <div className="col-span-3 flex flex-col justify-center pr-24">
         <h2 className="font-bold text-primary">
           ChainEntities make You styled
