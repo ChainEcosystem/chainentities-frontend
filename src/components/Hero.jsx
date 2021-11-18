@@ -44,7 +44,7 @@ const Hero = () => {
                   className="MintCount__Button"
                   onClick={() => {
                     setMintCount((prevCount) => {
-                      if (prevCount === 0) return prevCount;
+                      if (prevCount <= 1) return prevCount;
                       return prevCount - 1;
                     });
                   }}
