@@ -2,32 +2,60 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="pt-20">
       {/* CTA */}
-      <div>
-        <div>Nothing is limited, except for data.</div>
+      <div className="bg-dark text-center py-10">
+        <h1 className="font-bold text-primary mb-6">
+          Nothing is limited,
+          <br />
+          except for data.
+        </h1>
 
-        <button>Proceed to mint</button>
+        <button className="btn-primary">Proceed to mint</button>
       </div>
 
       {/* Socials */}
-      <div className="grid grid-cols-3">
-        <div>Contacts: chainecosystem@gmail.com</div>
-        <div>All rights reserved.</div>
+      <div className="container bg-black mx-auto flex justify-center items-center">
+        <div className="grid grid-cols-3 justify-center items-center text-white  py-6">
+          <small className="text-left ">
+            Contacts:{" "}
+            <span className="text-pink">chainecosystem@gmail.com</span>{" "}
+          </small>
 
-        <div>
-          <img src="/images/VectorTelegram.svg" alt="" />
+          <small className="text-center">All rights reserved.</small>
 
-          <img src="/images/VectorTwitter.svg" alt="" />
+          <div className="flex justify-end">
+            <img
+              className="SocialIcon mr-5"
+              src="/images/VectorTelegram.svg"
+              alt=""
+            />
 
-          <img src="/images/VectorInstagram.svg" alt="" />
+            <img
+              className="SocialIcon mr-5"
+              src="/images/VectorTwitter.svg"
+              alt=""
+            />
 
-          <img src="/images/VectorDiscord.svg" alt="" />
+            <img
+              className="SocialIcon mr-5"
+              src="/images/VectorInstagram.svg"
+              alt=""
+            />
+
+            <img
+              className="SocialIcon"
+              src="/images/VectorDiscord.svg"
+              alt=""
+            />
+          </div>
         </div>
       </div>
 
       {/* Brand name */}
-      <div>ChainEntities</div>
+      <div className="py-3 text-center bg-dark text-white">
+        <small>ChainEntities</small>
+      </div>
     </footer>
   );
 };

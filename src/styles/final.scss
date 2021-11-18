@@ -51,6 +51,11 @@ li {
   transform: rotate(-180deg);
 }
 
+.SocialIcon {
+  color: $pink-color;
+  width: 21px;
+}
+
 .btn-primary {
   background: linear-gradient(to right, $primary-gradient);
   padding: 12px 32px;
