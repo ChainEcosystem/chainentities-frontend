@@ -61,7 +61,7 @@ const Team = () => {
           </ul>
         </div>
 
-        <div className="text-blue xsmall">
+        <div className="text-primary xsmall">
           Thanks for contributing for future of this project!
         </div>
       </div>
