@@ -13,13 +13,6 @@ body {
   font-family: "DisposableDroid", Georgia, serif;
 }
 
-.text-primary {
-  background: -webkit-linear-gradient(left, $primary-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .btn-primary {
   background: linear-gradient(to right, $primary-gradient);
   padding: 8px 24px;

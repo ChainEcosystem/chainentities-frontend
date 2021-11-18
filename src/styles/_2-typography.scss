@@ -46,3 +46,24 @@ h1 {
   font-size: 31px;
   line-height: 32px;
 }
+
+.text {
+  &-primary {
+    background: -webkit-linear-gradient(left, $primary-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-blue {
+    color: $blue-color;
+  }
+
+  &-pink {
+    color: $pink-color;
+  }
+
+  &-divider {
+    color: $divider-color;
+  }
+}
