@@ -5,15 +5,17 @@
   position: relative;
 
   &__Button {
-    position: absolute;
     right: 10px;
     top: 10px;
     border-radius: 8px;
     cursor: pointer;
     padding: 10px;
     color: white;
+    background-color: $light-color;
+    transition: 0.2s;
 
     img {
+      filter: brightness(0) invert(1);
       transition: 0.2s;
       transform: rotate(135deg);
       height: 18px;
@@ -23,6 +25,13 @@
     &--active {
       img {
         transform: rotate(0);
+      }
+    }
+
+    &:hover {
+      background-color: white;
+      img {
+        filter: unset;
       }
     }
   }

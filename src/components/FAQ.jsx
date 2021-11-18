@@ -19,14 +19,6 @@ const FAQ = () => {
         className="TeamNoteBox cursor-pointer mb-3"
         onClick={() => setIsOpened1((open) => !open)}
       >
-        <div
-          className={`TeamNoteBox__Button ${
-            isOpened1 && "TeamNoteBox__Button--active"
-          }`}
-        >
-          <img src="/images/VectorCross.svg" alt="" />
-        </div>
-
         <Collapsible
           transitionTime={200}
           onOpen={() => {
@@ -37,8 +29,15 @@ const FAQ = () => {
           }}
           open={isOpened1}
           trigger={
-            <div className="text-blue font-bold">
+            <div className="flex justify-between items-center text-blue font-bold">
               <big>What token do You use?</big>
+              <div
+                className={`TeamNoteBox__Button ${
+                  isOpened1 && "TeamNoteBox__Button--active"
+                }`}
+              >
+                <img src="/images/VectorCross.svg" alt="" />
+              </div>
             </div>
           }
         >
@@ -57,14 +56,6 @@ const FAQ = () => {
         className="TeamNoteBox cursor-pointer mb-3"
         onClick={() => setIsOpened2((open) => !open)}
       >
-        <div
-          className={`TeamNoteBox__Button ${
-            isOpened2 && "TeamNoteBox__Button--active"
-          }`}
-        >
-          <img src="/images/VectorCross.svg" alt="" />
-        </div>
-
         <Collapsible
           transitionTime={200}
           onOpen={() => {
@@ -75,8 +66,15 @@ const FAQ = () => {
           }}
           open={isOpened2}
           trigger={
-            <div className="text-blue font-bold">
+            <div className="flex justify-between items-center text-blue font-bold">
               <big>Are Your NFT’s hosted?</big>
+              <div
+                className={`TeamNoteBox__Button ${
+                  isOpened2 && "TeamNoteBox__Button--active"
+                }`}
+              >
+                <img src="/images/VectorCross.svg" alt="" />
+              </div>
             </div>
           }
         >
@@ -95,14 +93,6 @@ const FAQ = () => {
         className="TeamNoteBox cursor-pointer mb-3"
         onClick={() => setIsOpened3((open) => !open)}
       >
-        <div
-          className={`TeamNoteBox__Button ${
-            isOpened3 && "TeamNoteBox__Button--active"
-          }`}
-        >
-          <img src="/images/VectorCross.svg" alt="" />
-        </div>
-
         <Collapsible
           transitionTime={200}
           onOpen={() => {
@@ -113,8 +103,15 @@ const FAQ = () => {
           }}
           open={isOpened3}
           trigger={
-            <div className="text-blue font-bold">
+            <div className="flex justify-between items-center text-blue font-bold">
               <big>What’s the blockchain You use?</big>
+              <div
+                className={`TeamNoteBox__Button ${
+                  isOpened3 && "TeamNoteBox__Button--active"
+                }`}
+              >
+                <img src="/images/VectorCross.svg" alt="" />
+              </div>
             </div>
           }
         >
