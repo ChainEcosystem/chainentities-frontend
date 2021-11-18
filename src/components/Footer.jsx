@@ -6,9 +6,9 @@ const Footer = () => {
   }
 
   return (
-    <footer className="pt-20">
+    <footer>
       {/* CTA */}
-      <div className="bg-dark text-center py-10">
+      <div className="bg-blacked text-center py-10">
         <h1 className="font-bold text-primary mb-6">
           Nothing is limited,
           <br />
@@ -74,7 +74,7 @@ const Footer = () => {
       </div>
 
       {/* Brand name */}
-      <div className="py-3 text-center bg-dark text-white">
+      <div className="py-3 text-center bg-blacked text-white">
         <small>
           ChainEntities<span className="text-pink">.</span>
         </small>

@@ -8,7 +8,7 @@ import Team from "./components/Team";
 
 const App = () => {
   return (
-    <main>
+    <main className="ContentContainer">
       {/* header */}
       <Header />
 
