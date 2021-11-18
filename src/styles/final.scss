@@ -13,6 +13,16 @@ body {
   font-family: "DisposableDroid", Georgia, serif;
 }
 
+.bg {
+  &-light {
+    background: $light-color;
+  }
+
+  &-dark {
+    background: $dark-color;
+  }
+}
+
 .btn-primary {
   background: linear-gradient(to right, $primary-gradient);
   padding: 8px 24px;
