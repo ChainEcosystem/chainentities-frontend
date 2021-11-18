@@ -63,7 +63,13 @@ li {
 .TitleDivider_Right {
   height: 1px;
   width: 150px;
+
   background: linear-gradient(90deg, #514b58 0%, rgba(196, 196, 196, 0) 100%);
+
+  @media (min-width: 1900px) {
+    height: 3px;
+    width: 250px;
+  }
 }
 
 .TitleDivider_Left {
