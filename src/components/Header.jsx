@@ -13,10 +13,30 @@ const Header = () => {
         </small>
 
         <div className="flex-grow flex justify-end items-center">
-          <small className="text-pink mr-5">The story</small>
-          <small className="text-pink mr-5">Roadmap</small>
-          <small className="text-pink mr-5">Team</small>
-          <small className="text-pink">FAQ</small>
+          <a
+            href="#story"
+            className="text-pink transition duration-200 hover:text-white mr-5"
+          >
+            <small>The story</small>
+          </a>
+          <a
+            href="#roadmap"
+            className="text-pink transition duration-200 hover:text-white mr-5"
+          >
+            <small>Roadmap</small>
+          </a>
+          <a
+            href="#team"
+            className="text-pink transition duration-200 hover:text-white mr-5"
+          >
+            <small>Team</small>
+          </a>
+          <a
+            href="#faq"
+            className="text-pink transition duration-200 hover:text-white"
+          >
+            <small>FAQ</small>
+          </a>
 
           <div className="NavDivider mx-5" />
 

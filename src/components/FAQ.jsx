@@ -7,7 +7,7 @@ const FAQ = () => {
     [isOpened3, setIsOpened3] = useState(false);
 
   return (
-    <section className="pt-20">
+    <section id="faq" className="pt-20">
       <div className="flex justify-center items-center mb-10">
         <div className="TitleDivider_Left" />
         <h1 className="font-bold text-primary mx-7">FAQ</h1>

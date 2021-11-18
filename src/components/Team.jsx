@@ -2,7 +2,7 @@ import React from "react";
 
 const Team = () => {
   return (
-    <section className="pt-20">
+    <section id="team" className="pt-20">
       <div className="flex justify-center items-center mb-10">
         <div className="TitleDivider_Left" />
         <h1 className="font-bold text-primary mx-7">Team</h1>

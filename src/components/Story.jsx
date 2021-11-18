@@ -2,7 +2,7 @@ import React from "react";
 
 const Story = () => {
   return (
-    <section>
+    <section id="story">
       {/* Part 1: New life systems */}
       <div className="grid grid-cols-5 pt-10">
         <div className="col-span-2">

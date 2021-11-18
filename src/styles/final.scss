@@ -14,6 +14,9 @@ body {
   padding: 0;
   border: 0;
   font-family: "DisposableDroid", Georgia, serif;
+  background-color: $dark-color;
+  color: white;
+  scroll-behavior: smooth;
 }
 
 ul {
