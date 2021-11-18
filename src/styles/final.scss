@@ -104,16 +104,13 @@ li {
 }
 
 .btn-secondary {
-  --r: 8px; /* radius */
-  --b: 2px; /* border width */
-
   transition: 0.2s;
   background: linear-gradient(to right, $primary-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  border-radius: var(--r);
+  border-radius: 8px;
   font-weight: bold;
   padding: 10px 30px;
   position: relative;
@@ -127,9 +124,8 @@ li {
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: var(--r);
-    border: var(--b) solid transparent;
-    border-radius: var(--r);
+    border: 2px solid transparent;
+    border-radius: 8px;
     background: inherit;
     background-origin: border-box;
     background-clip: border-box;
@@ -140,6 +136,10 @@ li {
     mask-composite: exclude;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
+
+    @media (min-width: 1900px) {
+      border: 3px solid transparent;
+    }
   }
 
   &:hover {
