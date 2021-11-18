@@ -1,6 +1,10 @@
 import React from "react";
 
 const Footer = () => {
+  function redirectSocialLink(link) {
+    window.open(link, "_blank");
+  }
+
   return (
     <footer className="pt-20">
       {/* CTA */}
@@ -29,24 +33,36 @@ const Footer = () => {
               className="SocialIcon mr-5"
               src="/images/VectorTelegram.svg"
               alt=""
+              onClick={() => {
+                redirectSocialLink("https://t.me/joinchat/ak0ckrBeURpmNzgy");
+              }}
             />
 
             <img
               className="SocialIcon mr-5"
               src="/images/VectorTwitter.svg"
               alt=""
+              onClick={() => {
+                redirectSocialLink("https://twitter.com/ChainEntities");
+              }}
             />
 
             <img
               className="SocialIcon mr-5"
               src="/images/VectorInstagram.svg"
               alt=""
+              onClick={() => {
+                redirectSocialLink("https://www.instagram.com/chainentities/");
+              }}
             />
 
             <img
               className="SocialIcon"
               src="/images/VectorDiscord.svg"
               alt=""
+              onClick={() => {
+                redirectSocialLink("https://discord.gg/5qRS9KThV2");
+              }}
             />
           </div>
         </div>

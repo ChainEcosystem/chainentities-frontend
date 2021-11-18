@@ -52,8 +52,13 @@ li {
 }
 
 .SocialIcon {
-  color: $pink-color;
   width: 21px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    filter: brightness(0) invert(1);
+  }
 }
 
 .btn-primary {
