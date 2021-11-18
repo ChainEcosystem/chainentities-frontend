@@ -5,12 +5,23 @@
 @import "./1-variables";
 @import "./2-typography";
 @import "./components/heroStyles";
+@import "./components/roadmapStyles";
 
 body {
   margin: 0;
   padding: 0;
   border: 0;
   font-family: "DisposableDroid", Georgia, serif;
+}
+
+ul {
+  padding-left: 11px;
+  list-style-image: url("../icons/ListDot.svg");
+}
+
+li {
+  font-size: 22px;
+  line-height: 22px;
 }
 
 .bg {
@@ -21,6 +32,17 @@ body {
   &-dark {
     background: $dark-color;
   }
+}
+
+.TitleDivider_Left,
+.TitleDivider_Right {
+  height: 1px;
+  width: 150px;
+  background: linear-gradient(90deg, #514b58 0%, rgba(196, 196, 196, 0) 100%);
+}
+
+.TitleDivider_Left {
+  transform: rotate(-180deg);
 }
 
 .btn-primary {
