@@ -84,7 +84,8 @@ const Hero = () => {
                 alt=""
               />
               <span className="xsmall">
-                Please make sure You are connected to the Polygon Network
+                Please make sure You are connected to the{" "}
+                <span className="text-blue">Polygon Network</span>
               </span>
             </div>
           </div>
