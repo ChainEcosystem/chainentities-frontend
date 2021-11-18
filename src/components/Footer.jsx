@@ -19,7 +19,7 @@ const Footer = () => {
       </div>
 
       {/* Socials */}
-      <div className="container bg-black mx-auto flex justify-center items-center">
+      <div className="container mx-auto flex justify-center items-center">
         <div className="grid grid-cols-3 justify-center items-center text-white  py-6">
           <small className="text-left ">
             Contacts:{" "}
