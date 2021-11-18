@@ -19,6 +19,12 @@ body {
   background-color: #1f1b25;
 }
 
+@-moz-document url-prefix() {
+  .container {
+    max-width: 1000px;
+  }
+}
+
 .ContentContainer {
   background: url("../style-images/BgBall1.png") top left no-repeat,
     url("../style-images/BgBall2.png") top right no-repeat;
