@@ -22,6 +22,11 @@ ul {
 li {
   font-size: 22px;
   line-height: 22px;
+  margin-bottom: 6px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .bg {
