@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Hero = () => {
+  const [mintCount, setMintCount] = useState(1);
+
   return (
     <section className="grid grid-cols-5">
       <div className="col-span-3">
@@ -32,15 +34,28 @@ const Hero = () => {
 
             <div>
               <div className="w-5/12 p-2 flex justify-center items-center bg-light">
-                <div className="MintCountButtonContainer">
+                <div
+                  className="MintCountButtonContainer"
+                  onClick={() => {
+                    setMintCount((prevCount) => prevCount + 1);
+                  }}
+                >
                   <div className="MintCountButtonContent">
                     <big className="text-primary">+</big>
                   </div>
                 </div>
 
-                <big className="mx-3">1</big>
+                <big className="mx-3">{mintCount}</big>
 
-                <div className="MintCountButtonContainer">
+                <div
+                  className="MintCountButtonContainer"
+                  onClick={() => {
+                    setMintCount((prevCount) => {
+                      if (prevCount === 0) return prevCount;
+                      return prevCount - 1;
+                    });
+                  }}
+                >
                   <div className="MintCountButtonContent">
                     <big className="text-primary">-</big>
                   </div>
