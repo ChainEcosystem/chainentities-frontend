@@ -23,7 +23,7 @@ const Hero = () => {
       </div>
 
       <div className="col-span-2">
-        <div className="MintContainer h-72 w-80">
+        <div className="MintContainer w-80" style={{ height: "295px" }}>
           <div className="MintContent">
             <big className="block">ChainEntities Minted</big>
             <h2 className="font-bold text-primary">0/4444</h2>
@@ -90,6 +90,18 @@ const Hero = () => {
               >
                 Mint
               </button>
+            </div>
+
+            {/* Connection warning */}
+            <div className="flex items-start mt-4">
+              <img
+                src="/images/VectorCheckmark.svg"
+                className="mt-1 mr-3 w-3"
+                alt=""
+              />
+              <span className="text-base leading-4">
+                Please make sure You are connected to the Polygon Network
+              </span>
             </div>
           </div>
         </div>
