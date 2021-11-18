@@ -15,25 +15,25 @@ const Header = () => {
         <div className="flex-grow flex justify-end items-center">
           <a
             href="#story"
-            className="text-pink transition duration-200 hover:text-white mr-5"
+            className="text-pink flex justify-center items-center transition duration-200 hover:text-white mr-5"
           >
             <small>The story</small>
           </a>
           <a
             href="#roadmap"
-            className="text-pink transition duration-200 hover:text-white mr-5"
+            className="text-pink flex justify-center items-center transition duration-200 hover:text-white mr-5"
           >
             <small>Roadmap</small>
           </a>
           <a
             href="#team"
-            className="text-pink transition duration-200 hover:text-white mr-5"
+            className="text-pink flex justify-center items-center transition duration-200 hover:text-white mr-5"
           >
             <small>Team</small>
           </a>
           <a
             href="#faq"
-            className="text-pink transition duration-200 hover:text-white"
+            className="text-pink flex justify-center items-center transition duration-200 hover:text-white"
           >
             <small>FAQ</small>
           </a>
