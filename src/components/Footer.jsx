@@ -75,7 +75,9 @@ const Footer = () => {
 
       {/* Brand name */}
       <div className="py-3 text-center bg-dark text-white">
-        <small>ChainEntities</small>
+        <small>
+          ChainEntities<span className="text-pink">.</span>
+        </small>
       </div>
     </footer>
   );
