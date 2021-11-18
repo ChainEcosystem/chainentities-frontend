@@ -23,7 +23,12 @@ const Footer = () => {
         <div className="grid grid-cols-3 justify-center items-center text-white  py-6">
           <small className="text-left ">
             Contacts:{" "}
-            <span className="text-pink">chainecosystem@gmail.com</span>{" "}
+            <a
+              href="mailto:chainecosystem@gmail.com"
+              className="transition duration-200 text-pink hover:text-white"
+            >
+              chainecosystem@gmail.com
+            </a>
           </small>
 
           <small className="text-center">All rights reserved.</small>
