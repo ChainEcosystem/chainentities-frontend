@@ -1,5 +1,5 @@
-.MintContainer,
-.MintCountButtonContainer {
+.MintBoxContainer,
+.MintCount__Button {
   &:hover {
     opacity: 1 !important;
   }
@@ -18,8 +18,13 @@
   align-items: center;
 }
 
-.MintContent,
-.MintCountButtonContent {
+.MintBoxContainer {
+  width: 384px;
+  height: 373px;
+}
+
+.MintBox,
+.MintCount__ButtonInner {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -29,21 +34,52 @@
   height: calc(100% - 4px);
   border-radius: 3px;
   color: white;
-  // padding: 22px;
 }
 
-.MintContent {
-  padding: 26px;
+.MintBox {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__Divider {
+    width: 100%;
+    border-top: solid 2px $divider-color;
+    margin: 14px 0;
+  }
+
+  &__MintButton {
+    display: block;
+    margin-left: auto;
+    height: 54px;
+    width: 130px;
+  }
 }
 
-.MintCountButtonContainer {
-  cursor: pointer;
-  height: 38px;
-  width: calc(38px * 1.1108);
-}
-
-.MintCountButtonContent {
+.MintCount {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $light-color;
+  width: min-content;
+  border-radius: 6px;
+  padding: 3px;
+  height: 54px;
+
+  &__Button {
+    cursor: pointer;
+    height: 46px;
+    width: 51px;
+  }
+
+  &__ButtonInner,
+  &__Indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__Indicator {
+    width: 51px;
+  }
 }

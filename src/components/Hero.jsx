@@ -5,52 +5,43 @@ const Hero = () => {
 
   return (
     <section className="grid grid-cols-5">
-      <div className="col-span-3">
+      <div className="col-span-3 flex flex-col justify-center pr-24">
         <h2 className="font-bold text-primary">
           ChainEntities make You styled
         </h2>
         <h1>Data's limited, rush for Your unique token</h1>
 
-        <p>
+        <p className="mt-2">
           The time when everyone and everything lives on blockchain is here.
         </p>
 
-        <div className="flex">
-          <button className="btn-primary mr-2">Opensea</button>
-
+        <div className="flex mt-5">
+          <button className="btn-primary mr-5">Opensea</button>
           <button className="btn-secondary">Discord</button>
         </div>
       </div>
 
       <div className="col-span-2">
-        <div className="MintContainer w-80" style={{ height: "295px" }}>
-          <div className="MintContent">
+        <div className="MintBoxContainer">
+          <div className="MintBox">
             <big className="block">ChainEntities Minted</big>
-            <h2 className="font-bold text-primary">0/4444</h2>
+            {/* Minted count */}
+            <h2 className="font-bold text-primary mt-3">0/4444</h2>
 
-            <hr
-              style={{
-                width: "100%",
-                borderTop: "solid 2px grey",
-                margin: "14px 0",
-              }}
-            />
+            <hr className="MintBox__Divider" />
 
             <big className="block">
               1 Entity costs <span className="text-blue">29</span> Matic
             </big>
-            <small className="text-divider block mt-1">
+            <small className="text-divider block mt-2">
               Excluding gas fees
             </small>
 
             <div className="flex items-center mt-6">
-              {/* Mint count control */}
-              <div
-                className="flex justify-center items-center bg-light w-min"
-                style={{ borderRadius: "6px", padding: "3px" }}
-              >
+              <div className="MintCount">
+                {/* Minus button */}
                 <div
-                  className="MintCountButtonContainer"
+                  className="MintCount__Button"
                   onClick={() => {
                     setMintCount((prevCount) => {
                       if (prevCount === 0) return prevCount;
@@ -58,48 +49,41 @@ const Hero = () => {
                     });
                   }}
                 >
-                  <div className="MintCountButtonContent">
+                  <div className="MintCount__ButtonInner">
                     <big className="text-primary">-</big>
                   </div>
                 </div>
 
-                <div className="flex justify-center items-center w-12">
+                {/* Mint counter */}
+                <div className="MintCount__Indicator">
                   <big>{mintCount}</big>
                 </div>
 
+                {/* Plus button */}
                 <div
-                  className="MintCountButtonContainer"
+                  className="MintCount__Button"
                   onClick={() => {
                     setMintCount((prevCount) => prevCount + 1);
                   }}
                 >
-                  <div className="MintCountButtonContent">
+                  <div className="MintCount__ButtonInner">
                     <big className="text-primary">+</big>
                   </div>
                 </div>
               </div>
 
               {/* Mint button */}
-              <button
-                className="btn-primary block h-full w-full"
-                style={{
-                  padding: "11px 0",
-                  width: "100px",
-                  marginLeft: "auto",
-                }}
-              >
-                Mint
-              </button>
+              <button className="MintBox__MintButton btn-primary">Mint</button>
             </div>
 
             {/* Connection warning */}
-            <div className="flex items-start mt-4">
+            <div className="flex items-start mt-5">
               <img
                 src="/images/VectorCheckmark.svg"
                 className="mt-1 mr-3 w-3"
                 alt=""
               />
-              <span className="text-base leading-4">
+              <span className="xsmall">
                 Please make sure You are connected to the Polygon Network
               </span>
             </div>
