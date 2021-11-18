@@ -9,6 +9,7 @@ const Team = () => {
         <div className="TitleDivider_Right" />
       </div>
 
+      {/* Part 1: Images */}
       <div className="grid grid-cols-3 grid-rows-1 grid-flow-row items-start">
         <div className="flex flex-col justify-center items-center px-12">
           <img src="/images/Team1.png" className="m-auto" alt="" />
@@ -33,31 +34,30 @@ const Team = () => {
         </div>
       </div>
 
-      <div>
-        <div>
-          We’ve got a few more niche experts, but they asked to keep their
-          identity anonymous.
+      {/* Part 2: Note */}
+      <div className="TeamNoteBox mt-5">
+        <div className="text-blue">
+          <big>
+            We’ve got a few more niche experts, but they asked to keep their
+            identity anonymous.
+          </big>
         </div>
 
-        <div className="grid grid-cols-2">
-          <div className="col-span-1 grid grid-cols-2 grid-rows-4">
-            <div>test</div>
-
-            <div>test</div>
-
-            <div>test</div>
-
-            <div>test</div>
-
-            <div>test</div>
-
-            <div>test</div>
-
-            <div>test</div>
-          </div>
+        <div className="grid grid-cols-2 my-5">
+          <ul className="col-span-1 grid grid-cols-2 grid-rows-4 text-white">
+            <li>Blockchain developer</li>
+            <li>Game Designer</li>
+            <li>FullStack Developer x3</li>
+            <li>Game Developer</li>
+            <li>Community manger x2</li>
+            <li>Marketing advisor</li>
+            <li>Lawyer</li>
+          </ul>
         </div>
 
-        <div>Thanks for contributing for future of this project!</div>
+        <div className="text-blue xsmall">
+          Thanks for contributing for future of this project!
+        </div>
       </div>
     </section>
   );
