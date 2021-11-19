@@ -36,10 +36,15 @@ const Hero = () => {
         <h2 className="font-bold text-primary mb-1">
           ChainEntities make You styled
         </h2>
-        <h1>Data's limited, rush for Your unique token</h1>
+        <h1 className="md:text-left text-center">
+          Data's limited, rush for Your
+          <br />
+          unique token
+        </h1>
 
-        <p className="mt-3">
-          The time when everyone and everything lives on blockchain is here.
+        <p className="mt-3 md:text-left text-center">
+          The time when everyone and everything <br /> lives on blockchain is
+          here.
         </p>
 
         {!isOnMobile && (
