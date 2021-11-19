@@ -14,7 +14,7 @@ const Team = () => {
         <div className="flex flex-col justify-center items-center px-12 md:mb-0 mb-6">
           <img
             src="/images/Team1.png"
-            className="m-auto sm:w-auto w-40"
+            className="m-auto md:w-auto w-40"
             alt=""
           />
           <h2 className="text-blue md:my-3 my-2 text-center whitespace-nowrap">
@@ -28,7 +28,7 @@ const Team = () => {
         <div className="flex flex-col justify-center items-center px-12 md:mb-0 mb-6">
           <img
             src="/images/Team2.png"
-            className="m-auto sm:w-auto w-40"
+            className="m-auto md:w-auto w-40"
             alt=""
           />
           <h2 className="text-blue md:my-3 my-2 text-center whitespace-nowrap">
@@ -42,7 +42,7 @@ const Team = () => {
         <div className="flex flex-col justify-center items-center px-12">
           <img
             src="/images/Team3.png"
-            className="m-auto sm:w-auto w-40"
+            className="m-auto md:w-auto w-40"
             alt=""
           />
           <h2 className="text-blue md:my-3 my-2 text-center whitespace-nowrap">
