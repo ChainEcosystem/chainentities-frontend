@@ -20,9 +20,13 @@ body {
   background-color: #1f1b25;
 }
 
+.container {
+  width: 95%;
+}
+
 @-moz-document url-prefix() {
   .container {
-    width: 100%;
+    width: 95%;
 
     @media (min-width: 640px) {
       max-width: 640px;
