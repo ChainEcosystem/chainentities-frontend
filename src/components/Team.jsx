@@ -10,7 +10,7 @@ const Team = () => {
       </div>
 
       {/* Part 1: Images */}
-      <div className="md:grid flex flex-col grid-cols-3 grid-rows-1 grid-flow-row md:items-start items-center">
+      <div className="md:grid flex flex-col grid-cols-3 grid-rows-1 grid-flow-row md:items-start items-center justify-center">
         <div className="flex flex-col justify-center items-center px-12 md:mb-0 mb-6">
           <img
             src="/images/Team1.png"
