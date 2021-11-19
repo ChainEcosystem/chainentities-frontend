@@ -165,7 +165,7 @@ const Hero = () => {
 
             <big className="block">
               {mintCount} Entity costs{" "}
-              <span className="text-blue">{+mintCount * 29}</span> Matic
+              <span className="text-blue">{+mintCount * 0.0001}</span> Matic
             </big>
             <small className="text-divider block md:mt-2 mt-1">
               Excluding gas fees
