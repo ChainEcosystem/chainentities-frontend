@@ -55,7 +55,7 @@ const Team = () => {
             <li>Game Designer</li>
             <li>FullStack Developer x3</li>
             <li>Game Developer</li>
-            <li>Community manger x2</li>
+            <li>Community manager x2</li>
             <li>Marketing advisor</li>
             <li>Lawyer</li>
           </ul>
