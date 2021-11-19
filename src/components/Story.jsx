@@ -4,12 +4,12 @@ const Story = () => {
   return (
     <section id="story">
       {/* Part 1: New life systems */}
-      <div className="grid grid-cols-5 pt-10">
+      <div className="md:grid flex flex-col-reverse justify-center items-center grid-cols-5 md:pt-10 pt-14 md:text-left text-center">
         <div className="col-span-2">
-          <img src="/images/HeroImage1.png" alt="" />
+          <img src="/images/HeroImage1.png" className="md:w-auto w-64" alt="" />
         </div>
 
-        <div className="col-span-3 flex flex-col justify-center pl-16">
+        <div className="col-span-3 flex flex-col justify-center md:pl-16 md:mb-0 mb-7">
           <h2 className="font-bold text-primary mb-6">New life systems</h2>
 
           <p>
@@ -30,8 +30,8 @@ const Story = () => {
       </div>
 
       {/* Part 2: ChainEntities is Future */}
-      <div className="grid grid-cols-5 pt-20">
-        <div className="col-span-3 flex flex-col justify-center pr-24">
+      <div className="md:grid flex flex-col justify-center items-center md:text-left text-center grid-cols-5 md:pt-20 pt-14">
+        <div className="col-span-3 flex flex-col justify-center md:pr-24 md:mb-0 mb-7">
           <h2 className="text-primary mb-6">ChainEntities is Future</h2>
 
           <p>
@@ -53,17 +53,26 @@ const Story = () => {
           </div>
         </div>
         <div className="col-span-2 flex justify-end items-center">
-          <img src="/images/HeroImage2.png" alt="" />
+          <img src="/images/HeroImage2.png" className="md:w-auto w-64" alt="" />
         </div>
       </div>
 
       {/* Part 3: Why Polygon blockchain? */}
-      <div className="grid grid-cols-5 pt-20">
+      <div className="md:grid flex flex-col-reverse justify-center items-center md:text-left text-center grid-cols-5 md:pt-20 pt-14">
         <div className="col-span-2 flex items-center justify-start">
-          <img src="/images/HeroImage3.png" alt="" />
+          <img
+            src="/images/HeroImage3.png"
+            className="md:block hidden"
+            alt=""
+          />
+          <img
+            src="/images/HeroImage3_Mobile.png"
+            className="md:hidden block w-64"
+            alt=""
+          />
         </div>
 
-        <div className="col-span-3 flex flex-col justify-center pl-24">
+        <div className="col-span-3 flex flex-col justify-center md:pl-24">
           <h2 className="text-primary mb-6">Why Polygon blockchain?</h2>
 
           <p>
