@@ -11,6 +11,7 @@ const App = () => {
   useEffect(() => {
     function showToTopBtn() {
       const scrollTopBtn = document.getElementById("scroll-top-btn");
+      if (!scrollTopBtn) return;
 
       if (window.pageYOffset > 400) {
         scrollTopBtn.style.display = "flex";
