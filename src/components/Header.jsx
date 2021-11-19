@@ -8,11 +8,17 @@ const Header = () => {
   return (
     <header className="bg-blacked py-5">
       <div className="container flex mx-auto justify-center items-center">
-        <small className="text-white">
+        <p className="md:hidden">
+          ChainEntities<span className="text-pink">.</span>
+        </p>
+
+        <img src="/images/VectorMenu.svg" className="ml-auto" alt="" />
+
+        <small className="md:inline-block hidden text-white">
           ChainEntities<span className="text-pink">.</span>
         </small>
 
-        <div className="flex-grow flex justify-end items-center">
+        <div className="md:flex hidden flex-grow justify-end items-center">
           <a
             href="#story"
             className="text-pink flex justify-center items-center transition duration-200 hover:text-white NavItemSpacing"
