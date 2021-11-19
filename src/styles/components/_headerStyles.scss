@@ -5,6 +5,13 @@
     margin-right: 36px;
   }
 }
+.MobileNav {
+  transform: translateY(-100vh);
+
+  &--activated {
+    transform: translateY(0);
+  }
+}
 
 .NavDivider {
   height: 24px;

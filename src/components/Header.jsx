@@ -98,9 +98,9 @@ const Header = () => {
 
       {/* Mobile nav  */}
       <nav
-        className={`md:hidden absolute bg-dark py-3 px-2 transition duration-200 w-full h-full bg-white z-20 transform -translate-y-${
-          isMenuOpen ? "0" : "full"
-        }`}
+        className={`MobileNav ${
+          isMenuOpen && "MobileNav--activated"
+        } md:hidden absolute bg-dark py-3 px-2 transition duration-200 w-full h-full bg-white z-20 transform`}
       >
         <div className="container mx-auto flex flex-col justify-center text-white">
           <div
