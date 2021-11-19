@@ -98,7 +98,7 @@ const Header = () => {
 
       {/* Mobile nav  */}
       <nav
-        className={`md:hidden absolute bg-dark py-3 transition duration-200 w-full h-full bg-white z-20 transform -translate-y-${
+        className={`md:hidden absolute bg-dark py-3 px-2 transition duration-200 w-full h-full bg-white z-20 transform -translate-y-${
           isMenuOpen ? "0" : "full"
         }`}
       >
