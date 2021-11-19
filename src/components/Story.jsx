@@ -9,7 +9,7 @@ const Story = () => {
           <img src="/images/HeroImage1.png" alt="" />
         </div>
 
-        <div className="col-span-3 flex flex-col justify-center">
+        <div className="col-span-3 flex flex-col justify-center pl-16">
           <h2 className="font-bold text-primary mb-6">New life systems</h2>
 
           <p>
