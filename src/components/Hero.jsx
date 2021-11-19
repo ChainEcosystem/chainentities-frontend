@@ -1,13 +1,35 @@
 /* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from "react";
+import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
+import ABI from "../json/abi.json";
 
 const Hero = () => {
+  const { authenticate, user } = useMoralis();
+  const [mintCount, setMintCount] = useState(1);
+  const [isOnMobile, setIsOnMobile] = useState(false);
+
+  console.log({ user });
+
+  const {
+    data,
+    error,
+    fetch: handleMint,
+    isFetching,
+    isLoading,
+  } = useWeb3ExecuteFunction({
+    abi: ABI,
+    contractAddress: "0x7079b79C24552072c7d1318F74A87053A6B8D40d",
+    functionName: "mint",
+    params: {
+      _mintAmount: mintCount,
+    },
+  });
+
+  console.log({ data });
+
   function redirectSocialLink(link) {
     window.open(link, "_blank");
   }
-
-  const [mintCount, setMintCount] = useState(1);
-  const [isOnMobile, setIsOnMobile] = useState(false);
 
   useEffect(() => {
     function handleCheckIsMobile() {
@@ -129,8 +151,15 @@ const Hero = () => {
                 </div>
 
                 {/* Mint button */}
-                <button className="MintBox__MintButton btn-primary">
-                  Mint
+                <button
+                  onClick={handleMint}
+                  className={`MintBox__MintButton ${
+                    isFetching || isLoading
+                      ? "bg-divider text-white"
+                      : "btn-primary"
+                  }`}
+                >
+                  {isFetching || isLoading ? "...Minting" : "Mint"}
                 </button>
               </div>
             )}
