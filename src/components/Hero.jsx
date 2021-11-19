@@ -33,7 +33,7 @@ const Hero = () => {
   return (
     <section className="HeroSection">
       <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5 lg:pr-24 md:pr-12">
-        <h2 className="font-bold text-primary mb-1">
+        <h2 className="font-bold text-primary mb-1 md:text-left text-center">
           ChainEntities make You styled
         </h2>
         <h1 className="md:text-left text-center">

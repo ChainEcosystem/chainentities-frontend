@@ -43,6 +43,10 @@
     height: 303px;
   }
 
+  @media (max-width: 350px) {
+    width: 310px;
+  }
+
   @media (min-width: 1900px) {
     width: 414px;
     height: 403px;
@@ -89,6 +93,10 @@
     @media (max-width: 800px) {
       height: 39px;
       width: 100px;
+    }
+
+    @media (max-width: 350px) {
+      padding: 24px;
     }
   }
 }
