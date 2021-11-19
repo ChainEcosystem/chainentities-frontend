@@ -44,11 +44,14 @@ const App = () => {
       <div className="container mx-auto">
         <Hero />
         <Story />
-        <Roadmap />
+      </div>
+
+      <Roadmap />
+
+      <div className="container mx-auto">
         <Team />
         <FAQ />
       </div>
-
       <Footer />
     </main>
   );
