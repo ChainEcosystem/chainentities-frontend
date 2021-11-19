@@ -79,8 +79,7 @@ const Hero = () => {
           ChainEntities make You styled
         </h2>
         <h1 className="md:text-left text-center">
-          Data's limited, rush for Your
-          <br />
+          Data's limited, rush for Your <br className="sm:block hidden" />
           unique token
         </h1>
 
