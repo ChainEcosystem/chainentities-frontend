@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-blacked py-5 relative z-50">
+      <header className="bg-blacked sm:py-5 py-3 relative z-50">
         <div className="container flex mx-auto justify-center items-center">
           <p className="md:hidden">
             ChainEntities<span className="text-pink">.</span>
@@ -98,56 +98,64 @@ const Header = () => {
 
       {/* Mobile nav  */}
       <nav
-        className={`absolute bg-dark py-5 transition duration-200 w-full h-full bg-white z-20 transform -translate-y-${
+        className={`absolute bg-dark py-3 transition duration-200 w-full h-full bg-white z-20 transform -translate-y-${
           isMenuOpen ? "0" : "full"
         }`}
       >
         <div className="container mx-auto flex flex-col justify-center text-white">
-          <div className="w-full py-3 flex">
+          <div
+            className="w-full py-3 flex items-center"
+            onClick={() => {
+              redirectSocialLink("https://discord.gg/5qRS9KThV2");
+            }}
+          >
             <img
               className="SocialIcon NavItemSpacing"
               src="/images/VectorDiscord.svg"
               alt=""
-              onClick={() => {
-                redirectSocialLink("https://discord.gg/5qRS9KThV2");
-              }}
             />
             <p>Discord</p>
           </div>
 
-          <div className="w-full py-3 flex">
+          <div
+            className="w-full py-3 flex items-center"
+            onClick={() => {
+              redirectSocialLink("https://twitter.com/ChainEntities");
+            }}
+          >
             <img
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTwitter.svg"
               alt=""
-              onClick={() => {
-                redirectSocialLink("https://twitter.com/ChainEntities");
-              }}
             />
             <p>Twitter</p>
           </div>
 
-          <div className="w-full py-3 flex">
+          <div
+            className="w-full py-3 flex items-center"
+            onClick={() => {
+              redirectSocialLink("https://t.me/joinchat/ak0ckrBeURpmNzgy");
+            }}
+          >
             <img
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTelegram.svg"
               alt=""
-              onClick={() => {
-                redirectSocialLink("https://t.me/joinchat/ak0ckrBeURpmNzgy");
-              }}
             />
 
             <p>Telegram</p>
           </div>
 
-          <div className="w-full py-3 flex">
+          <div
+            className="w-full py-3 flex items-center"
+            onClick={() => {
+              redirectSocialLink("https://www.instagram.com/chainentities/");
+            }}
+          >
             <img
               className="SocialIcon NavItemSpacing"
               src="/images/VectorInstagram.svg"
               alt=""
-              onClick={() => {
-                redirectSocialLink("https://www.instagram.com/chainentities/");
-              }}
             />
             <p>Instagram</p>
           </div>
