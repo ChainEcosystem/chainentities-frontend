@@ -24,6 +24,10 @@ body {
   width: 95%;
 }
 
+.ScreenContainer {
+  width: 100%;
+}
+
 @-moz-document url-prefix() {
   .container {
     width: 95%;
@@ -97,6 +101,10 @@ li {
 
   &-blacked {
     background: $black-color;
+  }
+
+  &-divider {
+    background-color: $divider-color;
   }
 }
 

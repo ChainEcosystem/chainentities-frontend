@@ -1,9 +1,3 @@
-.RoadmapBoxContainer {
-  @media (max-width: 640px) {
-    display: none;
-  }
-}
-
 .RoadmapBox {
   padding: 20px;
   width: 100%;
@@ -16,6 +10,12 @@
   @media (max-width: 768px) {
     min-height: unset;
     width: 90%;
+  }
+
+  @media (max-width: 640px) {
+    margin-right: 20px;
+    min-width: 250px;
+    min-height: 260px;
   }
 }
 
