@@ -6,7 +6,8 @@ import TEST_ABI from "../json/test-abi.json";
 import address from "../json/address.json";
 
 const Hero = () => {
-  const { authenticate, user, isAuthenticated, enableWeb3 } = useMoralis();
+  const { authenticate, user, isAuthenticated, enableWeb3, Moralis } =
+    useMoralis();
   const [mintCount, setMintCount] = useState(1);
   const [isOnMobile, setIsOnMobile] = useState(false);
 
@@ -20,7 +21,8 @@ const Hero = () => {
     abi: TEST_ABI,
     contractAddress: address.test,
     functionName: "mint",
-    params: { _mintAmount: 1 },
+    msgValue: Moralis.Units.ETH((mintCount * 0.0001).toFixed(5)),
+    params: { _mintAmount: mintCount },
   });
 
   if (mintData || mintError) {
@@ -211,7 +213,7 @@ const Hero = () => {
                 {/* Mint button */}
                 <button
                   onClick={() => {
-                    if (isAuthenticated) {
+                    if (isAuthenticated && user?.attributes?.ethAddress) {
                       console.log("@@@ Minting");
                       handleMint();
                     } else {
