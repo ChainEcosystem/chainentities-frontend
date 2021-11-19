@@ -1,3 +1,9 @@
+.RoadmapBoxContainer {
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
 .RoadmapBox {
   padding: 20px;
   width: 100%;
@@ -6,6 +12,11 @@
   background-color: $dark-color;
   color: white;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    min-height: unset;
+    width: 90%;
+  }
 }
 
 .RoadmapBox__Title {
