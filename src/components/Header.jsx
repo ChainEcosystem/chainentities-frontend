@@ -104,7 +104,7 @@ const Header = () => {
       >
         <div className="container mx-auto flex flex-col justify-center text-white">
           <div
-            className="w-full py-3 flex items-center"
+            className="w-full py-3 flex items-center text-pink"
             onClick={() => {
               redirectSocialLink("https://discord.gg/5qRS9KThV2");
             }}
@@ -118,7 +118,7 @@ const Header = () => {
           </div>
 
           <div
-            className="w-full py-3 flex items-center"
+            className="w-full py-3 flex items-center text-pink"
             onClick={() => {
               redirectSocialLink("https://twitter.com/ChainEntities");
             }}
@@ -132,7 +132,7 @@ const Header = () => {
           </div>
 
           <div
-            className="w-full py-3 flex items-center"
+            className="w-full py-3 flex items-center text-pink"
             onClick={() => {
               redirectSocialLink("https://t.me/joinchat/ak0ckrBeURpmNzgy");
             }}
@@ -147,7 +147,7 @@ const Header = () => {
           </div>
 
           <div
-            className="w-full py-3 flex items-center"
+            className="w-full py-3 flex items-center text-pink"
             onClick={() => {
               redirectSocialLink("https://www.instagram.com/chainentities/");
             }}
