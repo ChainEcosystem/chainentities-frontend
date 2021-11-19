@@ -21,7 +21,7 @@ const Hero = () => {
     abi: TEST_ABI,
     contractAddress: address.test,
     functionName: "mint",
-    msgValue: Moralis.Units.ETH((mintCount * 0.0001).toFixed(5)),
+    msgValue: Moralis.Units.ETH((mintCount * 0.0001).toFixed(4)),
     params: { _mintAmount: mintCount },
   });
 
@@ -165,7 +165,10 @@ const Hero = () => {
 
             <big className="block">
               {mintCount} Entity costs{" "}
-              <span className="text-blue">{+mintCount * 0.0001}</span> Matic
+              <span className="text-blue">
+                {(+mintCount * 0.0001).toFixed(4)}
+              </span>{" "}
+              Matic
             </big>
             <small className="text-divider block md:mt-2 mt-1">
               Excluding gas fees
