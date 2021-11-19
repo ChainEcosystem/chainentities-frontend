@@ -10,12 +10,12 @@ const Hero = () => {
   return (
     <section className="HeroSection grid grid-cols-5">
       <div className="col-span-3 flex flex-col justify-center pr-24">
-        <h2 className="font-bold text-primary">
+        <h2 className="font-bold text-primary mb-1">
           ChainEntities make You styled
         </h2>
         <h1>Data's limited, rush for Your unique token</h1>
 
-        <p className="mt-2">
+        <p className="mt-3">
           The time when everyone and everything lives on blockchain is here.
         </p>
 
