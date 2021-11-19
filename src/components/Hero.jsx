@@ -41,28 +41,33 @@ const Hero = () => {
           The time when everyone and everything lives on blockchain is here.
         </p>
 
-        <div className="flex mt-5">
-          <button
-            className="btn-primary NavItemSpacing"
-            onClick={() => {
-              redirectSocialLink("https://discord.gg/5qRS9KThV2");
-            }}
-          >
-            Opensea
-          </button>
-          <button
-            className="btn-secondary"
-            onClick={() => {
-              redirectSocialLink("https://discord.gg/5qRS9KThV2");
-            }}
-          >
-            Discord
-          </button>
-        </div>
+        {!isOnMobile && (
+          <div className="flex mt-5">
+            <button
+              className="btn-primary NavItemSpacing"
+              onClick={() => {
+                redirectSocialLink("https://discord.gg/5qRS9KThV2");
+              }}
+            >
+              Opensea
+            </button>
+            <button
+              className="btn-secondary"
+              onClick={() => {
+                redirectSocialLink("https://discord.gg/5qRS9KThV2");
+              }}
+            >
+              Discord
+            </button>
+          </div>
+        )}
       </div>
 
       <div>
-        <div className="MintBoxContainer">
+        <div
+          className="MintBoxContainer"
+          style={{ ...(isOnMobile ? { height: "233px" } : {}) }}
+        >
           <div className="MintBox">
             <big className="block">ChainEntities Minted</big>
             {/* Minted count */}
@@ -74,48 +79,52 @@ const Hero = () => {
               {mintCount} Entity costs{" "}
               <span className="text-blue">{+mintCount * 29}</span> Matic
             </big>
-            <small className="text-divider block mt-2">
+            <small className="text-divider block md:mt-2 mt-1">
               Excluding gas fees
             </small>
 
-            <div className="flex items-center mt-6">
-              <div className="MintCount">
-                {/* Minus button */}
-                <div
-                  className="MintCount__Button"
-                  onClick={() => {
-                    setMintCount((prevCount) => {
-                      if (prevCount <= 1) return prevCount;
-                      return prevCount - 1;
-                    });
-                  }}
-                >
-                  <div className="MintCount__ButtonInner">
-                    <big className="text-primary">-</big>
+            {!isOnMobile && (
+              <div className="flex items-center mt-6">
+                <div className="MintCount">
+                  {/* Minus button */}
+                  <div
+                    className="MintCount__Button"
+                    onClick={() => {
+                      setMintCount((prevCount) => {
+                        if (prevCount <= 1) return prevCount;
+                        return prevCount - 1;
+                      });
+                    }}
+                  >
+                    <div className="MintCount__ButtonInner">
+                      <big className="text-primary">-</big>
+                    </div>
+                  </div>
+
+                  {/* Mint counter */}
+                  <div className="MintCount__Indicator">
+                    <big>{mintCount}</big>
+                  </div>
+
+                  {/* Plus button */}
+                  <div
+                    className="MintCount__Button"
+                    onClick={() => {
+                      setMintCount((prevCount) => prevCount + 1);
+                    }}
+                  >
+                    <div className="MintCount__ButtonInner">
+                      <big className="text-primary">+</big>
+                    </div>
                   </div>
                 </div>
 
-                {/* Mint counter */}
-                <div className="MintCount__Indicator">
-                  <big>{mintCount}</big>
-                </div>
-
-                {/* Plus button */}
-                <div
-                  className="MintCount__Button"
-                  onClick={() => {
-                    setMintCount((prevCount) => prevCount + 1);
-                  }}
-                >
-                  <div className="MintCount__ButtonInner">
-                    <big className="text-primary">+</big>
-                  </div>
-                </div>
+                {/* Mint button */}
+                <button className="MintBox__MintButton btn-primary">
+                  Mint
+                </button>
               </div>
-
-              {/* Mint button */}
-              <button className="MintBox__MintButton btn-primary">Mint</button>
-            </div>
+            )}
 
             {/* Connection warning */}
             <div className="flex items-start mt-5">
