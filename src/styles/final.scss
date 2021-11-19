@@ -116,7 +116,8 @@ li {
   }
 }
 
-.btn-primary {
+.btn-primary,
+#scroll-top-btn {
   background: linear-gradient(to right, $primary-gradient);
   padding: 12px 32px;
   border-radius: 8px;
@@ -130,6 +131,23 @@ li {
 
   @media (min-width: 1900px) {
     padding: 16px 36px;
+  }
+}
+
+#scroll-top-btn {
+  padding: 0 !important;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 999;
+
+  img {
+    width: 18px;
   }
 }
 

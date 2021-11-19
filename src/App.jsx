@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -7,10 +8,38 @@ import Story from "./components/Story";
 import Team from "./components/Team";
 
 const App = () => {
+  useEffect(() => {
+    function showToTopBtn() {
+      const scrollTopBtn = document.getElementById("scroll-top-btn");
+
+      if (window.pageYOffset > 400) {
+        scrollTopBtn.style.display = "flex";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    }
+
+    window.addEventListener("scroll", showToTopBtn);
+
+    return () => window.removeEventListener("scroll", showToTopBtn);
+  }, []);
+
   return (
     <main className="ContentContainer">
       {/* header */}
       <Header />
+
+      <div
+        id="scroll-top-btn"
+        style={{ display: "none" }}
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+          });
+        }}
+      >
+        <img src="/images/VectorUp.svg" alt="" />
+      </div>
 
       <div className="container mx-auto">
         <Hero />
