@@ -49,7 +49,8 @@ const Hero = () => {
             <hr className="MintBox__Divider" />
 
             <big className="block">
-              1 Entity costs <span className="text-blue">29</span> Matic
+              {mintCount} Entity costs{" "}
+              <span className="text-blue">{+mintCount * 29}</span> Matic
             </big>
             <small className="text-divider block mt-2">
               Excluding gas fees
