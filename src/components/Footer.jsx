@@ -29,10 +29,10 @@ const Footer = () => {
 
       {/* Socials */}
       <div className="container mx-auto">
-        <div className="grid grid-cols-3 items-center w-100 text-white py-6">
-          <div className="col-span-1 flex justify-start">
-            <small className="text-left">
-              Contacts:{" "}
+        <div className="grid sm:grid-cols-3 grid-cols-1 items-center w-100 text-white py-6">
+          <div className="col-span-1 flex sm:justify-start justify-center">
+            <small className="sm:text-left text-center">
+              Contacts: <br className="sm:hidden" />
               <a
                 href="mailto:chainecosystem@gmail.com"
                 className="transition duration-200 text-pink hover:text-white"
@@ -42,9 +42,11 @@ const Footer = () => {
             </small>
           </div>
 
-          <small className="col-span-1 text-center">All rights reserved.</small>
+          <small className="sm:inline-block hidden col-span-1 text-center">
+            All rights reserved.
+          </small>
 
-          <div className="col-span-1 flex justify-end">
+          <div className="col-span-1 flex sm:justify-end justify-center sm:mt-0 mt-5">
             <img
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTelegram.svg"
@@ -85,10 +87,14 @@ const Footer = () => {
       </div>
 
       {/* Brand name */}
-      <div className="py-3 text-center bg-dark text-white">
-        <small>
-          ChainEntities<span className="text-pink">.</span>
-        </small>
+      <div className="py-3 bg-dark text-white">
+        <div className="container mx-auto flex sm:justify-center justify-between text-center">
+          <small>
+            ChainEntities<span className="text-pink">.</span>
+          </small>
+
+          <small className="sm:hidden">All rights reserved.</small>
+        </div>
       </div>
     </footer>
   );
