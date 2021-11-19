@@ -17,12 +17,12 @@ const Roadmap = () => {
         responsive={{ md: { breakpoint: { min: 0, max: 640 }, items: 1 } }}
         arrows={false}
         centerMode={true}
-        infinite={true}
+        infinite={false}
         // partialVisible
         swipeable={true}
         additionalTransfrom={-20 * 2}
         // itemClass="px-5"
-        // draggable={true}
+        draggable={true}
       >
         {/* Box 1 */}
         <div className="flex justify-center items-center h-full">
