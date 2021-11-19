@@ -9,8 +9,8 @@ import "react-multi-carousel/lib/styles.css";
 ReactDOM.render(
   <React.StrictMode>
     <MoralisProvider
-      appId="PchN0ugTNoH0oy6cBi1VJG6TB9E0KqA9QLGYqvlu"
-      serverUrl="https://okwkk3izlznb.usemoralis.com:2053/server"
+      appId="DkODzlPguj5n7TavF2blTSp1SCcIzETd3Tpay2pM"
+      serverUrl="https://ovbs0az4d08z.usemoralis.com:2053/server"
     >
       <App />
     </MoralisProvider>
