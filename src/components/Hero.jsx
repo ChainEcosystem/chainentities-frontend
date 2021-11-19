@@ -110,7 +110,44 @@ const Hero = () => {
         )}
       </div>
 
-      <div>
+      <div className="relative">
+        {(mintData || mintError) && (
+          <div
+            style={{ bottom: "-76px" }}
+            className="absolute rounded-lg w-full bg-divider text-white p-4"
+          >
+            {mintError && (
+              <span className="mt-1 xsmall">
+                Sorry, something went wrong,{" "}
+                <span
+                  className="text-pink cursor-pointer"
+                  onClick={() => window.location.reload()}
+                >
+                  refresh
+                </span>{" "}
+                the page and try again!
+              </span>
+            )}
+
+            {mintData && (
+              <span className="mt-1 xsmall">
+                Congratulations! You’ve got Your own Entity
+                <br />
+                Visit{" "}
+                <span
+                  className="text-pink cursor-pointer"
+                  onClick={() =>
+                    redirectSocialLink("https://discord.gg/5qRS9KThV2")
+                  }
+                >
+                  opensea
+                </span>{" "}
+                to view it!
+              </span>
+            )}
+          </div>
+        )}
+
         <div
           className="MintBoxContainer"
           style={{ ...(isOnMobile ? { height: "233px" } : {}) }}
