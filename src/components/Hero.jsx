@@ -1,37 +1,48 @@
 /* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
-import ABI from "../json/abi.json";
+// import ABI from "../json/abi.json";
+import TEST_ABI from "../json/test-abi.json";
+import address from "../json/address.json";
 
 const Hero = () => {
-  const { authenticate, user } = useMoralis();
+  const { authenticate, user, isAuthenticated, enableWeb3 } = useMoralis();
   const [mintCount, setMintCount] = useState(1);
   const [isOnMobile, setIsOnMobile] = useState(false);
 
-  console.log({ user });
-
   const {
-    data,
-    error,
+    data: mintData,
+    error: mintError,
     fetch: handleMint,
-    isFetching,
-    isLoading,
+    isFetching: mintIsFetching,
+    isLoading: mintIsLoading,
   } = useWeb3ExecuteFunction({
-    abi: ABI,
-    contractAddress: "0x7079b79C24552072c7d1318F74A87053A6B8D40d",
+    abi: TEST_ABI,
+    contractAddress: address.test,
     functionName: "mint",
-    params: {
-      _mintAmount: mintCount,
-    },
+    params: { _mintAmount: 1 },
   });
 
-  console.log({ data });
+  if (mintData || mintError) {
+    console.log({ mintData, mintError });
+  }
+
+  const { data: walletData, fetch: handleGetWallet } = useWeb3ExecuteFunction({
+    abi: TEST_ABI,
+    contractAddress: address.test,
+    functionName: "walletOfOwner",
+    params: {
+      _owner: user?.attributes?.ethAddress,
+    },
+  });
 
   function redirectSocialLink(link) {
     window.open(link, "_blank");
   }
 
   useEffect(() => {
+    enableWeb3();
+
     function handleCheckIsMobile() {
       const userAgent =
         navigator.userAgent || navigator.vendor || window.opera.substr(0, 4);
@@ -50,7 +61,16 @@ const Hero = () => {
     window.addEventListener("load", handleCheckIsMobile);
 
     return () => window.removeEventListener("load", handleCheckIsMobile);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (!user?.attributes?.ethAddress) return;
+    console.log("@@@ Getting wallet of user");
+    handleGetWallet();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mintData]);
 
   return (
     <section className="HeroSection">
@@ -99,7 +119,9 @@ const Hero = () => {
           <div className="MintBox">
             <big className="block">ChainEntities Minted</big>
             {/* Minted count */}
-            <h2 className="font-bold text-primary mt-3">0/4444</h2>
+            <h2 className="font-bold text-primary mt-3">
+              {walletData?.length ?? 0}/4444
+            </h2>
 
             <hr className="MintBox__Divider" />
 
@@ -152,14 +174,22 @@ const Hero = () => {
 
                 {/* Mint button */}
                 <button
-                  onClick={handleMint}
+                  onClick={() => {
+                    if (isAuthenticated) {
+                      console.log("@@@ Minting");
+                      handleMint();
+                    } else {
+                      console.log("@@@ Authenticating");
+                      authenticate();
+                    }
+                  }}
                   className={`MintBox__MintButton ${
-                    isFetching || isLoading
-                      ? "bg-divider text-white"
+                    mintIsFetching || mintIsLoading
+                      ? "bg-divider text-white rounded-lg"
                       : "btn-primary"
                   }`}
                 >
-                  {isFetching || isLoading ? "...Minting" : "Mint"}
+                  {mintIsFetching || mintIsLoading ? "...Minting" : "Mint"}
                 </button>
               </div>
             )}
