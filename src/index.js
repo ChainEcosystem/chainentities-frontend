@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { MoralisProvider } from "react-moralis";
 import App from "./App.jsx";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/final.scss";
@@ -7,7 +8,12 @@ import "react-multi-carousel/lib/styles.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MoralisProvider
+      appId="PchN0ugTNoH0oy6cBi1VJG6TB9E0KqA9QLGYqvlu"
+      serverUrl="https://okwkk3izlznb.usemoralis.com:2053/server"
+    >
+      <App />
+    </MoralisProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
