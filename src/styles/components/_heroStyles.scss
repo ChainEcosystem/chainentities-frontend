@@ -33,6 +33,11 @@
     height: 343px;
   }
 
+  @media (max-width: 800px) {
+    width: 324px;
+    height: 303px;
+  }
+
   @media (min-width: 1900px) {
     width: 414px;
     height: 403px;
@@ -75,6 +80,11 @@
     margin-left: auto;
     height: 54px;
     width: 130px;
+
+    @media (max-width: 800px) {
+      height: 39px;
+      width: 100px;
+    }
   }
 }
 
@@ -88,10 +98,19 @@
   padding: 3px;
   height: 54px;
 
+  @media (max-width: 800px) {
+    height: 39px;
+  }
+
   &__Button {
     cursor: pointer;
     height: 46px;
     width: 51px;
+
+    @media (max-width: 800px) {
+      height: 36px;
+      width: 40px;
+    }
   }
 
   &__ButtonInner,

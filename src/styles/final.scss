@@ -65,6 +65,16 @@ li {
     margin-bottom: 0;
   }
 
+  @media (max-width: 800px) {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
   @media (min-width: 1900px) {
     font-size: 26px;
     line-height: 26px;
@@ -109,6 +119,10 @@ li {
 
   &:hover {
     filter: brightness(0) invert(1);
+  }
+
+  @media (max-width: 800px) {
+    width: 17px;
   }
 
   @media (min-width: 1900px) {
@@ -156,6 +170,15 @@ li {
 
     img {
       width: 14px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    height: 40px;
+    width: 40px;
+
+    img {
+      width: 12px;
     }
   }
 }
