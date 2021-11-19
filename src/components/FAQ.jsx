@@ -16,7 +16,7 @@ const FAQ = () => {
 
       {/* FAQ Box 1 */}
       <div
-        className="TeamNoteBox cursor-pointer mb-3"
+        className="FaqBox cursor-pointer mb-3"
         onClick={() => setIsOpened1((open) => !open)}
       >
         <Collapsible
@@ -32,8 +32,8 @@ const FAQ = () => {
             <div className="flex justify-between items-center text-blue font-bold">
               <big>What token do You use?</big>
               <div
-                className={`TeamNoteBox__Button ${
-                  isOpened1 && "TeamNoteBox__Button--active"
+                className={`FaqBox__Button ${
+                  isOpened1 && "FaqBox__Button--active"
                 }`}
               >
                 <img src="/images/VectorCross.svg" alt="" />
@@ -53,7 +53,7 @@ const FAQ = () => {
 
       {/* FAQ Box 2 */}
       <div
-        className="TeamNoteBox cursor-pointer mb-3"
+        className="FaqBox cursor-pointer mb-3"
         onClick={() => setIsOpened2((open) => !open)}
       >
         <Collapsible
@@ -69,8 +69,8 @@ const FAQ = () => {
             <div className="flex justify-between items-center text-blue font-bold">
               <big>Are Your NFT’s hosted?</big>
               <div
-                className={`TeamNoteBox__Button ${
-                  isOpened2 && "TeamNoteBox__Button--active"
+                className={`FaqBox__Button ${
+                  isOpened2 && "FaqBox__Button--active"
                 }`}
               >
                 <img src="/images/VectorCross.svg" alt="" />
@@ -90,7 +90,7 @@ const FAQ = () => {
 
       {/* FAQ Box 3 */}
       <div
-        className="TeamNoteBox cursor-pointer mb-3"
+        className="FaqBox cursor-pointer mb-3"
         onClick={() => setIsOpened3((open) => !open)}
       >
         <Collapsible
@@ -106,8 +106,8 @@ const FAQ = () => {
             <div className="flex justify-between items-center text-blue font-bold">
               <big>What’s the blockchain You use?</big>
               <div
-                className={`TeamNoteBox__Button ${
-                  isOpened3 && "TeamNoteBox__Button--active"
+                className={`FaqBox__Button ${
+                  isOpened3 && "FaqBox__Button--active"
                 }`}
               >
                 <img src="/images/VectorCross.svg" alt="" />
