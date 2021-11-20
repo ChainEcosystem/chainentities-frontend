@@ -52,7 +52,7 @@ const Hero = () => {
   }
 
   useEffect(() => {
-    if (isWeb3Enabled) alert("Successfully connected to Web3!");
+    if (isWeb3Enabled) alert("Successfully connected to Web3 provider!");
   }, [isWeb3Enabled]);
 
   useEffect(() => {
