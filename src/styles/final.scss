@@ -24,10 +24,6 @@ body {
   width: 95%;
 }
 
-.ScreenContainer {
-  width: 100%;
-}
-
 @-moz-document url-prefix() {
   .container {
     width: 95%;
@@ -51,6 +47,14 @@ body {
     @media (min-width: 1536px) {
       max-width: 1280px;
     }
+  }
+}
+
+.ScreenContainer {
+  width: 95%;
+
+  @media (max-width: 640px) {
+    width: 100%;
   }
 }
 
