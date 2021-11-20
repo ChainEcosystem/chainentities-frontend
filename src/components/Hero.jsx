@@ -6,7 +6,8 @@ import TEST_ABI from "../json/test-abi.json";
 import address from "../json/address.json";
 
 const Hero = () => {
-  const { user, Moralis, isWeb3Enabled, enableWeb3 } = useMoralis();
+  const { user, Moralis, isWeb3Enabled, enableWeb3, web3EnableError } =
+    useMoralis();
   const [mintCount, setMintCount] = useState(1);
   const [isOnMobile, setIsOnMobile] = useState(false);
   const [totalMinted, setTotalMinted] = useState(0);
@@ -49,6 +50,10 @@ const Hero = () => {
   function redirectSocialLink(link) {
     window.open(link, "_blank");
   }
+
+  useEffect(() => {
+    if (isWeb3Enabled) alert("Successfully connected to Web3!");
+  }, [isWeb3Enabled]);
 
   useEffect(() => {
     function handleCheckIsMobile() {
@@ -121,12 +126,12 @@ const Hero = () => {
       </div>
 
       <div className="relative">
-        {(mintData || mintError) && (
+        {(mintData || mintError || web3EnableError) && (
           <div
             style={{ bottom: "-76px" }}
             className="absolute rounded-lg w-full bg-divider text-white p-4"
           >
-            {mintError && (
+            {(mintError || web3EnableError) && (
               <span className="mt-1 xsmall">
                 Sorry, something went wrong,{" "}
                 <span
