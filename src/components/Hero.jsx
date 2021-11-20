@@ -29,14 +29,22 @@ const Hero = () => {
     console.log({ mintData, mintError });
   }
 
-  const { data: walletData, fetch: handleGetWallet } = useWeb3ExecuteFunction({
+  const {
+    data: walletData,
+    error: walletError,
+    fetch: handleGetWallet,
+  } = useWeb3ExecuteFunction({
     abi: TEST_ABI,
     contractAddress: address.test,
-    functionName: "walletOfOwner",
+    functionName: "balanceOf",
     params: {
-      _owner: user?.attributes?.ethAddress,
+      owner: user?.attributes?.ethAddress,
     },
   });
+
+  if (walletData || walletError) {
+    console.log({ walletData, walletError });
+  }
 
   function redirectSocialLink(link) {
     window.open(link, "_blank");
@@ -72,7 +80,7 @@ const Hero = () => {
     console.log("@@@ Getting wallet of user");
     handleGetWallet();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mintData]);
+  }, [user?.attributes?.ethAddress, mintData]);
 
   return (
     <section className="HeroSection">
@@ -158,7 +166,7 @@ const Hero = () => {
             <big className="block">ChainEntities Minted</big>
             {/* Minted count */}
             <h2 className="font-bold text-primary mt-3">
-              {walletData?.length ?? 0}/4444
+              {walletData ?? 0}/4444
             </h2>
 
             <hr className="MintBox__Divider" />
