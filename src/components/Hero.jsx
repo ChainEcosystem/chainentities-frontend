@@ -165,12 +165,12 @@ const Hero = () => {
         </div>
 
         <div className="relative">
-          {(mintData || mintError) && (
+          {(mintData || mintError || web3EnableError) && (
             <div
               style={{ bottom: "-76px" }}
               className="absolute rounded-lg w-full bg-divider text-white p-4"
             >
-              {mintError && (
+              {(mintError || web3EnableError) && (
                 <span className="mt-1 xsmall">
                   Sorry, something went wrong,{" "}
                   <span
