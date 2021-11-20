@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
-// import ABI from "../json/abi.json";
-import TEST_ABI from "../json/test-abi.json";
+import ABI from "../json/abi.json";
+// import ABI from "../json/test-abi.json";
 import contract from "../json/contract.json";
 
 const Hero = () => {
@@ -23,10 +23,10 @@ const Hero = () => {
     isFetching: mintIsFetching,
     isLoading: mintIsLoading,
   } = useWeb3ExecuteFunction({
-    abi: TEST_ABI,
-    contractAddress: contract.test.address,
+    abi: ABI,
+    contractAddress: contract.main.address,
     functionName: "mint",
-    msgValue: Moralis.Units.ETH((mintCount * +contract.test.cost).toFixed(4)),
+    msgValue: Moralis.Units.ETH(mintCount * +contract.main.cost),
     params: { _mintAmount: mintCount },
   });
 
@@ -35,20 +35,17 @@ const Hero = () => {
   }
 
   const {
-    data: walletData,
-    error: walletError,
-    fetch: handleGetWallet,
+    data: totalSupplyData,
+    error: totalSupplyError,
+    fetch: handleGetTotalSupply,
   } = useWeb3ExecuteFunction({
-    abi: TEST_ABI,
-    contractAddress: contract.test.address,
+    abi: ABI,
+    contractAddress: contract.main.address,
     functionName: "totalSupply",
-    params: {
-      owner: user?.attributes?.ethAddress,
-    },
   });
 
-  if (walletData) {
-    console.log({ walletData, walletError });
+  if (totalSupplyData) {
+    console.log({ walletData: totalSupplyData, walletError: totalSupplyError });
   }
 
   function redirectSocialLink(link) {
@@ -97,13 +94,11 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (!user?.attributes?.ethAddress || !isWeb3Enabled) {
-      return;
-    }
-    console.log("@@@ Getting wallet of user");
-    handleGetWallet({ onSuccess: (data) => setTotalMinted(data) });
+    if (!isWeb3Enabled) return;
+    console.log("@@@ Getting total supply");
+    handleGetTotalSupply({ onSuccess: (data) => setTotalMinted(data) });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.attributes?.ethAddress, isWeb3Enabled]);
+  }, [isWeb3Enabled]);
 
   return (
     <>
@@ -222,7 +217,7 @@ const Hero = () => {
               <big className="block">
                 {mintCount} Entity costs{" "}
                 <span className="text-blue">
-                  {(+mintCount * +contract.test.cost).toFixed(4)}
+                  {+mintCount * +contract.main.cost}
                 </span>{" "}
                 Matic
               </big>
