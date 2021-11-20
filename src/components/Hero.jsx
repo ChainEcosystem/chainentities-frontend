@@ -135,7 +135,7 @@ const Hero = () => {
               <span className="mt-1 xsmall">
                 Sorry, something went wrong,{" "}
                 <span
-                  className="text-pink cursor-pointer"
+                  className="text-pink transition duration-200 cursor-pointer hover:text-white"
                   onClick={() => window.location.reload()}
                 >
                   refresh
