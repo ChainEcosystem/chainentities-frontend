@@ -37,7 +37,7 @@ const Hero = () => {
   } = useWeb3ExecuteFunction({
     abi: TEST_ABI,
     contractAddress: contract.test.address,
-    functionName: "balanceOf",
+    functionName: "totalSupply",
     params: {
       owner: user?.attributes?.ethAddress,
     },
