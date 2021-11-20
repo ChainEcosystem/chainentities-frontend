@@ -29,11 +29,7 @@ const Hero = () => {
     console.log({ mintData, mintError });
   }
 
-  const {
-    data: walletData,
-    error: walletError,
-    fetch: handleGetWallet,
-  } = useWeb3ExecuteFunction({
+  const { data: walletData, fetch: handleGetWallet } = useWeb3ExecuteFunction({
     abi: TEST_ABI,
     contractAddress: address.test,
     functionName: "balanceOf",
@@ -41,10 +37,6 @@ const Hero = () => {
       owner: user?.attributes?.ethAddress,
     },
   });
-
-  if (walletData || walletError) {
-    console.log({ walletData, walletError });
-  }
 
   function redirectSocialLink(link) {
     window.open(link, "_blank");
