@@ -11,8 +11,10 @@ const Hero = () => {
   const [mintCount, setMintCount] = useState(1);
   const [isOnMobile, setIsOnMobile] = useState(false);
   const [totalMinted, setTotalMinted] = useState(0);
-  const [showWeb3ConnectionSuccess, setShowWeb3ConnectionSuccess] =
-    useState(false);
+  const [notificationState, setNotificationState] = useState({
+    show: false,
+    type: "success",
+  });
 
   const {
     data: mintData,
@@ -55,15 +57,17 @@ const Hero = () => {
 
   useEffect(() => {
     if (isWeb3Enabled) {
-      setShowWeb3ConnectionSuccess(true);
+      setNotificationState({ show: true, type: "success" });
+    } else if (web3EnableError) {
+      setNotificationState({ show: true, type: "error" });
     }
 
     let timeoutId = setTimeout(() => {
-      setShowWeb3ConnectionSuccess(false);
+      setNotificationState(false);
     }, 5000);
 
     return () => clearTimeout(timeoutId);
-  }, [isWeb3Enabled]);
+  }, [isWeb3Enabled, web3EnableError]);
 
   useEffect(() => {
     function handleCheckIsMobile() {
@@ -101,14 +105,24 @@ const Hero = () => {
     <>
       <div
         className={`flex justify-center transition duration-300 fixed left-0 z-50 w-full -top-10 transform ${
-          showWeb3ConnectionSuccess ? "translate-y-20" : ""
+          notificationState.show ? "translate-y-20" : ""
         } `}
       >
-        <div className="flex justify-center items-center py-3 px-4 bg-dark">
-          <img src="/images/VectorCheckmark.svg" className="mr-3" alt="" />
+        <div className="flex justify-center items-center py-3 px-4 bg-dark rounded-md">
+          {
+            <img
+              src={`/images/Vector${
+                notificationState.type === "success" ? "Checkmark" : "CrossRed"
+              }.svg`}
+              className="mr-3"
+              alt=""
+            />
+          }
 
           <div className="xsmall text-white">
-            Successfully connected to Your wallet
+            {notificationState.type === "success"
+              ? "Successfully connected to Your wallet"
+              : "Not connected to Your wallet"}
           </div>
         </div>
       </div>
@@ -151,12 +165,12 @@ const Hero = () => {
         </div>
 
         <div className="relative">
-          {(mintData || mintError || web3EnableError) && (
+          {(mintData || mintError) && (
             <div
               style={{ bottom: "-76px" }}
               className="absolute rounded-lg w-full bg-divider text-white p-4"
             >
-              {(mintError || web3EnableError) && (
+              {mintError && (
                 <span className="mt-1 xsmall">
                   Sorry, something went wrong,{" "}
                   <span
