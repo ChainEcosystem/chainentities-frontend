@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 // import ABI from "../json/abi.json";
 import TEST_ABI from "../json/test-abi.json";
-import address from "../json/address.json";
+import contract from "../json/contract.json";
 
 const Hero = () => {
   const { user, Moralis, isWeb3Enabled, enableWeb3, web3EnableError } =
@@ -20,9 +20,9 @@ const Hero = () => {
     isLoading: mintIsLoading,
   } = useWeb3ExecuteFunction({
     abi: TEST_ABI,
-    contractAddress: address.test,
+    contractAddress: contract.test.address,
     functionName: "mint",
-    msgValue: Moralis.Units.ETH((mintCount * 0.0001).toFixed(4)),
+    msgValue: Moralis.Units.ETH((mintCount * +contract.test.cost).toFixed(4)),
     params: { _mintAmount: mintCount },
   });
 
@@ -36,7 +36,7 @@ const Hero = () => {
     fetch: handleGetWallet,
   } = useWeb3ExecuteFunction({
     abi: TEST_ABI,
-    contractAddress: address.test,
+    contractAddress: contract.test.address,
     functionName: "balanceOf",
     params: {
       owner: user?.attributes?.ethAddress,
@@ -177,7 +177,7 @@ const Hero = () => {
             <big className="block">
               {mintCount} Entity costs{" "}
               <span className="text-blue">
-                {(+mintCount * 0.0001).toFixed(4)}
+                {(+mintCount * +contract.test.cost).toFixed(4)}
               </span>{" "}
               Matic
             </big>
