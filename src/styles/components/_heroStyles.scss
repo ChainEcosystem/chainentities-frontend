@@ -90,6 +90,12 @@
     height: 54px;
     width: 130px;
 
+    &--loading {
+      width: max-content;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
     @media (max-width: 800px) {
       height: 39px;
       width: 100px;
