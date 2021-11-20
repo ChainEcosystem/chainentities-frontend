@@ -6,10 +6,10 @@ import TEST_ABI from "../json/test-abi.json";
 import address from "../json/address.json";
 
 const Hero = () => {
-  const { authenticate, user, isAuthenticated, enableWeb3, Moralis } =
-    useMoralis();
+  const { user, Moralis, isWeb3Enabled, enableWeb3 } = useMoralis();
   const [mintCount, setMintCount] = useState(1);
   const [isOnMobile, setIsOnMobile] = useState(false);
+  const [totalMinted, setTotalMinted] = useState(0);
 
   const {
     data: mintData,
@@ -29,7 +29,11 @@ const Hero = () => {
     console.log({ mintData, mintError });
   }
 
-  const { data: walletData, fetch: handleGetWallet } = useWeb3ExecuteFunction({
+  const {
+    data: walletData,
+    error: walletError,
+    fetch: handleGetWallet,
+  } = useWeb3ExecuteFunction({
     abi: TEST_ABI,
     contractAddress: address.test,
     functionName: "balanceOf",
@@ -38,13 +42,15 @@ const Hero = () => {
     },
   });
 
+  if (walletData) {
+    console.log({ walletData, walletError });
+  }
+
   function redirectSocialLink(link) {
     window.open(link, "_blank");
   }
 
   useEffect(() => {
-    enableWeb3();
-
     function handleCheckIsMobile() {
       const userAgent =
         navigator.userAgent || navigator.vendor || window.opera.substr(0, 4);
@@ -68,11 +74,13 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (!user?.attributes?.ethAddress) return;
+    if (!user?.attributes?.ethAddress || !isWeb3Enabled) {
+      return;
+    }
     console.log("@@@ Getting wallet of user");
-    handleGetWallet();
+    handleGetWallet({ onSuccess: (data) => setTotalMinted(data) });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.attributes?.ethAddress, mintData]);
+  }, [user?.attributes?.ethAddress, isWeb3Enabled]);
 
   return (
     <section className="HeroSection">
@@ -157,9 +165,7 @@ const Hero = () => {
           <div className="MintBox">
             <big className="block">ChainEntities Minted</big>
             {/* Minted count */}
-            <h2 className="font-bold text-primary mt-3">
-              {walletData ?? 0}/4444
-            </h2>
+            <h2 className="font-bold text-primary mt-3">{totalMinted}/4444</h2>
 
             <hr className="MintBox__Divider" />
 
@@ -179,6 +185,7 @@ const Hero = () => {
                 <div className="MintCount">
                   {/* Minus button */}
                   <div
+                    disabled={mintIsFetching || mintIsLoading}
                     className="MintCount__Button"
                     onClick={() => {
                       setMintCount((prevCount) => {
@@ -199,6 +206,7 @@ const Hero = () => {
 
                   {/* Plus button */}
                   <div
+                    disabled={mintIsFetching || mintIsLoading}
                     className="MintCount__Button"
                     onClick={() => {
                       setMintCount((prevCount) => {
@@ -215,18 +223,22 @@ const Hero = () => {
 
                 {/* Mint button */}
                 <button
-                  onClick={() => {
-                    if (isAuthenticated && user?.attributes?.ethAddress) {
+                  disabled={mintIsFetching || mintIsLoading}
+                  onClick={async () => {
+                    if (user?.attributes?.ethAddress && isWeb3Enabled) {
                       console.log("@@@ Minting");
-                      handleMint();
+                      handleMint({
+                        onSuccess: () =>
+                          setTotalMinted((count) => +count + +mintCount),
+                      });
                     } else {
                       console.log("@@@ Authenticating");
-                      authenticate();
+                      enableWeb3();
                     }
                   }}
                   className={`MintBox__MintButton ${
                     mintIsFetching || mintIsLoading
-                      ? "bg-divider text-white rounded-lg"
+                      ? "bg-divider text-white rounded-lg MintBox__MintButton--loading"
                       : "btn-primary"
                   }`}
                 >
