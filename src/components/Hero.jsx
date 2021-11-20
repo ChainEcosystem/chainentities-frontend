@@ -56,14 +56,18 @@ const Hero = () => {
   }
 
   useEffect(() => {
-    if (isWeb3Enabled) {
-      setNotificationState({ show: true, type: "success" });
-    } else if (web3EnableError) {
-      setNotificationState({ show: true, type: "error" });
-    }
+    if (!isWeb3Enabled && !web3EnableError) return;
+    setNotificationState({
+      show: true,
+      type: isWeb3Enabled ? "success" : "error",
+    });
 
     let timeoutId = setTimeout(() => {
-      setNotificationState(false);
+      if (!isWeb3Enabled && !web3EnableError) return;
+      setNotificationState({
+        show: false,
+        type: isWeb3Enabled ? "success" : "error",
+      });
     }, 5000);
 
     return () => clearTimeout(timeoutId);
