@@ -11,6 +11,8 @@ const Hero = () => {
   const [mintCount, setMintCount] = useState(1);
   const [isOnMobile, setIsOnMobile] = useState(false);
   const [totalMinted, setTotalMinted] = useState(0);
+  const [showWeb3ConnectionSuccess, setShowWeb3ConnectionSuccess] =
+    useState(false);
 
   const {
     data: mintData,
@@ -52,7 +54,15 @@ const Hero = () => {
   }
 
   useEffect(() => {
-    if (isWeb3Enabled) alert("Successfully connected to Web3 provider!");
+    if (isWeb3Enabled) {
+      setShowWeb3ConnectionSuccess(true);
+    }
+
+    let timeoutId = setTimeout(() => {
+      setShowWeb3ConnectionSuccess(false);
+    }, 3000);
+
+    return () => clearTimeout(timeoutId);
   }, [isWeb3Enabled]);
 
   useEffect(() => {
