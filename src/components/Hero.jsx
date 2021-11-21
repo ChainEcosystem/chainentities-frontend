@@ -6,8 +6,7 @@ import ABI from "../json/abi.json";
 import contract from "../json/contract.json";
 
 const Hero = () => {
-  const { user, Moralis, isWeb3Enabled, enableWeb3, web3EnableError } =
-    useMoralis();
+  const { Moralis, isWeb3Enabled, enableWeb3, web3EnableError } = useMoralis();
   const [mintCount, setMintCount] = useState(1);
   const [isOnMobile, setIsOnMobile] = useState(false);
   const [totalMinted, setTotalMinted] = useState(0);
@@ -270,8 +269,7 @@ const Hero = () => {
                   <button
                     disabled={mintIsFetching || mintIsLoading}
                     onClick={async () => {
-                      console.log({ user, isWeb3Enabled });
-                      if (user?.attributes?.ethAddress && isWeb3Enabled) {
+                      if (isWeb3Enabled) {
                         console.log("@@@ Minting");
                         handleMint({
                           onSuccess: () =>
