@@ -136,7 +136,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-3 md:text-left text-center">
-            Play to earn, dApps and real-life projects <br /> that makes Your life secure, enjoyable and easy.
+            Play-to-earn games and dApps that makes <br /> Your life secure, enjoyable and easy.
           </p>
 
           {!isOnMobile && (
