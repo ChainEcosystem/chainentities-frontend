@@ -128,16 +128,15 @@ const Hero = () => {
       <section className="HeroSection">
         <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5 lg:pr-24 md:pr-12">
           <h2 className="font-bold text-primary mb-1 md:text-left text-center">
-            ChainEntities make You styled
+            Stepping into metaverse...
           </h2>
           <h1 className="md:text-left text-center">
-            Data's limited, rush for Your <br className="sm:block hidden" />
-            unique token
+            We are starting an ecosystem <br className="sm:block hidden" />
+            that improves everyone's live
           </h1>
 
           <p className="mt-3 md:text-left text-center">
-            The time when everyone and everything <br /> lives on blockchain is
-            here.
+            Play to earn, dApps and real-life projects <br /> that makes Your life secure, enjoyable and easy.
           </p>
 
           {!isOnMobile && (
