@@ -270,6 +270,7 @@ const Hero = () => {
                   <button
                     disabled={mintIsFetching || mintIsLoading}
                     onClick={async () => {
+                      console.log({ user, isWeb3Enabled });
                       if (user?.attributes?.ethAddress && isWeb3Enabled) {
                         console.log("@@@ Minting");
                         handleMint({
