@@ -32,12 +32,12 @@ const Story = () => {
       {/* Part 2: ChainEntities is Future */}
       <div className="md:grid flex flex-col justify-center items-center md:text-left text-center grid-cols-5 md:pt-20 pt-14">
         <div className="col-span-3 flex flex-col justify-center md:pr-24 md:mb-0 mb-7">
-          <h2 className="text-primary mb-6">ChainEntities is Future</h2>
+          <h2 className="text-primary mb-6">ChainEntities are the future</h2>
 
           <p>
             Nowadays (~2097) “almost” every human wears a mask, that way their
             identity stays safe. But everyone has a personality to show, that’s
-            why there is <span className="text-blue">ChainEntities</span>.
+            why there are <span className="text-blue">ChainEntities</span>.
           </p>
 
           <p className="mt-5">
