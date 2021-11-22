@@ -43,6 +43,10 @@
     height: 303px;
   }
 
+  @media (max-width: 641px) {
+    height: 233px;
+  }
+
   @media (max-width: 350px) {
     width: 310px;
   }
