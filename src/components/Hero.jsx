@@ -101,7 +101,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <section className="HeroSection">
+      <section className="HeroSection 2xl:px-14">
         <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5 lg:pr-24 md:pr-12">
           <h2 className="font-bold text-primary mb-1 md:text-left text-center">
             Stepping into metaverse...
