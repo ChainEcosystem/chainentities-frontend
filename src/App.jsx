@@ -20,10 +20,21 @@ const App = () => {
       }
     }
 
+    window.history.replaceState(null, "", "/");
     window.addEventListener("scroll", showToTopBtn);
 
     return () => window.removeEventListener("scroll", showToTopBtn);
   }, []);
+
+  window.onbeforeunload = () => {
+    handleScrollToTop();
+  };
+
+  function handleScrollToTop() {
+    window.scrollTo({
+      top: 0,
+    });
+  }
 
   return (
     <main className="ContentContainer">
@@ -33,11 +44,7 @@ const App = () => {
       <div
         id="scroll-top-btn"
         style={{ display: "none" }}
-        onClick={() => {
-          window.scrollTo({
-            top: 0,
-          });
-        }}
+        onClick={handleScrollToTop}
       >
         <img src="/images/VectorUp.svg" alt="" />
       </div>
