@@ -107,7 +107,7 @@ const Hero = () => {
             Stepping into metaverse...
           </h2>
           <h1 className="md:text-left text-center">
-            We are starting an ecosystem <br className="sm:block hidden" />
+            We are building an ecosystem <br className="sm:block hidden" />
             that improves everyone's live
           </h1>
 
