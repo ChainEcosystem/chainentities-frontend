@@ -10,9 +10,9 @@ const Footer = () => {
       {/* CTA */}
       <div className="bg-dark text-center py-10">
         <h1 className="font-bold text-primary mb-6">
-          Nothing is limited,
+          Metaverse life is coming,
           <br />
-          except for data.
+          get Your access ticket.
         </h1>
 
         <button
