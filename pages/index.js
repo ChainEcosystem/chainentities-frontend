@@ -11,9 +11,8 @@ import Team from "../components/Team";
 
 const Home = () => {
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
+    if (typeof window === "undefined") return;
+
     function showToTopBtn() {
       const scrollTopBtn = document.getElementById("scroll-top-btn");
       if (!scrollTopBtn) return;
