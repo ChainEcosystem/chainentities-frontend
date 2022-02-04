@@ -1,0 +1,149 @@
+.HeroSection {
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    height: max-content;
+    flex-direction: column;
+  }
+}
+
+.MintBoxContainer,
+.MintCount__Button {
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  @extend .btn-secondary;
+
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  color: white;
+  font-weight: unset !important;
+  padding: unset !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MintBoxContainer {
+  width: 384px;
+  height: 373px;
+
+  @media (max-width: 1080px) {
+    height: 343px;
+  }
+
+  @media (max-width: 800px) {
+    width: 324px;
+    height: 303px;
+  }
+
+  @media (max-width: 641px) {
+    height: 233px;
+  }
+
+  @media (max-width: 350px) {
+    width: 310px;
+  }
+
+  @media (min-width: 1900px) {
+    width: 414px;
+    height: 403px;
+  }
+}
+
+.MintBox,
+.MintCount__ButtonInner {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: $dark-color;
+  width: calc(100% - 4px);
+  top: 2px;
+  height: calc(100% - 4px);
+  border-radius: 4px;
+  color: white;
+
+  @media (min-width: 1900px) {
+    top: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+  }
+}
+
+.MintBox {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__Divider {
+    width: 100%;
+    border-top: solid 2px $divider-color;
+    margin: 14px 0;
+  }
+
+  &__MintButton {
+    display: block;
+    margin-left: auto;
+    height: 54px;
+    width: 130px;
+
+    &--loading {
+      width: max-content;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    @media (max-width: 800px) {
+      height: 39px;
+      width: 100px;
+    }
+
+    @media (max-width: 350px) {
+      padding: 24px;
+    }
+  }
+}
+
+.MintCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-color;
+  width: min-content;
+  border-radius: 8px;
+  padding: 3px;
+  height: 54px;
+
+  @media (max-width: 800px) {
+    height: 39px;
+  }
+
+  &__Button {
+    cursor: pointer;
+    height: 46px;
+    width: 51px;
+
+    @media (max-width: 800px) {
+      height: 36px;
+      width: 40px;
+    }
+  }
+
+  &__ButtonInner,
+  &__Indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__Indicator {
+    width: 51px;
+  }
+}

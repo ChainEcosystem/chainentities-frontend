@@ -1,0 +1,28 @@
+.RoadmapBox {
+  padding: 20px;
+  width: 100%;
+  min-height: 269px;
+  height: 100%;
+  background-color: $dark-color;
+  color: white;
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    min-height: unset;
+    width: 90%;
+  }
+
+  @media (max-width: 641px) {
+    margin-right: 20px;
+    min-width: 250px;
+    min-height: 260px;
+  }
+}
+
+.RoadmapBox__Title {
+  padding: 5px 10px;
+  background-color: $blue-color;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: max-content;
+}
