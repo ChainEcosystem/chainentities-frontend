@@ -5,6 +5,7 @@ import ABI from "../json/abi.json";
 // import ABI from "../json/test-abi.json";
 import contract from "../json/contract.json";
 import socialMedias from "../json/socialMedia.json";
+import Image from "next/image";
 
 const Hero = () => {
   const { Moralis, isWeb3Enabled, enableWeb3, web3EnableError } = useMoralis();
@@ -129,7 +130,7 @@ const Hero = () => {
       >
         <div className="flex justify-center items-center py-3 px-4 bg-dark rounded-md">
           {
-            <img
+            <Image
               src={`/images/Vector${
                 notificationState.type === "success" ? "Checkmark" : "CrossRed"
               }.svg`}
@@ -184,7 +185,7 @@ const Hero = () => {
                 className="flex justify-center items-center p-3 rounded-full bg-dark"
                 key={`heroSocial-${index}`}
               >
-                <img src={`images/Vector${social.name}.svg`} alt="" />
+                <Image src={`images/Vector${social.name}.svg`} alt="" />
               </div>
             ))}
           </div>
@@ -323,7 +324,7 @@ const Hero = () => {
 
               {/* Connection warning */}
               <div className="flex items-start mt-5">
-                <img
+                <Image
                   src="/images/VectorCheckmark.svg"
                   className="md:mt-1 mr-3 w-3"
                   alt=""

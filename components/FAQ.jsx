@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Collapsible from "react-collapsible";
+import Image from "next/image";
 
 const FAQ = () => {
   const [isOpened1, setIsOpened1] = useState(false),
@@ -36,7 +37,7 @@ const FAQ = () => {
                   isOpened1 && "FaqBox__Button--active"
                 }`}
               >
-                <img src="/images/VectorCross.svg" alt="" />
+                <Image src="/images/VectorCross.svg" alt="" />
               </div>
             </div>
           }
@@ -73,7 +74,7 @@ const FAQ = () => {
                   isOpened2 && "FaqBox__Button--active"
                 }`}
               >
-                <img src="/images/VectorCross.svg" alt="" />
+                <Image src="/images/VectorCross.svg" alt="" />
               </div>
             </div>
           }
@@ -110,7 +111,7 @@ const FAQ = () => {
                   isOpened3 && "FaqBox__Button--active"
                 }`}
               >
-                <img src="/images/VectorCross.svg" alt="" />
+                <Image src="/images/VectorCross.svg" alt="" />
               </div>
             </div>
           }

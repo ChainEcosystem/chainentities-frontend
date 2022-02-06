@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Footer = () => {
   function redirectSocialLink(link) {
@@ -53,7 +54,7 @@ const Footer = () => {
           </small>
 
           <div className="col-span-1 flex sm:justify-end justify-center sm:mt-0 mt-5">
-            <img
+            <Image
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTelegram.svg"
               alt=""
@@ -62,7 +63,7 @@ const Footer = () => {
               }}
             />
 
-            <img
+            <Image
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTwitter.svg"
               alt=""
@@ -71,7 +72,7 @@ const Footer = () => {
               }}
             />
 
-            <img
+            <Image
               className="SocialIcon NavItemSpacing"
               src="/images/VectorInstagram.svg"
               alt=""
@@ -80,7 +81,7 @@ const Footer = () => {
               }}
             />
 
-            <img
+            <Image
               className="SocialIcon"
               src="/images/VectorDiscord.svg"
               alt=""

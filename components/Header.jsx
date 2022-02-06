@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import navItems from "../json/navItems.json";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ const Header = () => {
             ChainEntities<span className="text-pink">.</span>
           </p>
 
-          <img
+          <Image
             src={`/images/${
               isMenuOpen ? "VectorCrossColor" : "VectorMenu"
             }.svg`}
@@ -52,7 +53,7 @@ const Header = () => {
                 <small className="text-pink">Profile</small>
               </div>
 
-              <img src="/images/CEIcon.png" alt="" />
+              <Image src="/images/CEIcon.png" alt="" />
             </div>
           </div>
         </div>
@@ -71,7 +72,7 @@ const Header = () => {
               redirectSocialLink("https://discord.gg/5qRS9KThV2");
             }}
           >
-            <img
+            <Image
               className="SocialIcon NavItemSpacing"
               src="/images/VectorDiscord.svg"
               alt=""
@@ -85,7 +86,7 @@ const Header = () => {
               redirectSocialLink("https://twitter.com/ChainEntities");
             }}
           >
-            <img
+            <Image
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTwitter.svg"
               alt=""
@@ -99,7 +100,7 @@ const Header = () => {
               redirectSocialLink("https://t.me/joinchat/ak0ckrBeURpmNzgy");
             }}
           >
-            <img
+            <Image
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTelegram.svg"
               alt=""
@@ -114,7 +115,7 @@ const Header = () => {
               redirectSocialLink("https://www.instagram.com/chainentities/");
             }}
           >
-            <img
+            <Image
               className="SocialIcon NavItemSpacing"
               src="/images/VectorInstagram.svg"
               alt=""

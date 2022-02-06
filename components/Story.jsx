@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Story = () => {
   return (
@@ -6,7 +7,11 @@ const Story = () => {
       {/* Part 1: New life systems */}
       <div className="md:grid flex flex-col-reverse justify-center items-center grid-cols-5 md:pt-10 pt-14 md:text-left text-center">
         <div className="col-span-2">
-          <img src="/images/HeroImage1.png" className="md:w-auto w-64" alt="" />
+          <Image
+            src="/images/HeroImage1.png"
+            className="md:w-auto w-64"
+            alt=""
+          />
         </div>
 
         <div className="col-span-3 flex flex-col justify-center md:pl-16 md:mb-0 mb-7">
@@ -53,19 +58,23 @@ const Story = () => {
           </div>
         </div>
         <div className="col-span-2 flex justify-end items-center">
-          <img src="/images/HeroImage2.png" className="md:w-auto w-64" alt="" />
+          <Image
+            src="/images/HeroImage2.png"
+            className="md:w-auto w-64"
+            alt=""
+          />
         </div>
       </div>
 
       {/* Part 3: Why Polygon blockchain? */}
       <div className="md:grid flex flex-col-reverse justify-center items-center md:text-left text-center grid-cols-5 md:pt-20 pt-14">
         <div className="col-span-2 flex items-center justify-start">
-          <img
+          <Image
             src="/images/HeroImage3.png"
             className="md:block hidden"
             alt=""
           />
-          <img
+          <Image
             src="/images/HeroImage3_Mobile.png"
             className="md:hidden block w-64"
             alt=""
