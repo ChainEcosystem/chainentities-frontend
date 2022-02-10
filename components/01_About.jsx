@@ -31,8 +31,8 @@ const About = () => {
             <div className="flex flex-col justify-center items-center mt-4">
               {[...Array(4)].map((arr, index) => (
                 <div
-                  className="AboutDotWrap"
-                  key={`dot${block.source}${index}`}
+                  className="AboutDotWrap AboutDotDown"
+                  key={`dotDown${block.source}${index}`}
                   style={{ marginBottom: "8px" }}
                 >
                   <div className="AboutDot relative">
