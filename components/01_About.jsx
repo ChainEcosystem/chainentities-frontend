@@ -109,16 +109,18 @@ const About = () => {
           <div className="flex flex-col justify-center items-center mb-4">
             {[...Array(4)].map((arr, index) => (
               <div
-                className="AboutDot relative"
+                className="AboutDotWrap"
                 key={`dotUp${index}`}
                 style={{ marginTop: "10px" }}
               >
-                <Image
-                  src="/images/AboutDot.svg"
-                  unselectable="on"
-                  alt=""
-                  layout="fill"
-                />
+                <div className="AboutDot relative">
+                  <Image
+                    src="/images/AboutDot.svg"
+                    unselectable="on"
+                    alt=""
+                    layout="fill"
+                  />
+                </div>
               </div>
             ))}
           </div>
