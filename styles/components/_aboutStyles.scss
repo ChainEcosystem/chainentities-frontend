@@ -48,15 +48,43 @@
 
 .AboutDotMidLeft {
   .AboutDot {
-    animation: smallDotAnimation 2s linear infinite;
+    animation: midDotAnimation 4.4s linear infinite;
   }
 
-  @for $i from 1 through 34 {
+  @for $i from 2 through 35 {
     &:nth-child(#{$i}) {
       .AboutDot {
-        animation-delay: ($i + 5) * 0.2s;
+        animation-delay: ($i + 5) * 0.1s;
       }
     }
+  }
+}
+.AboutDotMidRight {
+  .AboutDot {
+    animation: midDotAnimation 4.4s linear infinite;
+  }
+
+  @for $i from 2 through 35 {
+    &:nth-last-child(#{$i}) {
+      .AboutDot {
+        animation-delay: ($i + 5) * 0.1s;
+      }
+    }
+  }
+}
+@keyframes midDotAnimation {
+  0% {
+  }
+
+  10% {
+    height: 100%;
+    width: 100%;
+    box-shadow: $dot-shadow;
+  }
+
+  11.37% {
+    height: 1px;
+    width: 1px;
   }
 }
 
