@@ -36,7 +36,6 @@
   .AboutDot {
     animation: smallDotAnimation 2s linear infinite;
   }
-
   &:nth-child(2) {
     .AboutDot {
       animation-delay: 0.2s;
@@ -53,6 +52,28 @@
     }
   }
 }
+
+// .AboutDotUp {
+//   .AboutDot {
+//     animation: smallDotAnimation 2s linear infinite 2s;
+//   }
+//   &:nth-child(2) {
+//     .AboutDot {
+//       animation-delay: 2.2s;
+//     }
+//   }
+//   &:nth-child(3) {
+//     .AboutDot {
+//       animation-delay: 2.4s;
+//     }
+//   }
+//   &:nth-child(4) {
+//     .AboutDot {
+//       animation-delay: 2.6s;
+//     }
+//   }
+// }
+
 @keyframes smallDotAnimation {
   0%,
   100% {
