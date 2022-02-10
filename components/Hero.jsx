@@ -182,14 +182,11 @@ const Hero = () => {
 
           <div className="flex gap-5">
             {socialMedias.map((social, index) => (
-              <div
-                className="flex justify-center items-center p-3 rounded-full bg-dark"
-                key={`heroSocial-${index}`}
-              >
+              <div className="" key={`heroSocial-${index}`}>
                 <Image
-                  height={40}
-                  width={40}
-                  src={`/images/Vector${social.name}.svg`}
+                  height={42}
+                  width={41}
+                  src={`/images/Hero${social.name}.svg`}
                   alt=""
                 />
               </div>
