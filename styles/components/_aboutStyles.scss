@@ -12,6 +12,14 @@
   width: 509px;
 }
 
+.AboutDotWrap {
+  height: 3px;
+  width: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .AboutDot,
 .AboutDotBig {
   height: 1px;

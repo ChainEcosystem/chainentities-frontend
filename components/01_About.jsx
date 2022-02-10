@@ -31,16 +31,18 @@ const About = () => {
             <div className="flex flex-col justify-center items-center mt-4">
               {[...Array(4)].map((arr, index) => (
                 <div
-                  className="AboutDot relative"
+                  className="AboutDotWrap"
                   key={`dot${block.source}${index}`}
-                  style={{ marginBottom: "10px" }}
+                  style={{ marginBottom: "8px" }}
                 >
-                  <Image
-                    src="/images/AboutDot.svg"
-                    unselectable="on"
-                    alt=""
-                    layout="fill"
-                  />
+                  <div className="AboutDot relative">
+                    <Image
+                      src="/images/AboutDot.svg"
+                      unselectable="on"
+                      alt=""
+                      layout="fill"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -50,7 +52,7 @@ const About = () => {
 
       <div
         className="flex items-center"
-        style={{ gap: "11px", padding: "0 172px" }}
+        style={{ gap: "9px", padding: "0 172px" }}
       >
         <div className="AboutDotBig relative mr-1">
           <Image
@@ -61,13 +63,15 @@ const About = () => {
           />
         </div>
         {[...Array(34)].map((arr, index) => (
-          <div className="AboutDot relative" key={`dotHorizontal${index}`}>
-            <Image
-              src="/images/AboutDot.svg"
-              unselectable="on"
-              alt=""
-              layout="fill"
-            />
+          <div className="AboutDotWrap" key={`dotHorizontal${index}`}>
+            <div className="AboutDot relative">
+              <Image
+                src="/images/AboutDot.svg"
+                unselectable="on"
+                alt=""
+                layout="fill"
+              />
+            </div>
           </div>
         ))}
         <div className="AboutDotBig relative mx-1">
@@ -79,13 +83,15 @@ const About = () => {
           />
         </div>
         {[...Array(34)].map((arr, index) => (
-          <div className="AboutDot relative" key={`dotHorizontal2${index}`}>
-            <Image
-              src="/images/AboutDot.svg"
-              unselectable="on"
-              alt=""
-              layout="fill"
-            />
+          <div className="AboutDotWrap" key={`dotHorizontal2${index}`}>
+            <div className="AboutDot relative">
+              <Image
+                src="/images/AboutDot.svg"
+                unselectable="on"
+                alt=""
+                layout="fill"
+              />
+            </div>
           </div>
         ))}
         <div className="AboutDotBig relative ml-1">
