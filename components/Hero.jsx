@@ -62,6 +62,13 @@ const Hero = () => {
         method: "wallet_switchEthereumChain",
         params: [{ chainId: "0x89" }],
       });
+      setNotificationState({ show: true, type: "success" });
+      setTimeout(() => {
+        setNotificationState({
+          show: false,
+          type: "success",
+        });
+      }, 5000);
     } catch (error) {
       if (error.code === 4902) {
         try {
@@ -232,14 +239,14 @@ const Hero = () => {
                   Congratulations! You’ve got Your own Entity
                   <br />
                   Visit{" "}
-                  <span
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://discord.gg/5qRS9KThV2"
                     className="text-pink cursor-pointer"
-                    onClick={() =>
-                      redirectSocialLink("https://discord.gg/5qRS9KThV2")
-                    }
                   >
                     opensea
-                  </span>{" "}
+                  </a>{" "}
                   to view it!
                 </span>
               )}
