@@ -155,7 +155,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <section className="HeroSection grid grid-cols-2 gap-32 justify-center items-center">
+      <section className="HeroSection grid grid-cols-2 xl:gap-32 justify-center items-center">
         <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5 lg:pr-24 md:pr-12">
           <h2 className="font-bold text-primary mb-1 md:text-left text-center">
             ChainEntities - an utopia in the metaverse
@@ -334,7 +334,7 @@ const Hero = () => {
                     mintIsFetching || mintIsLoading
                       ? "bg-divider text-white rounded-lg MintBox__MintButton--loading"
                       : "btn-primary"
-                  }`}
+                  } flex justify-center items-center`}
                 >
                   {mintIsFetching || mintIsLoading ? "...Minting" : "Mint"}
                 </button>
