@@ -36,19 +36,12 @@
   .AboutDot {
     animation: smallDotAnimation 2s linear infinite;
   }
-  &:nth-child(2) {
-    .AboutDot {
-      animation-delay: 0.2s;
-    }
-  }
-  &:nth-child(3) {
-    .AboutDot {
-      animation-delay: 0.4s;
-    }
-  }
-  &:nth-child(4) {
-    .AboutDot {
-      animation-delay: 0.6s;
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i + 1}) {
+      .AboutDot {
+        animation-delay: $i * 0.2s;
+      }
     }
   }
 }
