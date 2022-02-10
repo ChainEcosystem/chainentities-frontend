@@ -1,0 +1,14 @@
+.AboutBoxLong,
+.AboutBox {
+  border-radius: 8px;
+  padding: 20px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-color;
+}
+
+.AboutBoxLong {
+  width: 509px;
+}
