@@ -129,17 +129,16 @@ const Hero = () => {
         } `}
       >
         <div className="flex justify-center items-center py-3 px-4 bg-dark rounded-md">
-          {
+          <div className="mr-3 flex items-center">
             <Image
-              height={40}
-              width={40}
+              height={15}
+              width={18}
               src={`/images/Vector${
                 notificationState.type === "success" ? "Checkmark" : "CrossRed"
               }.svg`}
-              className="mr-3"
               alt=""
             />
-          }
+          </div>
 
           <div className="xsmall text-white">
             {notificationState.type === "success"
@@ -163,14 +162,14 @@ const Hero = () => {
           </p>
 
           <div className="sm:flex hidden mt-10 mb-8">
-            <button
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://discord.gg/5qRS9KThV2"
               className="btn-primary NavItemSpacing"
-              onClick={() => {
-                redirectSocialLink("https://discord.gg/5qRS9KThV2");
-              }}
             >
               Opensea
-            </button>
+            </a>
             <a
               href="/files/litepaper.pdf"
               target="_blank"
@@ -252,9 +251,9 @@ const Hero = () => {
             <div className="MintBox">
               <big className="block">ChainEntities Minted</big>
               {/* Minted count */}
-              <h2 className="font-bold text-primary mt-3">
+              <span className="font-bold text-primary mt-3 text-4xl">
                 {totalMinted}/4444
-              </h2>
+              </span>
 
               <hr className="MintBox__Divider" />
 
@@ -265,11 +264,11 @@ const Hero = () => {
                 </span>{" "}
                 Matic
               </big>
-              <small className="text-divider block md:mt-2 mt-1">
+              <small className="text-divider block mt-1">
                 Excluding gas fees
               </small>
 
-              <div className="sm:flex hidden items-center mt-6">
+              <div className="sm:flex hidden items-center mt-8">
                 <div className="MintCount">
                   {/* Minus button */}
                   <div
@@ -335,14 +334,15 @@ const Hero = () => {
               </div>
 
               {/* Connection warning */}
-              <div className="flex items-start mt-5">
-                <Image
-                  height={40}
-                  width={40}
-                  src="/images/VectorCheckmark.svg"
-                  className="md:mt-1 mr-3 w-3"
-                  alt=""
-                />
+              <div className="flex items-start mt-4">
+                <div className="mr-3">
+                  <Image
+                    height={22}
+                    width={25}
+                    src="/images/VectorCheckmark.svg"
+                    alt=""
+                  />
+                </div>
 
                 <span className="xsmall sm:hidden">
                   Please visit Web version of the site, to mint an Entity
