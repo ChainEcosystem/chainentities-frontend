@@ -55,6 +55,8 @@ const Footer = () => {
 
           <div className="col-span-1 flex sm:justify-end justify-center sm:mt-0 mt-5">
             <Image
+              height={40}
+              width={40}
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTelegram.svg"
               alt=""
@@ -64,6 +66,8 @@ const Footer = () => {
             />
 
             <Image
+              height={40}
+              width={40}
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTwitter.svg"
               alt=""
@@ -73,6 +77,8 @@ const Footer = () => {
             />
 
             <Image
+              height={40}
+              width={40}
               className="SocialIcon NavItemSpacing"
               src="/images/VectorInstagram.svg"
               alt=""
@@ -82,6 +88,8 @@ const Footer = () => {
             />
 
             <Image
+              height={40}
+              width={40}
               className="SocialIcon"
               src="/images/VectorDiscord.svg"
               alt=""

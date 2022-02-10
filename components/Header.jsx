@@ -21,6 +21,8 @@ const Header = () => {
           </p>
 
           <Image
+            height={40}
+            width={40}
             src={`/images/${
               isMenuOpen ? "VectorCrossColor" : "VectorMenu"
             }.svg`}
@@ -53,7 +55,7 @@ const Header = () => {
                 <small className="text-pink">Profile</small>
               </div>
 
-              <Image src="/images/CEIcon.png" alt="" />
+              <Image height={40} width={40} src="/images/CEIcon.png" alt="" />
             </div>
           </div>
         </div>
@@ -73,6 +75,8 @@ const Header = () => {
             }}
           >
             <Image
+              height={40}
+              width={40}
               className="SocialIcon NavItemSpacing"
               src="/images/VectorDiscord.svg"
               alt=""
@@ -87,6 +91,8 @@ const Header = () => {
             }}
           >
             <Image
+              height={40}
+              width={40}
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTwitter.svg"
               alt=""
@@ -101,6 +107,8 @@ const Header = () => {
             }}
           >
             <Image
+              height={40}
+              width={40}
               className="SocialIcon NavItemSpacing"
               src="/images/VectorTelegram.svg"
               alt=""
@@ -116,6 +124,8 @@ const Header = () => {
             }}
           >
             <Image
+              height={40}
+              width={40}
               className="SocialIcon NavItemSpacing"
               src="/images/VectorInstagram.svg"
               alt=""

@@ -37,7 +37,12 @@ const FAQ = () => {
                   isOpened1 && "FaqBox__Button--active"
                 }`}
               >
-                <Image src="/images/VectorCross.svg" alt="" />
+                <Image
+                  height={40}
+                  width={40}
+                  src="/images/VectorCross.svg"
+                  alt=""
+                />
               </div>
             </div>
           }
@@ -74,7 +79,12 @@ const FAQ = () => {
                   isOpened2 && "FaqBox__Button--active"
                 }`}
               >
-                <Image src="/images/VectorCross.svg" alt="" />
+                <Image
+                  height={40}
+                  width={40}
+                  src="/images/VectorCross.svg"
+                  alt=""
+                />
               </div>
             </div>
           }
@@ -111,7 +121,12 @@ const FAQ = () => {
                   isOpened3 && "FaqBox__Button--active"
                 }`}
               >
-                <Image src="/images/VectorCross.svg" alt="" />
+                <Image
+                  height={40}
+                  width={40}
+                  src="/images/VectorCross.svg"
+                  alt=""
+                />
               </div>
             </div>
           }

@@ -14,6 +14,8 @@ const Team = () => {
       <div className="md:grid flex flex-col grid-cols-3 grid-rows-1 grid-flow-row md:items-start items-center justify-center">
         <div className="flex flex-col justify-center items-center px-12 md:mb-0 mb-6">
           <Image
+            height={100}
+            width={100}
             src="/images/Team1.png"
             className="m-auto md:w-auto w-40"
             alt=""
@@ -28,6 +30,8 @@ const Team = () => {
 
         <div className="flex flex-col justify-center items-center px-12 md:mb-0 mb-6">
           <Image
+            height={100}
+            width={100}
             src="/images/Team2.png"
             className="m-auto md:w-auto w-40"
             alt=""
@@ -42,6 +46,8 @@ const Team = () => {
 
         <div className="flex flex-col justify-center items-center px-12">
           <Image
+            height={100}
+            width={100}
             src="/images/Team3.png"
             className="m-auto md:w-auto w-40"
             alt=""

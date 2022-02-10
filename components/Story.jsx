@@ -6,8 +6,9 @@ const Story = () => {
     <section id="story">
       {/* Part 1: New life systems */}
       <div className="md:grid flex flex-col-reverse justify-center items-center grid-cols-5 md:pt-10 pt-14 md:text-left text-center">
-        <div className="col-span-2">
+        <div className="col-span-2 relative">
           <Image
+            layout="fill"
             src="/images/HeroImage1.png"
             className="md:w-auto w-64"
             alt=""
@@ -57,8 +58,9 @@ const Story = () => {
             creature can mark him/her/it-self with multiple Entities!
           </div>
         </div>
-        <div className="col-span-2 flex justify-end items-center">
+        <div className="col-span-2 flex justify-end items-center relative">
           <Image
+            layout="fill"
             src="/images/HeroImage2.png"
             className="md:w-auto w-64"
             alt=""
@@ -68,17 +70,18 @@ const Story = () => {
 
       {/* Part 3: Why Polygon blockchain? */}
       <div className="md:grid flex flex-col-reverse justify-center items-center md:text-left text-center grid-cols-5 md:pt-20 pt-14">
-        <div className="col-span-2 flex items-center justify-start">
-          <Image
-            src="/images/HeroImage3.png"
-            className="md:block hidden"
-            alt=""
-          />
-          <Image
-            src="/images/HeroImage3_Mobile.png"
-            className="md:hidden block w-64"
-            alt=""
-          />
+        <div className="col-span-2 flex items-center justify-start relative h-full">
+          <div className="md:block hidden">
+            <Image layout="fill" src="/images/HeroImage3.png" alt="" />
+          </div>
+          <div className="md:hidden">
+            <Image
+              width={256}
+              height={256}
+              src="/images/HeroImage3_Mobile.png"
+              alt=""
+            />
+          </div>
         </div>
 
         <div className="col-span-3 flex flex-col justify-center md:pl-24">

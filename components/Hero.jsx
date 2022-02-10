@@ -131,6 +131,8 @@ const Hero = () => {
         <div className="flex justify-center items-center py-3 px-4 bg-dark rounded-md">
           {
             <Image
+              height={40}
+              width={40}
               src={`/images/Vector${
                 notificationState.type === "success" ? "Checkmark" : "CrossRed"
               }.svg`}
@@ -185,7 +187,12 @@ const Hero = () => {
                 className="flex justify-center items-center p-3 rounded-full bg-dark"
                 key={`heroSocial-${index}`}
               >
-                <Image src={`images/Vector${social.name}.svg`} alt="" />
+                <Image
+                  height={40}
+                  width={40}
+                  src={`/images/Vector${social.name}.svg`}
+                  alt=""
+                />
               </div>
             ))}
           </div>
@@ -325,6 +332,8 @@ const Hero = () => {
               {/* Connection warning */}
               <div className="flex items-start mt-5">
                 <Image
+                  height={40}
+                  width={40}
                   src="/images/VectorCheckmark.svg"
                   className="md:mt-1 mr-3 w-3"
                   alt=""
