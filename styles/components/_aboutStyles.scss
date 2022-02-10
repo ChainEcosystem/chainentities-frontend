@@ -46,6 +46,20 @@
   }
 }
 
+.AboutDotMidLeft {
+  .AboutDot {
+    animation: smallDotAnimation 2s linear infinite;
+  }
+
+  @for $i from 1 through 34 {
+    &:nth-child(#{$i}) {
+      .AboutDot {
+        animation-delay: ($i + 5) * 0.2s;
+      }
+    }
+  }
+}
+
 // .AboutDotUp {
 //   .AboutDot {
 //     animation: smallDotAnimation 2s linear infinite 2s;

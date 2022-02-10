@@ -63,7 +63,10 @@ const About = () => {
           />
         </div>
         {[...Array(34)].map((arr, index) => (
-          <div className="AboutDotWrap" key={`dotHorizontal${index}`}>
+          <div
+            className="AboutDotWrap AboutDotMidLeft"
+            key={`dotHorizontal${index}`}
+          >
             <div className="AboutDot relative">
               <Image
                 src="/images/AboutDot.svg"
