@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 import ABI from "../json/abi.json";
@@ -9,6 +8,7 @@ import Image from "next/image";
 
 const Hero = () => {
   const { Moralis, isWeb3Enabled, enableWeb3, web3EnableError } = useMoralis();
+  const [hoveredSocial, setHoveredSocial] = useState("");
   const [mintCount, setMintCount] = useState(1);
   const [totalMinted, setTotalMinted] = useState(0);
   const [notificationState, setNotificationState] = useState({
@@ -182,14 +182,23 @@ const Hero = () => {
 
           <div className="flex gap-5">
             {socialMedias.map((social, index) => (
-              <div className="" key={`heroSocial-${index}`}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={social.link}
+                onMouseEnter={() => setHoveredSocial(social.name)}
+                onMouseLeave={() => setHoveredSocial("")}
+                key={`heroSocial-${index}`}
+              >
                 <Image
                   height={42}
                   width={41}
-                  src={`/images/Hero${social.name}.svg`}
+                  src={`/images/Hero${social.name}${
+                    social.name === hoveredSocial ? "Color" : ""
+                  }.svg`}
                   alt=""
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
