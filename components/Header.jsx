@@ -20,22 +20,28 @@ const Header = () => {
             ChainEntities<span className="text-pink">.</span>
           </p>
 
-          <Image
-            height={40}
-            width={40}
-            src={`/images/${
-              isMenuOpen ? "VectorCrossColor" : "VectorMenu"
-            }.svg`}
-            onClick={() => {
-              setIsMenuOpen((open) => !open);
-            }}
-            className="md:hidden ml-auto"
-            alt=""
-          />
+          <div className="md:hidden ml-auto">
+            <Image
+              height={40}
+              width={40}
+              src={`/images/${
+                isMenuOpen ? "VectorCrossColor" : "VectorMenu"
+              }.svg`}
+              onClick={() => {
+                setIsMenuOpen((open) => !open);
+              }}
+              alt=""
+            />
+          </div>
 
           {/* Desktop nav */}
-          <big className="md:inline-block hidden font-bold text-white">
-            ChainEntities<span className="text-pink">.</span>
+          <big className="md:flex items-center hidden font-bold text-white">
+            <div className="mt-1 mr-3">
+              <Image height={40} width={40} src="/images/Logo.svg" alt="" />
+            </div>
+            <span>
+              ChainEntities<span className="text-pink">.</span>
+            </span>
           </big>
 
           <div className="md:flex hidden flex-grow justify-end items-center">
@@ -49,13 +55,13 @@ const Header = () => {
             </div>
             <div className="NavDivider" />
 
-            <div className="flex gap-1">
-              <div className="flex flex-col">
+            <div className="flex">
+              <div className="flex flex-col mr-1">
                 <span className="text-xs">Coming soon</span>
                 <small className="text-pink">Profile</small>
               </div>
 
-              <Image height={40} width={40} src="/images/CEIcon.png" alt="" />
+              <Image height={38} width={38} src="/images/CEIcon.png" alt="" />
             </div>
           </div>
         </div>
