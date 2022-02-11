@@ -10,6 +10,7 @@ import Story from "../components/Story";
 import Team from "../components/Team";
 import About from "../components/01-About";
 import Overview from "../components/02-Overview";
+import Detail from "../components/03-Details";
 
 const Home = () => {
   useEffect(() => {
@@ -75,6 +76,7 @@ const Home = () => {
           <Hero />
           <About />
           <Overview />
+          <Detail />
           <Story />
         </div>
 
