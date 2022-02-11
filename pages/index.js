@@ -8,7 +8,8 @@ import Hero from "../components/Hero";
 import Roadmap from "../components/Roadmap";
 import Story from "../components/Story";
 import Team from "../components/Team";
-import About from "../components/01_About";
+import About from "../components/01-About";
+import Overview from "../components/02-Overview";
 
 const Home = () => {
   useEffect(() => {
@@ -73,6 +74,7 @@ const Home = () => {
         <div className="container mx-auto">
           <Hero />
           <About />
+          <Overview />
           <Story />
         </div>
 
