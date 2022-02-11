@@ -18,6 +18,7 @@ const About = () => {
             <div className="AboutBox">
               <div className="flex flex-col justify-center items-center text-center">
                 <Image
+                  className="pointer-events-none"
                   src={`/images/${block.source}.svg`}
                   alt=""
                   height={32}
@@ -134,6 +135,7 @@ const About = () => {
           <div className="AboutBoxLong">
             <div className="flex flex-col justify-center items-center text-center">
               <Image
+                unselectable="on"
                 src={`/images/${aboutLongBlock.source}.svg`}
                 alt=""
                 height={32}
