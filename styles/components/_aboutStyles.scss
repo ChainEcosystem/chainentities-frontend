@@ -31,6 +31,9 @@
   width: 6px;
   animation: bigDotAnimation 3s linear infinite 0.341s;
 }
+.AboutDotBigMid {
+  animation: bigMidDotAnimation 3s linear infinite 0.341s;
+}
 @keyframes bigDotAnimation {
   0% {
     box-shadow: $dot-shadow;
@@ -39,7 +42,23 @@
     box-shadow: none;
   }
 }
-
+@keyframes bigMidDotAnimation {
+  0% {
+    box-shadow: $dot-shadow;
+  }
+  16.617% {
+    box-shadow: none;
+  }
+  79.545% {
+    box-shadow: none;
+  }
+  87.879% {
+    box-shadow: $dot-shadow;
+  }
+  96.212% {
+    box-shadow: none;
+  }
+}
 .AboutDotDown {
   .AboutDot {
     animation: downDotAnimation 3s linear infinite;
@@ -67,7 +86,7 @@
 
 .AboutDotMidLeft {
   .AboutDot {
-    animation: midDotAnimation 3s linear infinite;
+    animation: downDotAnimation 3s linear infinite;
   }
 
   @for $i from 1 through 35 {
@@ -80,7 +99,7 @@
 }
 .AboutDotMidRight {
   .AboutDot {
-    animation: midDotAnimation 3s linear infinite;
+    animation: downDotAnimation 3s linear infinite;
   }
 
   @for $i from 1 through 35 {
@@ -89,21 +108,6 @@
         animation-delay: 0.341s + ($i * 0.068s);
       }
     }
-  }
-}
-@keyframes midDotAnimation {
-  0% {
-  }
-
-  10% {
-    height: 100%;
-    width: 100%;
-    box-shadow: $dot-shadow;
-  }
-
-  11.37% {
-    height: 1px;
-    width: 1px;
   }
 }
 
@@ -120,5 +124,3 @@
     }
   }
 }
-// @keyframes upDotAnimation {
-// }

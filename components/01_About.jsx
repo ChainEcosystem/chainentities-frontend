@@ -77,7 +77,7 @@ const About = () => {
             </div>
           </div>
         ))}
-        <div className="AboutDotBig relative mx-1">
+        <div className="AboutDotBig AboutDotBigMid relative mx-1">
           <Image
             src="/images/AboutDot.svg"
             unselectable="on"
