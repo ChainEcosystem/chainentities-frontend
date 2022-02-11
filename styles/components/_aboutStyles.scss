@@ -7,7 +7,27 @@
   justify-content: center;
   align-items: center;
   background-color: $dark-color;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(to right, #514b589f, #514b5800);
+    content: "";
+    z-index: -1;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    &::after {
+      background: linear-gradient(to right, #7ad1ec, #7ad1ec18);
+    }
+  }
 }
+
 .AboutBoxLong {
   width: 509px;
 }
