@@ -39,14 +39,14 @@
   justify-content: center;
   align-items: center;
 }
-.AboutDot {
+.AboutDot,
+.AboutDotBig {
   height: 1px;
   width: 1px;
   border-radius: 50%;
-  // animation: dots 1.6s linear infinite;
+  opacity: 1; // <-- play with opacity here
 }
 .AboutDotBig {
-  border-radius: 50%;
   height: 6px;
   width: 6px;
   animation: bigDotAnimation 3s linear infinite 0.341s;
