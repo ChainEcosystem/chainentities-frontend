@@ -29,45 +29,64 @@
   border-radius: 50%;
   height: 6px;
   width: 6px;
-  animation: bigDotAnimation 2s linear infinite 0.8s;
+  animation: bigDotAnimation 3s linear infinite 0.341s;
+}
+@keyframes bigDotAnimation {
+  0% {
+    box-shadow: $dot-shadow;
+  }
+  16.617% {
+    box-shadow: none;
+  }
 }
 
 .AboutDotDown {
   .AboutDot {
-    animation: smallDotAnimation 2s linear infinite;
+    animation: downDotAnimation 3s linear infinite;
   }
 
-  @for $i from 1 through 3 {
-    &:nth-child(#{$i + 1}) {
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
       .AboutDot {
-        animation-delay: $i * 0.2s;
+        animation-delay: $i * 0.068s;
       }
     }
+  }
+}
+@keyframes downDotAnimation {
+  0% {
+    height: 100%;
+    width: 100%;
+    box-shadow: $dot-shadow;
+  }
+  16.617% {
+    height: 1px;
+    width: 1px;
   }
 }
 
 .AboutDotMidLeft {
   .AboutDot {
-    animation: midDotAnimation 4.4s linear infinite;
+    animation: midDotAnimation 3s linear infinite;
   }
 
-  @for $i from 2 through 35 {
+  @for $i from 1 through 35 {
     &:nth-child(#{$i}) {
       .AboutDot {
-        animation-delay: ($i + 5) * 0.1s;
+        animation-delay: 0.341s + ($i * 0.068s);
       }
     }
   }
 }
 .AboutDotMidRight {
   .AboutDot {
-    animation: midDotAnimation 4.4s linear infinite;
+    animation: midDotAnimation 3s linear infinite;
   }
 
-  @for $i from 2 through 35 {
+  @for $i from 1 through 35 {
     &:nth-last-child(#{$i}) {
       .AboutDot {
-        animation-delay: ($i + 5) * 0.1s;
+        animation-delay: 0.341s + ($i * 0.068s);
       }
     }
   }
@@ -88,46 +107,18 @@
   }
 }
 
-// .AboutDotUp {
-//   .AboutDot {
-//     animation: smallDotAnimation 2s linear infinite 2s;
-//   }
-//   &:nth-child(2) {
-//     .AboutDot {
-//       animation-delay: 2.2s;
-//     }
-//   }
-//   &:nth-child(3) {
-//     .AboutDot {
-//       animation-delay: 2.4s;
-//     }
-//   }
-//   &:nth-child(4) {
-//     .AboutDot {
-//       animation-delay: 2.6s;
-//     }
-//   }
+.AboutDotUp {
+  .AboutDot {
+    animation: downDotAnimation 3s linear infinite;
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      .AboutDot {
+        animation-delay: 2.727s + ($i * 0.068s);
+      }
+    }
+  }
+}
+// @keyframes upDotAnimation {
 // }
-
-@keyframes smallDotAnimation {
-  0%,
-  100% {
-    height: 1px;
-    width: 1px;
-  }
-  50% {
-    height: 100%;
-    width: 100%;
-    box-shadow: $dot-shadow;
-  }
-}
-
-@keyframes bigDotAnimation {
-  0%,
-  100% {
-    box-shadow: none;
-  }
-  50% {
-    box-shadow: $dot-shadow;
-  }
-}
