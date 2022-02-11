@@ -113,14 +113,38 @@
 
 .AboutDotUp {
   .AboutDot {
-    animation: downDotAnimation 3s linear infinite;
+    animation: upDotAnimation 3s linear infinite;
   }
 
   @for $i from 1 through 5 {
     &:nth-child(#{$i}) {
       .AboutDot {
-        animation-delay: 2.727s + ($i * 0.068s);
+        animation-delay: 0.341s + ($i * 0.068s);
       }
     }
+  }
+}
+@keyframes upDotAnimation {
+  0% {
+    height: 100%;
+    width: 100%;
+    box-shadow: $dot-shadow;
+  }
+  16.617% {
+    height: 1px;
+    width: 1px;
+  }
+  72.718% {
+    height: 1px;
+    width: 1px;
+  }
+  81.052% {
+    height: 100%;
+    width: 100%;
+    box-shadow: $dot-shadow;
+  }
+  89.385% {
+    height: 1px;
+    width: 1px;
   }
 }
