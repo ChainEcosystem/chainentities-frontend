@@ -6,7 +6,7 @@ import Image from "next/image";
 const About = () => {
   return (
     <section className="py-24">
-      <div className="flex justify-center items-center md:mb-10 mb-6">
+      <div className="flex justify-center items-center mb-14">
         <div className="TitleDivider_Left" />
         <h1 className="font-bold text-primary mx-7">What is ChainEntities</h1>
         <div className="TitleDivider_Right" />

@@ -5,10 +5,6 @@
 
 .NavItemSpacing {
   margin-right: 24px;
-
-  @media (min-width: 1900px) {
-    margin-right: 36px;
-  }
 }
 .MobileNav {
   transform: translateY(-100vh);
@@ -23,9 +19,4 @@
   width: 1px;
   background-color: $divider-color;
   margin: 0 24px;
-
-  @media (min-width: 1900px) {
-    width: 3px;
-    margin: 0 36px;
-  }
 }

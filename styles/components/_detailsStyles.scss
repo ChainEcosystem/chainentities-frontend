@@ -1,0 +1,46 @@
+.DetailTab {
+  background-color: $dark-color;
+  border-radius: 8px;
+  position: relative;
+  width: 536px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 12px #de59ff, 0 0 6px #7ad1ec75;
+  }
+
+  &::after {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(to right, $primary-gradient);
+    content: "";
+    z-index: 1;
+    border-radius: 8px;
+  }
+}
+
+.DetailTabInner {
+  position: absolute;
+  border-radius: 6px;
+  background: $dark-color;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--active {
+    background: $divider-color;
+  }
+}

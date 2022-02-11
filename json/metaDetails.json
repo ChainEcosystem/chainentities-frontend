@@ -1,0 +1,20 @@
+{
+  "tabs": ["Metaverse map", "3D Models"],
+
+  "metaverseMap": {
+    "headline": "The ChainEntities metaverse map is going to be divided in two regions - The City and Outside the city territory.",
+
+    "contents": [
+      {
+        "title": "City",
+        "description": "The ground city is the only legal land area in the metaverse and it’s the only place where players can purchase and own NFT land property."
+      },
+      {
+        "title": "Outside the city",
+        "description": "- is the place, where entities privatize land, build their own shelters, and mine materials (for selling, trading, building or achieveing the global goal). All the land privatized on this territory is not backed up by a NFT token."
+      }
+    ],
+
+    "note": "*This isn’t the end of the land, an expansion is coming..."
+  }
+}
