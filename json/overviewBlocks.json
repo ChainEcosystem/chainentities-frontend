@@ -1,0 +1,22 @@
+[
+  {
+    "source": "Overview1",
+    "title": "1. Metaverse access",
+    "description": "Only NFT holders get access to the metaverse. A limited amount is permited during 1’st phase",
+    "buttonSrc": "OverviewButton1"
+  },
+
+  {
+    "source": "Overview2",
+    "title": "2. In-game purpose",
+    "description": "Once entered metaverse - farm, earn and prepare yourself for upcoming major game phases",
+    "buttonSrc": "OverviewButton2"
+  },
+
+  {
+    "source": "Overview3",
+    "title": "3. Marketplace",
+    "description": "Land, clothes, accessories, add-ons, supplies - everything tradable on marketplace",
+    "buttonSrc": "OverviewButton3"
+  }
+]
