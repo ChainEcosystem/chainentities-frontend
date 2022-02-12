@@ -8,7 +8,7 @@ const FAQ = () => {
     [isOpened3, setIsOpened3] = useState(false);
 
   return (
-    <section id="faq" className="md:py-20 py-14">
+    <section id="faq" className="py-24">
       <div className="flex justify-center items-center md:mb-10 mb-6">
         <div className="TitleDivider_Left" />
         <h1 className="font-bold text-primary mx-7">FAQ</h1>
@@ -38,8 +38,8 @@ const FAQ = () => {
                 }`}
               >
                 <Image
-                  height={40}
-                  width={40}
+                  height={20}
+                  width={20}
                   src="/images/VectorCross.svg"
                   alt=""
                 />
