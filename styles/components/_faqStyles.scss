@@ -8,30 +8,11 @@
     color: white;
     background-color: $light-color;
     transition: 0.2s;
-
-    img {
-      filter: brightness(0) invert(1);
-      transition: 0.2s;
-      transform: rotate(135deg);
-      height: 18px;
-      width: 18px;
-
-      @media (max-width: 1080px) {
-        height: 14px;
-        width: 14px;
-      }
-
-      @media (max-width: 800px) {
-        height: 10px;
-        width: 10px;
-      }
-    }
-
-    &--active {
-      img {
-        transform: rotate(0);
-      }
-    }
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background-color: white;

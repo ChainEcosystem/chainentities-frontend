@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -11,6 +10,7 @@ import Detail from "../components/03-Details";
 import Story from "../components/04-Story";
 import Roadmap from "../components/05-Roadmap";
 import Team from "../components/06-Team";
+import FAQ from "../components/07-FAQ";
 
 const Home = () => {
   useEffect(() => {

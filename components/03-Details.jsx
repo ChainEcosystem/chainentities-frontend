@@ -99,7 +99,7 @@ const Detail = () => {
                     alt=""
                   />
                   <Image
-                    src="/images/VectorArrowR.svg"
+                    src="/images/VectorArrowRight.svg"
                     height={20}
                     width={20}
                     alt=""
