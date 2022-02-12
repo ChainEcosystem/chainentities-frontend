@@ -1,0 +1,22 @@
+[
+  {
+    "title": "What token do You use?",
+    "answer": "Our NFT’s are all stored as ERC-721 tokens"
+  },
+
+  {
+    "title": "What’s the blockchain You use?",
+    "answer": "We use Polygon Blockchain. Same security, same scalability, but less gas fees for You"
+  },
+
+  {
+    "title": "Is the metaverse game going to be in pixel?",
+    "answer": "No, the game is being built on a third-party engine (Unreal Engine) in a 3D style, connected to blockchain with help of smart contracts"
+  },
+
+  {
+    "title": "Why do you do it?",
+    "answer": "We’re building a project where its community strives to implement blockchain tehnology into day-to-day life.",
+    "finalWord": true
+  }
+]
