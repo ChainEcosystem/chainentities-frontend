@@ -1,6 +1,17 @@
 .Collapsible {
   @extend .TeamNoteBox;
 
+  .text-blue {
+    transition: 0.2s;
+  }
+
+  &:hover {
+    .Collapsible__Button,
+    .text-blue {
+      opacity: 0.8;
+    }
+  }
+
   &__Button {
     border-radius: 8px;
     cursor: pointer;
@@ -13,13 +24,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &:hover {
-      background-color: white;
-      img {
-        filter: unset;
-      }
-    }
 
     @media (max-width: 1080px) {
       padding: 8px;
