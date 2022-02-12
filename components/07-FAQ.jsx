@@ -4,7 +4,7 @@ import Image from "next/image";
 import FAQs from "../json/FAQs.json";
 
 const FAQ = () => {
-  const [openedTab, setOpenedTab] = useState("");
+  const [openedTabs, setOpenedTabs] = useState([]);
 
   return (
     <section id="faq" className="py-24">
@@ -14,22 +14,24 @@ const FAQ = () => {
         <div className="TitleDivider_Right" />
       </div>
 
-      {FAQs.map((faq, index) => (
-        <div
-          key={`faq${index}`}
-          className="FaqBox cursor-pointer mb-3"
-          onClick={() =>
-            setOpenedTab((prevTab) => (prevTab === index ? index : ""))
-          }
-        >
+      <div className="flex flex-col gap-4">
+        {FAQs.map((faq, index) => (
           <Collapsible
+            key={`faq${index}`}
             transitionTime={200}
-            open={openedTab === index}
+            onOpen={() => {
+              setOpenedTabs((prevTabs) => [...prevTabs, index]);
+            }}
+            onClose={() => {
+              setOpenedTabs((prevTabs) =>
+                prevTabs.filter((tab) => tab !== index)
+              );
+            }}
             trigger={
               <div className="flex justify-between items-center font-bold">
                 <big className="text-blue">{faq.title}</big>
-                <div className="FaqBox__Button">
-                  {openedTab === index ? (
+                <div className="Collapsible__Button">
+                  {openedTabs.includes(index) ? (
                     <Image
                       height={22}
                       width={10}
@@ -64,8 +66,8 @@ const FAQ = () => {
               <p className="ml-1">{faq.answer}</p>
             </div>
           </Collapsible>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };
