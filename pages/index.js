@@ -6,11 +6,11 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Roadmap from "../components/Roadmap";
-import Story from "../components/Story";
 import Team from "../components/Team";
 import About from "../components/01-About";
 import Overview from "../components/02-Overview";
 import Detail from "../components/03-Details";
+import Story from "../components/04-Story";
 
 const Home = () => {
   useEffect(() => {
