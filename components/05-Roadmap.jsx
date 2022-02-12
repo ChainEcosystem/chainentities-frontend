@@ -2,7 +2,7 @@ import React from "react";
 
 const Roadmap = () => {
   return (
-    <section id="roadmap" className="md:pt-20 pt-14">
+    <section id="roadmap" className="py-24">
       <div className="container mx-auto">
         <div className="flex justify-center items-center md:mb-10 mb-6">
           <div className="TitleDivider_Left" />
@@ -25,7 +25,7 @@ const Roadmap = () => {
                 <li>Team Building</li>
                 <li>Project concepting</li>
                 <li>Art creating</li>
-                <li>Blockchain research</li>
+                <li>Blockchain, metaverse research</li>
                 <li>Smart contract writing</li>
                 <li>Smart contract launch</li>
               </ul>
@@ -40,6 +40,7 @@ const Roadmap = () => {
 
               <ul>
                 <li>Website launch</li>
+                <li>1’st 2D Pixel Ticket collection launch</li>
                 <li>Public minting launch</li>
                 <li>
                   Community 200 NFT’s giveaway{" "}
@@ -57,13 +58,8 @@ const Roadmap = () => {
               </div>
 
               <ul>
-                <li>
-                  <span className="text-blue">
-                    Next art creation for future merging 2+ collections (race,
-                    sex, city?)
-                  </span>
-                </li>
-                <li>Video presentation for a future ecosystem</li>
+                <li>Next art creation for future 3D in-game models</li>
+                <li>2’nd and 3’rd 2D Pixel ticket collection launch</li>
                 <li>Roadmap update</li>
               </ul>
             </div>
@@ -80,12 +76,19 @@ const Roadmap = () => {
                   Giveaway
                   <span className="text-blue"> (Community voting)</span>
                 </li>
+                <li>3D in-game models presentation</li>
+                <li>Building community clusters for the alpha launch</li>
                 <li>
-                  Whitelist injection and holders discount system for future
-                  collections
+                  Native token deploy and airdrop{" "}
+                  <a
+                    href="/files/litepaper.pdf"
+                    target="_blank"
+                    className="text-pink transition duration-200 hover:text-white"
+                  >
+                    (details - Litepaper)
+                  </a>
                 </li>
-                <li>“Outside the wall” concept creating</li>
-                <li>Brand creation</li>
+                <li>Metaverse land auction start</li>
               </ul>
             </div>
 
@@ -97,13 +100,13 @@ const Roadmap = () => {
               </div>
 
               <ul>
-                <li>Metaverse land buying</li>
-                <li>Building community clusters</li>
-                <li>Gamification project announcement</li>
+                <li>In-game monetization system presentation</li>
                 <li>
                   Giveaway
                   <span className="text-blue"> (Community voting)</span>
                 </li>
+                <li>Brand creation</li>
+                <li>Metaverse early closed access</li>
               </ul>
             </div>
 
@@ -115,11 +118,11 @@ const Roadmap = () => {
               </div>
 
               <ul>
+                <li>Marketplace beta launch</li>
+                <li>Metaverse early access</li>
                 <li>
-                  Personalized jackets, caps, “identities” etc. holders giveaway
+                  Houses, transport and new assets launch for the metaverse
                 </li>
-                <li>Developing token smart contract</li>
-                <li>Chain Ecosystem platform creating</li>
                 <li>Roadmap update</li>
               </ul>
             </div>
@@ -129,11 +132,11 @@ const Roadmap = () => {
 
       <div className="container mx-auto">
         <div className="md:grid grid-cols-3 mt-6 gap-10">
-          <div className="col-span-2 xsmall md:pr-5">
+          <div className="col-span-2 xsmall">
             <span className="text-blue">Note: </span>
-            We’ve got big plans for a future ecosystem (game, apps and some
-            exclusive projects), however some deadlines/releases can be
-            postponed. Thanks for Your support and understanding!
+            We’ve got big plans for a future ecosystem, however some
+            deadlines/releases can be postponed. Thanks for Your support and
+            understanding!
           </div>
         </div>
       </div>
