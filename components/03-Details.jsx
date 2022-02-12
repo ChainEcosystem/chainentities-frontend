@@ -39,13 +39,17 @@ const Detail = () => {
           {activeTabIndex === 0 && (
             <div className="flex gap-7 items-center">
               <div>
-                <Image
-                  className="pointer-events-none"
-                  src="/images/MetaDetail1.svg"
-                  alt=""
-                  height={268}
-                  width={536}
-                />
+                <div
+                  className="relative"
+                  style={{ width: "536px", height: "268px" }}
+                >
+                  <Image
+                    className="pointer-events-none"
+                    src="/images/MetaDetail1.svg"
+                    alt=""
+                    layout="fill"
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col w-full">
@@ -76,6 +80,70 @@ const Detail = () => {
 
                 <div className="xsmall text-blue">
                   {metaDetails.metaverseMap.note}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTabIndex === 1 && (
+            <div className="flex gap-7 items-center">
+              <div>
+                <div
+                  className="flex justify-between"
+                  style={{ width: "536px" }}
+                >
+                  <Image
+                    src="/images/MetaDetail2-1.svg"
+                    height={252}
+                    width={220}
+                    alt=""
+                  />
+                  <Image
+                    src="/images/VectorArrowR.svg"
+                    height={20}
+                    width={20}
+                    alt=""
+                  />
+                  <Image
+                    src="/images/MetaDetail2-2.svg"
+                    height={252}
+                    width={220}
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col w-full">
+                <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+                  2D Pixel tickets has certain traits (such as shoes, pants,
+                  race, gender, etc.) that will be carried in the metaverse to a
+                  3D model in the form of the same traits. The 3D in-game models
+                  are created in{" "}
+                  <span className="text-pink">MetaHuman Creator</span> software.
+                </div>
+
+                <div
+                  className="bg-light w-full my-4"
+                  style={{ height: "1px" }}
+                />
+
+                <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+                  2D Pixel tickets are access IDs for the metaverse. Every
+                  progress in the metaverse is stored under the token ID of a
+                  specific NFT{" "}
+                  <span className="text-blue">
+                    (data transfer to another token ID is possible)
+                  </span>
+                </div>
+
+                <div
+                  className="bg-light w-full my-4"
+                  style={{ height: "1px" }}
+                />
+
+                <div className="xsmall text-blue">
+                  *Players can trade their tickets just like they would any
+                  virtual asset (NFT)
                 </div>
               </div>
             </div>
