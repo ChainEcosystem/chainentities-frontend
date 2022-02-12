@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  generateEtags: false,
+  generateEtags: false, // remove on production
 };
