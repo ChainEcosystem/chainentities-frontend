@@ -48,13 +48,6 @@ const Hero = () => {
     console.log({ walletData: totalSupplyData, walletError: totalSupplyError });
   }
 
-  function redirectSocialLink(link) {
-    if (typeof window === "undefined") {
-      return;
-    }
-    window.open(link, "_blank");
-  }
-
   async function switchToMaticMainnet() {
     const web3 = await Moralis.Web3.enableWeb3();
     try {
