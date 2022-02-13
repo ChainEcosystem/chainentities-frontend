@@ -10,7 +10,6 @@ const Hero = () => {
   const { Moralis, isInitialized } = useMoralis();
 
   // Connection
-  const [walletUser, setWalletUser] = useState(null);
   const [isConnectingWallet, setIsConnectingWallet] = useState(false);
   const [connectedWallet, setConnectedWallet] = useState(false);
   const [showCountControl, setShowCountControl] = useState(false);
@@ -21,15 +20,20 @@ const Hero = () => {
 
   // Mint
   const [isMinting, setIsMinting] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState("");
   const [mintCount, setMintCount] = useState(1);
-  const [totalMinted, setTotalMinted] = useState(0);
+  const [publicTotalMinted, setPublicTotalMinted] = useState(0);
+  const [mintBoxMsg, setMintBoxMsg] = useState({
+    show: false,
+    type: "error",
+  });
+
+  const [hoveredSocial, setHoveredSocial] = useState("");
 
   async function handleConnectWallet() {
     setIsConnectingWallet(true);
     try {
       const web3 = await Moralis.enableWeb3();
-      const user = await Moralis.authenticate({
+      await Moralis.authenticate({
         signingMessage: "Authenticate on ChainEntities",
       });
 
@@ -39,7 +43,6 @@ const Hero = () => {
       }
 
       setConnectedWallet(true);
-      setWalletUser(user.get("ethAddress"));
       _showConnectionNotification("success");
       setTimeout(() => {
         setShowCountControl(true);
@@ -82,7 +85,9 @@ const Hero = () => {
     }
   }
 
-  function _showMintBoxMsg(type) {}
+  function _showMintBoxMsg(type) {
+    setMintBoxMsg({ show: true, type });
+  }
 
   function _mintBoxErrHandling(err) {
     if (err.code === 4001) return;
@@ -102,7 +107,7 @@ const Hero = () => {
           functionName: "totalSupply",
         });
 
-        setTotalMinted(parseInt(result._hex));
+        setPublicTotalMinted(parseInt(result._hex));
       } catch (error) {
         console.log(error);
       }
@@ -202,12 +207,12 @@ const Hero = () => {
 
           <div className="relative">
             {/* Notification - start */}
-            {false && (
+            {mintBoxMsg.show && (
               <div
                 style={{ bottom: "-76px" }}
                 className="absolute rounded-lg w-full bg-divider text-white p-4"
               >
-                {(mintError || web3EnableError) && (
+                {mintBoxMsg.type === "error" ? (
                   <span className="mt-1 xsmall">
                     Sorry, something went wrong,{" "}
                     <span
@@ -223,24 +228,22 @@ const Hero = () => {
                     </span>{" "}
                     the page and try again!
                   </span>
+                ) : (
+                  <span className="mt-1 xsmall">
+                    Congratulations! You’ve got Your own Entity
+                    <br />
+                    Visit{" "}
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://discord.gg/5qRS9KThV2"
+                      className="text-pink cursor-pointer"
+                    >
+                      opensea
+                    </a>{" "}
+                    to view it!
+                  </span>
                 )}
-
-                {/* {mintData && ( */}
-                <span className="mt-1 xsmall">
-                  Congratulations! You’ve got Your own Entity
-                  <br />
-                  Visit{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://discord.gg/5qRS9KThV2"
-                    className="text-pink cursor-pointer"
-                  >
-                    opensea
-                  </a>{" "}
-                  to view it!
-                </span>
-                {/* )} */}
               </div>
             )}
             {/* Notification - end */}
@@ -251,7 +254,7 @@ const Hero = () => {
 
                 {/* Minted count */}
                 <span className="font-bold text-primary mt-3 text-4xl">
-                  {totalMinted}/4444
+                  {publicTotalMinted}/4444
                 </span>
 
                 <hr className="MintBox__Divider" />
@@ -313,11 +316,7 @@ const Hero = () => {
                       <button
                         onClick={handleMint}
                         disabled={isMinting}
-                        className={`MintBox__MintButton btn-primary${
-                          isMinting
-                            ? "rounded-lg MintBox__MintButton--loading"
-                            : ""
-                        }`}
+                        className={`MintBox__MintButton btn-primary`}
                       >
                         {isMinting ? "...Minting" : "Mint"}
                       </button>
