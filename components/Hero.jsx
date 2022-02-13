@@ -10,6 +10,7 @@ const Hero = () => {
   const { Moralis, isInitialized } = useMoralis();
 
   // Connection
+  const [publicTotalMinted, setPublicTotalMinted] = useState(0);
   const [isConnectingWallet, setIsConnectingWallet] = useState(false);
   const [connectedWallet, setConnectedWallet] = useState(false);
   const [showCountControl, setShowCountControl] = useState(false);
@@ -21,7 +22,6 @@ const Hero = () => {
   // Mint
   const [isMinting, setIsMinting] = useState(false);
   const [mintCount, setMintCount] = useState(1);
-  const [publicTotalMinted, setPublicTotalMinted] = useState(0);
   const [mintBoxMsg, setMintBoxMsg] = useState({
     show: false,
     type: "error",
@@ -42,6 +42,13 @@ const Hero = () => {
         await Moralis.switchNetwork(137);
       }
 
+      const result = await Moralis.executeFunction({
+        contractAddress: contract[env].address,
+        abi: contract[env].ABI,
+        functionName: "totalSupply",
+      });
+
+      setPublicTotalMinted(parseInt(result._hex));
       setConnectedWallet(true);
       _showConnectionNotification("success");
       setTimeout(() => {
@@ -94,29 +101,6 @@ const Hero = () => {
     _showMintBoxMsg("error");
     console.log(err);
   }
-
-  useEffect(() => {
-    if (!isInitialized) return;
-
-    async function handleGetTotalSupply() {
-      try {
-        await Moralis.enableWeb3();
-        const result = await Moralis.executeFunction({
-          contractAddress: contract[env].address,
-          abi: contract[env].ABI,
-          functionName: "totalSupply",
-        });
-
-        setPublicTotalMinted(parseInt(result._hex));
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    handleGetTotalSupply();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isInitialized]);
 
   return (
     <>
@@ -254,7 +238,7 @@ const Hero = () => {
 
                 {/* Minted count */}
                 <span className="font-bold text-primary mt-3 text-4xl">
-                  {publicTotalMinted}/4444
+                  {connectedWallet ? publicTotalMinted : "-"}/4444
                 </span>
 
                 <hr className="MintBox__Divider" />
