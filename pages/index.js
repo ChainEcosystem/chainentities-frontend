@@ -13,6 +13,21 @@ import Team from "../components/06-Team";
 import FAQ from "../components/07-FAQ";
 
 const Home = () => {
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const STAR_COUNT = 25;
+  let result = "";
+  for (let i = 0; i < STAR_COUNT; i++) {
+    result += `${randomNumber(-50, 50)}vw ${randomNumber(
+      -50,
+      50
+    )}vh 0px 0px #fff,`;
+  }
+
+  console.log(result.substring(0, result.length - 1));
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -50,7 +65,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <>
       <Head>
         <meta name="theme-color" content="#1F1B25" />
         <title>ChainEntities - the metaverse from your dreams</title>
@@ -60,10 +75,8 @@ const Home = () => {
         />
         <link rel="icon" href="/images/icon.png" />
       </Head>
-      <main className="ContentContainer">
-        {/* header */}
-        <Header />
 
+      <main className="ContentContainer">
         <div
           id="scroll-top-btn"
           style={{ display: "none" }}
@@ -72,32 +85,24 @@ const Home = () => {
           <Image src="/images/VectorUp.svg" height={25} width={25} alt="" />
         </div>
 
-        <div className="container mx-auto">
-          <Hero />
-          <About />
-        </div>
+        {/* header */}
+        <Header />
+        <Hero />
+        <About />
+
         <div className="relative">
           <div className="OverviewBg"></div>
-
-          <div className="container mx-auto">
-            <Overview />
-            <Detail />
-          </div>
+          <Overview />
+          <Detail />
         </div>
 
-        <div className="container mx-auto">
-          <Story />
-        </div>
-
+        <Story />
         <Roadmap />
-
-        <div className="container mx-auto">
-          <Team />
-          <FAQ />
-        </div>
+        <Team />
+        <FAQ />
         <Footer />
       </main>
-    </div>
+    </>
   );
 };
 

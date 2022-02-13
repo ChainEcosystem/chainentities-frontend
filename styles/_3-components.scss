@@ -6,3 +6,22 @@
 @import "./components/aboutStyles";
 @import "./components/detailsStyles";
 @import "./components/overviewStyles";
+
+.StarBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  width: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 41vw 22vh 0px 0px #fff, -49vw 20vh 0px 0px #fff,
+    -36vw -18vh 0px 0px #fff, -34vw 32vh 0px 0px #fff, 27vw 4vh 0px 0px #fff,
+    3vw -39vh 0px 0px #fff, 22vw 44vh 0px 0px #fff, -11vw 19vh 0px 0px #fff,
+    -26vw 11vh 0px 0px #fff, 38vw 26vh 0px 0px #fff, 46vw -29vh 0px 0px #fff,
+    -13vw -23vh 0px 0px #fff, 50vw 15vh 0px 0px #fff, 30vw 2vh 0px 0px #fff,
+    -31vw -43vh 0px 0px #fff, 21vw -38vh 0px 0px #fff, -21vw 37vh 0px 0px #fff,
+    17vw 39vh 0px 0px #fff, -12vw 40vh 0px 0px #fff, -41vw -28vh 0px 0px #fff,
+    50vw 40vh 0px 0px #fff, -1vw 34vh 0px 0px #fff, -37vw 49vh 0px 0px #fff,
+    -47vw -32vh 0px 0px #fff, -28vw -25vh 0px 0px #fff;
+}
