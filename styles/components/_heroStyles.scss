@@ -83,6 +83,9 @@
     margin-left: auto;
     height: 54px;
     width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &--loading {
       width: max-content;

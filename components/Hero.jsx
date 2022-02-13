@@ -7,22 +7,23 @@ import Image from "next/image";
 const Hero = () => {
   const { Moralis, isWeb3Enabled, enableWeb3, web3EnableError } = useMoralis();
 
-  // Initialize
+  // Connection
   const [walletUser, setWalletUser] = useState(null);
   const [isConnectingWallet, setIsConnectingWallet] = useState(false);
   const [connectedWallet, setConnectedWallet] = useState(false);
   const [showCountControl, setShowCountControl] = useState(false);
-
-  const [hoveredSocial, setHoveredSocial] = useState("");
-  const [mintCount, setMintCount] = useState(1);
-  const [totalMinted, setTotalMinted] = useState(0);
-
-  const [notificationState, setNotificationState] = useState({
+  const [connectNotification, setConnectNotification] = useState({
     show: false,
     type: "success",
   });
 
-  async function connectWallet() {
+  // Mint
+  const [isMinting, setIsMinting] = useState(false);
+  const [hoveredSocial, setHoveredSocial] = useState("");
+  const [mintCount, setMintCount] = useState(1);
+  const [totalMinted, setTotalMinted] = useState(0);
+
+  async function handleConnectWallet() {
     setIsConnectingWallet(true);
     try {
       const web3 = await Moralis.enableWeb3();
@@ -42,27 +43,32 @@ const Hero = () => {
       }, 200);
     } catch (err) {
       setIsConnectingWallet(false);
-      if (err.code === 4001) return;
-      console.log(err);
+      _errHandling(err);
     }
   }
 
-  const {
-    data: mintData,
-    error: mintError,
-    fetch: handleMint,
-    isFetching: mintIsFetching,
-    isLoading: mintIsLoading,
-  } = useWeb3ExecuteFunction({
-    abi: contract.main.ABI,
-    contractAddress: contract.main.address,
-    functionName: "mint",
-    msgValue: Moralis.Units.ETH(mintCount * +contract.main.cost),
-    params: { _mintAmount: mintCount },
-  });
+  function _errHandling(err) {
+    if (err.code === 4001) return;
+    _showAndHideNotification("error");
+    console.log(err);
+  }
 
-  if (mintData || mintError) {
-    console.log({ mintData, mintError });
+  async function handleMint() {
+    setIsMinting(true);
+    try {
+      await Moralis.executeFunction({
+        contractAddress: contract.main.address,
+        functionName: "mint",
+        abi: contract.main.ABI,
+        msgValue: Moralis.Units.ETH(mintCount * +contract.main.cost),
+        params: { _mintAmount: mintCount },
+      });
+
+      _showAndHideNotification("success");
+    } catch (error) {
+      setIsMinting(false);
+      _errHandling(error);
+    }
   }
 
   const {
@@ -80,9 +86,9 @@ const Hero = () => {
   }
 
   function _showAndHideNotification(type) {
-    setNotificationState({ show: true, type });
+    setConnectNotification({ show: true, type });
     setTimeout(() => {
-      setNotificationState({
+      setConnectNotification({
         show: false,
         type,
       });
@@ -91,14 +97,14 @@ const Hero = () => {
 
   useEffect(() => {
     if (!isWeb3Enabled && !web3EnableError) return;
-    setNotificationState({
+    setConnectNotification({
       show: true,
       type: isWeb3Enabled ? "success" : "error",
     });
 
     let timeoutId = setTimeout(() => {
       if (!isWeb3Enabled && !web3EnableError) return;
-      setNotificationState({
+      setConnectNotification({
         show: false,
         type: isWeb3Enabled ? "success" : "error",
       });
@@ -123,7 +129,7 @@ const Hero = () => {
       {/* Notification - start */}
       <div
         className={`flex justify-center transition duration-300 fixed left-0 z-50 w-full -top-10 transform ${
-          notificationState.show ? "translate-y-20" : ""
+          connectNotification.show ? "translate-y-20" : ""
         } `}
       >
         <div className="flex justify-center items-center py-3 px-4 bg-dark rounded-md">
@@ -132,14 +138,16 @@ const Hero = () => {
               height={15}
               width={18}
               src={`/images/Vector${
-                notificationState.type === "success" ? "Checkmark" : "CrossRed"
+                connectNotification.type === "success"
+                  ? "Checkmark"
+                  : "CrossRed"
               }.svg`}
               alt=""
             />
           </div>
 
           <div className="xsmall text-white">
-            {notificationState.type === "success"
+            {connectNotification.type === "success"
               ? "Successfully connected to Your wallet"
               : "Not connected to Your wallet"}
           </div>
@@ -205,7 +213,7 @@ const Hero = () => {
 
           <div className="relative">
             {/* Notification - start */}
-            {(mintData || mintError || web3EnableError) && (
+            {false && (
               <div
                 style={{ bottom: "-76px" }}
                 className="absolute rounded-lg w-full bg-divider text-white p-4"
@@ -228,22 +236,22 @@ const Hero = () => {
                   </span>
                 )}
 
-                {mintData && (
-                  <span className="mt-1 xsmall">
-                    Congratulations! You’ve got Your own Entity
-                    <br />
-                    Visit{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://discord.gg/5qRS9KThV2"
-                      className="text-pink cursor-pointer"
-                    >
-                      opensea
-                    </a>{" "}
-                    to view it!
-                  </span>
-                )}
+                {/* {mintData && ( */}
+                <span className="mt-1 xsmall">
+                  Congratulations! You’ve got Your own Entity
+                  <br />
+                  Visit{" "}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://discord.gg/5qRS9KThV2"
+                    className="text-pink cursor-pointer"
+                  >
+                    opensea
+                  </a>{" "}
+                  to view it!
+                </span>
+                {/* )} */}
               </div>
             )}
             {/* Notification - end */}
@@ -277,7 +285,6 @@ const Hero = () => {
                         <div className="MintCount">
                           {/* Minus button */}
                           <div
-                            disabled={mintIsFetching || mintIsLoading}
                             className="MintCount__Button"
                             onClick={() => {
                               setMintCount((prevCount) => {
@@ -298,7 +305,6 @@ const Hero = () => {
 
                           {/* Plus button */}
                           <div
-                            disabled={mintIsFetching || mintIsLoading}
                             className="MintCount__Button"
                             onClick={() => {
                               setMintCount((prevCount) => {
@@ -316,23 +322,22 @@ const Hero = () => {
 
                       {/* Mint button */}
                       <button
-                        disabled={mintIsFetching || mintIsLoading}
-                        className={`MintBox__MintButton ${
-                          mintIsFetching || mintIsLoading
+                        onClick={handleMint}
+                        disabled={isMinting}
+                        className={`MintBox__MintButton btn-primary${
+                          isMinting
                             ? "rounded-lg MintBox__MintButton--loading"
-                            : "btn-primary"
-                        } flex justify-center items-center`}
+                            : ""
+                        }`}
                       >
-                        {mintIsFetching || mintIsLoading
-                          ? "...Minting"
-                          : "Mint"}
+                        {isMinting ? "...Minting" : "Mint"}
                       </button>
                     </>
                   ) : (
                     <button
                       className={`btn-primary w-full`}
                       disabled={isConnectingWallet}
-                      onClick={connectWallet}
+                      onClick={handleConnectWallet}
                     >
                       {isConnectingWallet ? "...Connecting" : "Connect Wallet"}
                     </button>
