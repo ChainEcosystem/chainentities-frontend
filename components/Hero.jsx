@@ -271,65 +271,69 @@ const Hero = () => {
                 </small>
 
                 <div className="sm:flex hidden items-center mt-8">
-                  {connectedWallet ? (
-                    <>
-                      {showCountControl && (
-                        <div className="MintCount">
-                          {/* Minus button */}
-                          <div
-                            className="MintCount__Button"
-                            onClick={() => {
-                              setMintCount((prevCount) => {
-                                if (prevCount <= 1) return prevCount;
-                                return prevCount - 1;
-                              });
-                            }}
-                          >
-                            <div className="MintCount__ButtonInner">
-                              <big className="text-primary">-</big>
-                            </div>
-                          </div>
-
-                          {/* Mint counter */}
-                          <div className="MintCount__Indicator">
-                            <big>{mintCount}</big>
-                          </div>
-
-                          {/* Plus button */}
-                          <div
-                            className="MintCount__Button"
-                            onClick={() => {
-                              setMintCount((prevCount) => {
-                                if (prevCount >= 13) return prevCount;
-                                return prevCount + 1;
-                              });
-                            }}
-                          >
-                            <div className="MintCount__ButtonInner">
-                              <big className="text-primary">+</big>
-                            </div>
+                  <>
+                    {showCountControl && (
+                      <div className="MintCount">
+                        {/* Minus button */}
+                        <div
+                          className="MintCount__Button"
+                          onClick={() => {
+                            setMintCount((prevCount) => {
+                              if (prevCount <= 1) return prevCount;
+                              return prevCount - 1;
+                            });
+                          }}
+                        >
+                          <div className="MintCount__ButtonInner">
+                            <big className="text-primary">-</big>
                           </div>
                         </div>
-                      )}
 
-                      {/* Mint button */}
-                      <button
-                        onClick={handleMint}
-                        disabled={isMinting}
-                        className={`MintBox__MintButton btn-primary`}
-                      >
-                        {isMinting ? "...Minting" : "Mint"}
-                      </button>
-                    </>
-                  ) : (
+                        {/* Mint counter */}
+                        <div className="MintCount__Indicator">
+                          <big>{mintCount}</big>
+                        </div>
+
+                        {/* Plus button */}
+                        <div
+                          className="MintCount__Button"
+                          onClick={() => {
+                            setMintCount((prevCount) => {
+                              if (prevCount >= 13) return prevCount;
+                              return prevCount + 1;
+                            });
+                          }}
+                        >
+                          <div className="MintCount__ButtonInner">
+                            <big className="text-primary">+</big>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Mint button */}
                     <button
-                      className={`btn-primary w-full`}
-                      disabled={isConnectingWallet}
-                      onClick={handleConnectWallet}
+                      onClick={
+                        connectedWallet ? handleMint : handleConnectWallet
+                      }
+                      disabled={
+                        connectedWallet ? isMinting : isConnectingWallet
+                      }
+                      className={`${
+                        connectedWallet ? "MintBox__MintButton" : "w-full"
+                      } btn-primary`}
                     >
-                      {isConnectingWallet ? "...Connecting" : "Connect Wallet"}
+                      {connectedWallet ? (
+                        <>{isMinting ? "...Minting" : "Mint"}</>
+                      ) : (
+                        <>
+                          {isConnectingWallet
+                            ? "...Connecting"
+                            : "Connect Wallet"}
+                        </>
+                      )}
                     </button>
-                  )}
+                  </>
                 </div>
 
                 {/* Connection warning */}
