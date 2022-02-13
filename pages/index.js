@@ -75,8 +75,17 @@ const Home = () => {
         <div className="container mx-auto">
           <Hero />
           <About />
-          <Overview />
-          <Detail />
+        </div>
+        <div className="relative">
+          <div className="OverviewBg"></div>
+
+          <div className="container mx-auto">
+            <Overview />
+            <Detail />
+          </div>
+        </div>
+
+        <div className="container mx-auto">
           <Story />
         </div>
 
