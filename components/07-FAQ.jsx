@@ -63,7 +63,14 @@ const FAQ = () => {
                   />
                 </div>
               </div>
-              <p className="ml-1">{faq.answer}</p>
+              <p className="ml-1">
+                {faq.answer}{" "}
+                {faq.finalWord && (
+                  <span className="text-primary">
+                    After all, it&apos;s going to be a fun journey :)
+                  </span>
+                )}
+              </p>
             </div>
           </Collapsible>
         ))}
