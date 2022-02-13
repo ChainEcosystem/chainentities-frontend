@@ -5,7 +5,9 @@ import socialMedias from "../json/socialMedia.json";
 import Image from "next/image";
 
 const Hero = () => {
-  const { Moralis, isWeb3Enabled, enableWeb3, web3EnableError } = useMoralis();
+  const env = "main";
+
+  const { Moralis, isInitialized } = useMoralis();
 
   // Connection
   const [walletUser, setWalletUser] = useState(null);
@@ -57,10 +59,10 @@ const Hero = () => {
     setIsMinting(true);
     try {
       await Moralis.executeFunction({
-        contractAddress: contract.main.address,
+        contractAddress: contract[env].address,
         functionName: "mint",
-        abi: contract.main.ABI,
-        msgValue: Moralis.Units.ETH(mintCount * +contract.main.cost),
+        abi: contract[env].ABI,
+        msgValue: Moralis.Units.ETH(mintCount * +contract[env].cost),
         params: { _mintAmount: mintCount },
       });
 
@@ -71,19 +73,29 @@ const Hero = () => {
     }
   }
 
-  const {
-    data: totalSupplyData,
-    error: totalSupplyError,
-    fetch: handleGetTotalSupply,
-  } = useWeb3ExecuteFunction({
-    abi: contract.main.ABI,
-    contractAddress: contract.main.address,
-    functionName: "totalSupply",
-  });
+  useEffect(() => {
+    if (!isInitialized) return;
 
-  if (totalSupplyData) {
-    console.log({ walletData: totalSupplyData, walletError: totalSupplyError });
-  }
+    async function handleGetTotalSupply() {
+      try {
+        await Moralis.enableWeb3();
+        const result = await Moralis.executeFunction({
+          contractAddress: contract[env].address,
+          abi: contract[env].ABI,
+          functionName: "totalSupply",
+        });
+
+        setTotalMinted(parseInt(result._hex));
+      } catch (error) {
+        setIsMinting(false);
+        _errHandling(error);
+      }
+    }
+
+    handleGetTotalSupply();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInitialized]);
 
   function _showAndHideNotification(type) {
     setConnectNotification({ show: true, type });
@@ -94,35 +106,6 @@ const Hero = () => {
       });
     }, 5000);
   }
-
-  useEffect(() => {
-    if (!isWeb3Enabled && !web3EnableError) return;
-    setConnectNotification({
-      show: true,
-      type: isWeb3Enabled ? "success" : "error",
-    });
-
-    let timeoutId = setTimeout(() => {
-      if (!isWeb3Enabled && !web3EnableError) return;
-      setConnectNotification({
-        show: false,
-        type: isWeb3Enabled ? "success" : "error",
-      });
-    }, 5000);
-
-    return () => clearTimeout(timeoutId);
-  }, [isWeb3Enabled, web3EnableError]);
-
-  useEffect(() => {
-    if (!isWeb3Enabled) return;
-    console.log("@@@ Getting total supply");
-    handleGetTotalSupply({
-      onSuccess: (data) => {
-        setTotalMinted(data);
-      },
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isWeb3Enabled]);
 
   return (
     <>
@@ -270,7 +253,7 @@ const Hero = () => {
                 <big className="block">
                   {mintCount} Entity costs{" "}
                   <span className="text-blue">
-                    {+mintCount * +contract.main.cost}
+                    {+mintCount * +contract[env].cost}
                   </span>{" "}
                   Matic
                 </big>
