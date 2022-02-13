@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import socials from "../json/socialMedia.json";
 
 const Footer = () => {
   function redirectSocialLink(link) {
@@ -10,108 +11,91 @@ const Footer = () => {
   }
 
   return (
-    <footer>
+    <>
       {/* CTA */}
-      <div className="bg-dark text-center py-10">
-        <h1 className="font-bold text-primary mb-6">
-          Metaverse life is coming,
-          <br />
-          get Your access ticket.
-        </h1>
+      <div className="container mx-auto mb-10">
+        <div className="bg-dark text-center py-10">
+          <h1 className="font-bold text-primary mb-6">
+            We - for the community,
+            <br />
+            community - for the future.
+          </h1>
 
-        <button
-          className="btn-primary"
-          onClick={() => {
-            if (typeof window === "undefined") {
-              return;
-            }
-            window.scrollTo({
-              top: 0,
-            });
-          }}
-        >
-          Proceed to mint
-        </button>
+          <button
+            className="btn-primary"
+            onClick={() => {
+              if (typeof window === "undefined") {
+                return;
+              }
+              window.scrollTo({
+                top: 0,
+              });
+            }}
+          >
+            Proceed to mint
+          </button>
+        </div>
       </div>
 
-      {/* Socials */}
-      <div className="container mx-auto">
-        <div className="grid sm:grid-cols-3 grid-cols-1 items-center w-100 text-white py-6">
-          <div className="col-span-1 flex sm:justify-start justify-center">
-            <small className="sm:text-left text-center">
-              Contacts: <br className="sm:hidden" />
-              <a
-                href="mailto:chainecosystem@gmail.com"
-                className="transition duration-200 text-pink hover:text-white"
-              >
-                chainecosystem@gmail.com
-              </a>
+      <footer>
+        <div className="bg-dark w-full" style={{ height: "1px" }} />
+        <div className="container mx-auto">
+          <div className="grid sm:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
+            <div
+              className="col-span-1 flex sm:justify-start justify-center"
+              style={{ fontSize: "22px", lineHeight: "22px" }}
+            >
+              <div className="sm:text-left text-center whitespace-nowrap">
+                Contacts:{" "}
+                <a
+                  href="mailto:chainecosystem@gmail.com"
+                  className="transition duration-200 text-pink hover:text-white"
+                >
+                  chainecosystem@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div
+              style={{ fontSize: "22px", lineHeight: "22px" }}
+              className="sm:inline-block hidden col-span-1 text-center"
+            >
+              All rights reserved.
+            </div>
+
+            <div className="col-span-1 flex sm:justify-end justify-center sm:mt-0 mt-5 gap-7">
+              {socials.map((social, index) => (
+                <a
+                  className="SocialIcon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={social.link}
+                  key={`footerSocial${index}`}
+                >
+                  <Image
+                    height={20}
+                    width={20}
+                    src={`/images/Vector${social.name}.svg`}
+                    alt=""
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Brand name */}
+        <div className="py-3 bg-dark text-white">
+          <div className="container mx-auto flex sm:justify-center justify-between text-center">
+            <small>
+              ChainEntities<span className="text-pink">.</span>
             </small>
-          </div>
 
-          <small className="sm:inline-block hidden col-span-1 text-center">
-            All rights reserved.
-          </small>
-
-          <div className="col-span-1 flex sm:justify-end justify-center sm:mt-0 mt-5">
-            <Image
-              height={40}
-              width={40}
-              className="SocialIcon NavItemSpacing"
-              src="/images/VectorTelegram.svg"
-              alt=""
-              onClick={() => {
-                redirectSocialLink("https://t.me/joinchat/ak0ckrBeURpmNzgy");
-              }}
-            />
-
-            <Image
-              height={40}
-              width={40}
-              className="SocialIcon NavItemSpacing"
-              src="/images/VectorTwitter.svg"
-              alt=""
-              onClick={() => {
-                redirectSocialLink("https://twitter.com/ChainEntities");
-              }}
-            />
-
-            <Image
-              height={40}
-              width={40}
-              className="SocialIcon NavItemSpacing"
-              src="/images/VectorInstagram.svg"
-              alt=""
-              onClick={() => {
-                redirectSocialLink("https://www.instagram.com/chainentities/");
-              }}
-            />
-
-            <Image
-              height={40}
-              width={40}
-              className="SocialIcon"
-              src="/images/VectorDiscord.svg"
-              alt=""
-              onClick={() => {
-                redirectSocialLink("https://discord.gg/5qRS9KThV2");
-              }}
-            />
+            <small className="sm:hidden">All rights reserved.</small>
           </div>
         </div>
-      </div>
-
-      {/* Brand name */}
-      <div className="py-3 bg-dark text-white">
-        <div className="container mx-auto flex sm:justify-center justify-between text-center">
-          <small>
-            ChainEntities<span className="text-pink">.</span>
-          </small>
-
-          <small className="sm:hidden">All rights reserved.</small>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 
