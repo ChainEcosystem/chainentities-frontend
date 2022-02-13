@@ -40,6 +40,7 @@ const Hero = () => {
 
       setConnectedWallet(true);
       setWalletUser(user.get("ethAddress"));
+      _showAndHideNotification("success");
       setTimeout(() => {
         setShowCountControl(true);
       }, 200);
