@@ -13,21 +13,6 @@ import Team from "../components/06-Team";
 import FAQ from "../components/07-FAQ";
 
 const Home = () => {
-  function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  const STAR_COUNT = 15;
-  let result = "";
-  for (let i = 0; i < STAR_COUNT; i++) {
-    result += `${randomNumber(-50, 50)}vw ${randomNumber(
-      -50,
-      50
-    )}vh 0px 0px #fff,`;
-  }
-
-  console.log(result.substring(0, result.length - 1));
-
   useEffect(() => {
     if (typeof window === "undefined") return;
 
