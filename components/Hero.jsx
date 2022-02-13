@@ -14,7 +14,7 @@ const Hero = () => {
   const [isConnectingWallet, setIsConnectingWallet] = useState(false);
   const [connectedWallet, setConnectedWallet] = useState(false);
   const [showCountControl, setShowCountControl] = useState(false);
-  const [connectNotification, setConnectNotification] = useState({
+  const [connectionNotification, setConnectionNotification] = useState({
     show: false,
     type: "success",
   });
@@ -40,19 +40,29 @@ const Hero = () => {
 
       setConnectedWallet(true);
       setWalletUser(user.get("ethAddress"));
-      _showAndHideNotification("success");
+      _showConnectionNotification("success");
       setTimeout(() => {
         setShowCountControl(true);
       }, 200);
     } catch (err) {
       setIsConnectingWallet(false);
-      _errHandling(err);
+      _connectionErrHandling(err);
     }
   }
 
-  function _errHandling(err) {
+  function _showConnectionNotification(type) {
+    setConnectionNotification({ show: true, type });
+    setTimeout(() => {
+      setConnectionNotification({
+        show: false,
+        type,
+      });
+    }, 5000);
+  }
+
+  function _connectionErrHandling(err) {
     if (err.code === 4001) return;
-    _showAndHideNotification("error");
+    _showConnectionNotification("error");
     console.log(err);
   }
 
@@ -66,12 +76,18 @@ const Hero = () => {
         msgValue: Moralis.Units.ETH(mintCount * +contract[env].cost),
         params: { _mintAmount: mintCount },
       });
-
-      _showAndHideNotification("success");
-    } catch (error) {
+    } catch (err) {
       setIsMinting(false);
-      _errHandling(error);
+      _mintBoxErrHandling(err);
     }
+  }
+
+  function _showMintBoxMsg(type) {}
+
+  function _mintBoxErrHandling(err) {
+    if (err.code === 4001) return;
+    _showMintBoxMsg("error");
+    console.log(err);
   }
 
   useEffect(() => {
@@ -88,8 +104,7 @@ const Hero = () => {
 
         setTotalMinted(parseInt(result._hex));
       } catch (error) {
-        setIsMinting(false);
-        _errHandling(error);
+        console.log(error);
       }
     }
 
@@ -98,22 +113,12 @@ const Hero = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInitialized]);
 
-  function _showAndHideNotification(type) {
-    setConnectNotification({ show: true, type });
-    setTimeout(() => {
-      setConnectNotification({
-        show: false,
-        type,
-      });
-    }, 5000);
-  }
-
   return (
     <>
       {/* Notification - start */}
       <div
         className={`flex justify-center transition duration-300 fixed left-0 z-50 w-full -top-10 transform ${
-          connectNotification.show ? "translate-y-20" : ""
+          connectionNotification.show ? "translate-y-20" : ""
         } `}
       >
         <div className="flex justify-center items-center py-3 px-4 bg-dark rounded-md">
@@ -122,7 +127,7 @@ const Hero = () => {
               height={15}
               width={18}
               src={`/images/Vector${
-                connectNotification.type === "success"
+                connectionNotification.type === "success"
                   ? "Checkmark"
                   : "CrossRed"
               }.svg`}
@@ -131,7 +136,7 @@ const Hero = () => {
           </div>
 
           <div className="xsmall text-white">
-            {connectNotification.type === "success"
+            {connectionNotification.type === "success"
               ? "Successfully connected to Your wallet"
               : "Not connected to Your wallet"}
           </div>
