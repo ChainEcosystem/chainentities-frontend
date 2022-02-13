@@ -4,7 +4,8 @@ import teamMembers from "../json/teamMembers.json";
 
 const Team = () => {
   return (
-    <section>
+    <section className="TeamSection relative">
+      <div className="StarBg" />
       <div className="container mx-auto">
         <div className="flex justify-center items-center md:mb-10 mb-6">
           <div className="TitleDivider_Left" />

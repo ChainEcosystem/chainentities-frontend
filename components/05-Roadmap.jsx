@@ -2,7 +2,8 @@ import React from "react";
 
 const Roadmap = () => {
   return (
-    <section className="py-24">
+    <section className="RoadmapSection relative py-24">
+      <div className="StarBg" />
       <div className="container mx-auto">
         <div className="flex justify-center items-center md:mb-10 mb-6">
           <div className="TitleDivider_Left" />

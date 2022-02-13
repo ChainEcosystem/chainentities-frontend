@@ -3,15 +3,9 @@ import Image from "next/image";
 import socials from "../json/socialMedia.json";
 
 const Footer = () => {
-  function redirectSocialLink(link) {
-    if (typeof window === "undefined") {
-      return;
-    }
-    window.open(link, "_blank");
-  }
-
   return (
-    <>
+    <div className="FooterSection relative">
+      <div className="StarBg" />
       {/* CTA */}
       <div className="container mx-auto mb-10">
         <div className="bg-dark text-center py-10">
@@ -95,7 +89,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

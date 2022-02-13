@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="py-24 relative">
-      <div className="StarBg"></div>
+    <section className="AboutSection py-24 relative">
+      <div className="StarBg" />
 
       <div className="container mx-auto">
         <div className="flex justify-center items-center mb-14">

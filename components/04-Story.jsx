@@ -3,7 +3,8 @@ import Image from "next/image";
 
 const Story = () => {
   return (
-    <section>
+    <section className="StorySection relative">
+      <div className="StarBg" />
       <div className="container mx-auto">
         <div className="flex justify-center items-center mb-8">
           <div className="TitleDivider_Left" />
