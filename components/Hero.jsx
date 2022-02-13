@@ -1,20 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
-import ABI from "../json/abi.json";
-// import ABI from "../json/test-abi.json";
 import contract from "../json/contract.json";
 import socialMedias from "../json/socialMedia.json";
 import Image from "next/image";
 
 const Hero = () => {
   const { Moralis, isWeb3Enabled, enableWeb3, web3EnableError } = useMoralis();
+
+  // Initialize
+  const [walletUser, setWalletUser] = useState(null);
+  const [isConnectingWallet, setIsConnectingWallet] = useState(false);
+  const [connectedWallet, setConnectedWallet] = useState(false);
+  const [showCountControl, setShowCountControl] = useState(false);
+
   const [hoveredSocial, setHoveredSocial] = useState("");
   const [mintCount, setMintCount] = useState(1);
   const [totalMinted, setTotalMinted] = useState(0);
+
   const [notificationState, setNotificationState] = useState({
     show: false,
     type: "success",
   });
+
+  async function connectWallet() {
+    setIsConnectingWallet(true);
+    try {
+      const web3 = await Moralis.enableWeb3();
+      const user = await Moralis.authenticate({
+        signingMessage: "Authenticate on ChainEntities",
+      });
+
+      // Switch chain if not on MATIC
+      if (![137, "0x89"].includes(web3._network.chainId)) {
+        await Moralis.switchNetwork(137);
+      }
+
+      setConnectedWallet(true);
+      setWalletUser(user.get("ethAddress"));
+      setTimeout(() => {
+        setShowCountControl(true);
+      }, 200);
+    } catch (err) {
+      setIsConnectingWallet(false);
+      if (err.code === 4001) return;
+      console.log(err);
+    }
+  }
 
   const {
     data: mintData,
@@ -23,7 +54,7 @@ const Hero = () => {
     isFetching: mintIsFetching,
     isLoading: mintIsLoading,
   } = useWeb3ExecuteFunction({
-    abi: ABI,
+    abi: contract.main.ABI,
     contractAddress: contract.main.address,
     functionName: "mint",
     msgValue: Moralis.Units.ETH(mintCount * +contract.main.cost),
@@ -39,7 +70,7 @@ const Hero = () => {
     error: totalSupplyError,
     fetch: handleGetTotalSupply,
   } = useWeb3ExecuteFunction({
-    abi: ABI,
+    abi: contract.main.ABI,
     contractAddress: contract.main.address,
     functionName: "totalSupply",
   });
@@ -48,52 +79,14 @@ const Hero = () => {
     console.log({ walletData: totalSupplyData, walletError: totalSupplyError });
   }
 
-  async function switchToMaticMainnet() {
-    const web3 = await Moralis.Web3.enableWeb3();
-    try {
-      await web3.currentProvider.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x89" }],
+  function _showAndHideNotification(type) {
+    setNotificationState({ show: true, type });
+    setTimeout(() => {
+      setNotificationState({
+        show: false,
+        type,
       });
-      setNotificationState({ show: true, type: "success" });
-      setTimeout(() => {
-        setNotificationState({
-          show: false,
-          type: "success",
-        });
-      }, 5000);
-    } catch (error) {
-      if (error.code === 4902) {
-        try {
-          await web3.currentProvider.request({
-            method: "wallet_addEthereumChain",
-            params: [
-              {
-                chainId: "0x89",
-                chainName: "Matic Mainnet",
-                rpcUrls: ["https://rpc-mainnet.maticvigil.com"],
-                nativeCurrency: {
-                  name: "MATIC",
-                  symbol: "MATIC",
-                  decimals: 18,
-                },
-                blockExplorerUrls: ["https://explorer.matic.network"],
-              },
-            ],
-          });
-        } catch (err) {
-          console.log("@Error: Switching to MATIC mainnet");
-          console.log(err);
-          setNotificationState({ show: true, type: "error" });
-          setTimeout(() => {
-            setNotificationState({
-              show: false,
-              type: "error",
-            });
-          }, 5000);
-        }
-      }
-    }
+    }, 5000);
   }
 
   useEffect(() => {
@@ -117,7 +110,11 @@ const Hero = () => {
   useEffect(() => {
     if (!isWeb3Enabled) return;
     console.log("@@@ Getting total supply");
-    handleGetTotalSupply({ onSuccess: (data) => setTotalMinted(data) });
+    handleGetTotalSupply({
+      onSuccess: (data) => {
+        setTotalMinted(data);
+      },
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isWeb3Enabled]);
 
@@ -254,6 +251,7 @@ const Hero = () => {
             <div className="MintBoxContainer">
               <div className="MintBox">
                 <big className="block">ChainEntities Minted</big>
+
                 {/* Minted count */}
                 <span className="font-bold text-primary mt-3 text-4xl">
                   {totalMinted}/4444
@@ -273,68 +271,72 @@ const Hero = () => {
                 </small>
 
                 <div className="sm:flex hidden items-center mt-8">
-                  <div className="MintCount">
-                    {/* Minus button */}
-                    <div
-                      disabled={mintIsFetching || mintIsLoading}
-                      className="MintCount__Button"
-                      onClick={() => {
-                        setMintCount((prevCount) => {
-                          if (prevCount <= 1) return prevCount;
-                          return prevCount - 1;
-                        });
-                      }}
+                  {connectedWallet ? (
+                    <>
+                      {showCountControl && (
+                        <div className="MintCount">
+                          {/* Minus button */}
+                          <div
+                            disabled={mintIsFetching || mintIsLoading}
+                            className="MintCount__Button"
+                            onClick={() => {
+                              setMintCount((prevCount) => {
+                                if (prevCount <= 1) return prevCount;
+                                return prevCount - 1;
+                              });
+                            }}
+                          >
+                            <div className="MintCount__ButtonInner">
+                              <big className="text-primary">-</big>
+                            </div>
+                          </div>
+
+                          {/* Mint counter */}
+                          <div className="MintCount__Indicator">
+                            <big>{mintCount}</big>
+                          </div>
+
+                          {/* Plus button */}
+                          <div
+                            disabled={mintIsFetching || mintIsLoading}
+                            className="MintCount__Button"
+                            onClick={() => {
+                              setMintCount((prevCount) => {
+                                if (prevCount >= 13) return prevCount;
+                                return prevCount + 1;
+                              });
+                            }}
+                          >
+                            <div className="MintCount__ButtonInner">
+                              <big className="text-primary">+</big>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Mint button */}
+                      <button
+                        disabled={mintIsFetching || mintIsLoading}
+                        className={`MintBox__MintButton ${
+                          mintIsFetching || mintIsLoading
+                            ? "rounded-lg MintBox__MintButton--loading"
+                            : "btn-primary"
+                        } flex justify-center items-center`}
+                      >
+                        {mintIsFetching || mintIsLoading
+                          ? "...Minting"
+                          : "Mint"}
+                      </button>
+                    </>
+                  ) : (
+                    <button
+                      className={`btn-primary w-full`}
+                      disabled={isConnectingWallet}
+                      onClick={connectWallet}
                     >
-                      <div className="MintCount__ButtonInner">
-                        <big className="text-primary">-</big>
-                      </div>
-                    </div>
-
-                    {/* Mint counter */}
-                    <div className="MintCount__Indicator">
-                      <big>{mintCount}</big>
-                    </div>
-
-                    {/* Plus button */}
-                    <div
-                      disabled={mintIsFetching || mintIsLoading}
-                      className="MintCount__Button"
-                      onClick={() => {
-                        setMintCount((prevCount) => {
-                          if (prevCount >= 13) return prevCount;
-                          return prevCount + 1;
-                        });
-                      }}
-                    >
-                      <div className="MintCount__ButtonInner">
-                        <big className="text-primary">+</big>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Mint button */}
-                  <button
-                    disabled={mintIsFetching || mintIsLoading}
-                    onClick={async () => {
-                      if (isWeb3Enabled) {
-                        console.log("@@@ Minting");
-                        handleMint({
-                          onSuccess: () =>
-                            setTotalMinted((count) => +count + +mintCount),
-                        });
-                      } else {
-                        console.log("@@@ Authenticating");
-                        enableWeb3();
-                      }
-                    }}
-                    className={`MintBox__MintButton ${
-                      mintIsFetching || mintIsLoading
-                        ? "bg-divider text-white rounded-lg MintBox__MintButton--loading"
-                        : "btn-primary"
-                    } flex justify-center items-center`}
-                  >
-                    {mintIsFetching || mintIsLoading ? "...Minting" : "Mint"}
-                  </button>
+                      {isConnectingWallet ? "...Connecting" : "Connect Wallet"}
+                    </button>
+                  )}
                 </div>
 
                 {/* Connection warning */}
@@ -355,7 +357,9 @@ const Hero = () => {
                     Please make sure You are connected to the{" "}
                     <span
                       className="transition duration-200 text-pink cursor-pointer hover:text-white"
-                      onClick={switchToMaticMainnet}
+                      onClick={async () => {
+                        await Moralis.switchNetwork(137);
+                      }}
                     >
                       Polygon Network
                     </span>

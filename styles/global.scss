@@ -16,6 +16,13 @@ body {
   background-color: #1f1b25;
 }
 
+button {
+  &:disabled {
+    cursor: not-allowed;
+    background: $divider-color;
+  }
+}
+
 .whiteHoverFill {
   fill: #de59ff;
   &:hover {
