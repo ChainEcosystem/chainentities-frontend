@@ -22,7 +22,7 @@ const Detail = () => {
                 className="DetailTab cursor-pointer"
               >
                 {/* placeholder */}
-                <h2>{tab}</h2>
+                <h3>{tab}</h3>
 
                 {/* content */}
                 <div
@@ -30,7 +30,7 @@ const Detail = () => {
                     activeTabIndex === index ? "DetailTabInner--active" : ""
                   }`}
                 >
-                  <h2>{tab}</h2>
+                  <h3>{tab}</h3>
                 </div>
               </div>
             ))}
@@ -54,7 +54,7 @@ const Detail = () => {
                 </div>
 
                 <div className="flex flex-col w-full">
-                  <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+                  <div className="lsmall">
                     {metaDetails.metaverseMap.headline}
                   </div>
 
@@ -115,7 +115,7 @@ const Detail = () => {
                 </div>
 
                 <div className="flex flex-col w-full">
-                  <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+                  <div className="lsmall">
                     2D Pixel tickets has certain traits (such as shoes, pants,
                     race, gender, etc.) that will be carried in the metaverse to
                     a 3D model in the form of the same traits. The 3D in-game
@@ -136,7 +136,7 @@ const Detail = () => {
                     style={{ height: "1px" }}
                   />
 
-                  <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+                  <div className="lsmall">
                     2D Pixel tickets are access IDs for the metaverse. Every
                     progress in the metaverse is stored under the token ID of a
                     specific NFT{" "}

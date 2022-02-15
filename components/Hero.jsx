@@ -138,17 +138,11 @@ const Hero = () => {
             <big className="text-primary mb-1 md:text-left text-center">
               ChainEntities - an utopia in the metaverse
             </big>
-            <div
-              className="md:text-left text-center"
-              style={{ fontSize: "37px", lineHeight: "37px" }}
-            >
+            <h2 className="md:text-left text-center">
               The biggest and unique ecosystem in the blockchain gaming industry
-            </div>
+            </h2>
 
-            <div
-              className="mt-4 md:text-left text-center"
-              style={{ fontSize: "22px", lineHeight: "22px" }}
-            >
+            <div className="mt-4 md:text-left text-center lsmall">
               Play-to-earn decentralized virtual-world,
               <br /> marketplace, native token.
             </div>

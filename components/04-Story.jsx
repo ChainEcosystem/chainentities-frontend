@@ -21,14 +21,9 @@ const Story = () => {
           </div>
 
           <div className="bg-blacked col-span-3 flex flex-col justify-center md:pl-16 md:mb-0 mb-7">
-            <div
-              className="font-bold text-blue mb-6"
-              style={{ fontSize: "37px", lineHeight: "37px" }}
-            >
-              New life systems
-            </div>
+            <h2 className="font-bold text-blue mb-6">New life systems</h2>
 
-            <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+            <div className="lsmall">
               Somewhere around 2097 After Common Era, along with human{" "}
               <span className="text-blue">
                 interaction with other form of life
@@ -36,10 +31,7 @@ const Story = () => {
               , started the building of private cross-race city clusters.
             </div>
 
-            <div
-              className="mt-4"
-              style={{ fontSize: "22px", lineHeight: "22px" }}
-            >
+            <div className="mt-4 lsmall">
               ...Because of multiple nations, none of the races are ruling big
               metropolises, so it won’t affect impartial decision-making by that
               nation in power. Instead of one authority, there is a
@@ -53,14 +45,9 @@ const Story = () => {
         {/* Part 2: ChainEntities is Future */}
         <div className="md:grid flex flex-col justify-center items-center md:text-left text-center grid-cols-5 md:pt-20 pt-14">
           <div className="col-span-3 flex flex-col justify-center md:pr-24 md:mb-0 mb-7">
-            <div
-              style={{ fontSize: "37px", lineHeight: "37px" }}
-              className="text-blue mb-6"
-            >
-              ChainEntities - future identity{" "}
-            </div>
+            <h2 className="text-blue mb-6">ChainEntities - future identity </h2>
 
-            <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+            <div className="lsmall">
               Nowadays (~2097) “almost” every human wears a mask, so their
               identity stays safe (Fingerprints and Face recognition is useless
               - they can be stolen). Still, everyone has a personality behind
@@ -68,10 +55,7 @@ const Story = () => {
               <span className="text-blue">ChainEntities.</span>
             </div>
 
-            <div
-              style={{ fontSize: "22px", lineHeight: "22px" }}
-              className="mt-4"
-            >
+            <div className="lsmall mt-4">
               After linking with an Entity, You get marked in the city’s
               blockchain with a unique “styled” ERC-721 token. Afterwards,
               Entities are used for almost everything to{" "}
@@ -110,14 +94,9 @@ const Story = () => {
           </div>
 
           <div className="col-span-3 flex flex-col justify-center md:pl-24">
-            <div
-              style={{ fontSize: "37px", lineHeight: "37px" }}
-              className="text-blue mb-6"
-            >
-              Why Polygon blockchain?
-            </div>
+            <h2 className="text-blue mb-6">Why Polygon blockchain?</h2>
 
-            <div style={{ fontSize: "22px", lineHeight: "22px" }}>
+            <div className="lsmall">
               We stand for <span className="text-blue">equity</span>, so we make
               it accessible for everyone to experience the limitless potential
               of this ecosystem.

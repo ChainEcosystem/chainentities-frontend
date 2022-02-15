@@ -13,9 +13,9 @@ const Overview = () => {
           <div className="TitleDivider_Right" />
         </div>
 
-        <h2 className="text-center mb-14">
+        <h3 className="text-center mb-14">
           An ecosystem with a continuous development <br /> towards perfection
-        </h2>
+        </h3>
 
         <div className="flex justify-between">
           {overviewBlocks.map((block, index) => (

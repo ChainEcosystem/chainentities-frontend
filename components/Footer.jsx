@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="grid sm:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
             <div
               className="col-span-1 flex sm:justify-start justify-center"
-              style={{ fontSize: "22px", lineHeight: "22px" }}
+              className="lsmall"
             >
               <div className="sm:text-left text-center whitespace-nowrap">
                 Contacts:{" "}
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
 
             <div
-              style={{ fontSize: "22px", lineHeight: "22px" }}
+              className="lsmall"
               className="sm:inline-block hidden col-span-1 text-center"
             >
               All rights reserved.

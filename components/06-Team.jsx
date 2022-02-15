@@ -26,12 +26,9 @@ const Team = () => {
                 src={`/images/Team${index + 1}.svg`}
                 alt=""
               />
-              <div
-                style={{ fontSize: "37px", lineHeight: "37px" }}
-                className="text-blue mb-2 mt-3 text-center whitespace-nowrap"
-              >
+              <h2 className="text-blue mb-2 mt-3 text-center whitespace-nowrap">
                 {member.name}
-              </div>
+              </h2>
               <p className="text-center px-4">{member.role}</p>
             </div>
           ))}

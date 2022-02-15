@@ -44,6 +44,11 @@ button,
   }
 }
 
+.lsmall {
+  font-size: 22px;
+  line-height: 22px;
+}
+
 small {
   font-size: 20px;
   line-height: 20px;
@@ -85,8 +90,8 @@ big {
 }
 
 h2 {
-  font-size: 33px;
-  line-height: 33px;
+  font-size: 37px;
+  line-height: 37px;
 
   @media (max-width: 1080px) {
     font-size: 33px;
