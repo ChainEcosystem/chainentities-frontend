@@ -133,7 +133,7 @@ const Hero = () => {
 
       <section className="HeroSection relative">
         <div className="StarBg" />
-        <div className="container mx-auto grid grid-cols-2 xl:gap-32 justify-center items-center">
+        <div className="wrapper grid grid-cols-2 xl:gap-32 justify-center items-center">
           <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5">
             <big className="text-primary mb-1 md:text-left text-center">
               ChainEntities - an utopia in the metaverse

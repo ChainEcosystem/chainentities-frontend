@@ -6,7 +6,7 @@ const Detail = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   return (
     <section className="pb-24">
-      <div className="container mx-auto">
+      <div className="wrapper">
         <div className="flex justify-center items-center mb-8">
           <div className="TitleDivider_Left" />
           <h1 className="font-bold text-primary mx-7 z-50">Meta-details</h1>

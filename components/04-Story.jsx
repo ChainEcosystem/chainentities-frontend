@@ -5,7 +5,7 @@ const Story = () => {
   return (
     <section className="StorySection relative">
       <div className="StarBg" />
-      <div className="container mx-auto">
+      <div className="wrapper">
         <div className="flex justify-center items-center mb-8">
           <div className="TitleDivider_Left" />
           <h1 className="font-bold text-primary mx-7">The story</h1>

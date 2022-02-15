@@ -6,7 +6,7 @@ const Overview = () => {
   return (
     <section className="OverviewSection pb-24 relative">
       <div className="StarBg" />
-      <div className="container mx-auto">
+      <div className="wrapper">
         <div className="flex justify-center items-center mb-6">
           <div className="TitleDivider_Left" />
           <h1 className="font-bold text-primary mx-7">Overview</h1>

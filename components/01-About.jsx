@@ -8,7 +8,7 @@ const About = () => {
     <section className="AboutSection py-24 relative">
       <div className="StarBg" />
 
-      <div className="container mx-auto">
+      <div className="wrapper">
         <div className="flex justify-center items-center mb-14">
           <div className="TitleDivider_Left" />
           <h1 className="font-bold text-primary mx-7">What is ChainEntities</h1>

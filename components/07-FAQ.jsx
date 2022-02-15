@@ -8,7 +8,7 @@ const FAQ = () => {
 
   return (
     <section className="py-24">
-      <div className="container mx-auto">
+      <div className="wrapper">
         <div className="flex justify-center items-center md:mb-10 mb-6">
           <div className="TitleDivider_Left" />
           <h1 className="font-bold text-primary mx-7">FAQ</h1>

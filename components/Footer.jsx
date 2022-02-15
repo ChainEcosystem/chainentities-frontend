@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="FooterSection relative">
       <div className="StarBg" />
       {/* CTA */}
-      <div className="container mx-auto mb-10">
+      <div className="wrapper mb-10">
         <div className="bg-dark text-center py-10">
           <h1 className="font-bold text-primary mb-6">
             We - for the community,
@@ -33,12 +33,9 @@ const Footer = () => {
 
       <footer>
         <div className="bg-dark w-full" style={{ height: "1px" }} />
-        <div className="container mx-auto">
+        <div className="wrapper">
           <div className="grid sm:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
-            <div
-              className="col-span-1 flex sm:justify-start justify-center"
-              className="lsmall"
-            >
+            <div className="col-span-1 flex sm:justify-start justify-center lsmall">
               <div className="sm:text-left text-center whitespace-nowrap">
                 Contacts:{" "}
                 <a
@@ -50,10 +47,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div
-              className="lsmall"
-              className="sm:inline-block hidden col-span-1 text-center"
-            >
+            <div className="sm:inline-block hidden col-span-1 text-center lsmall">
               All rights reserved.
             </div>
 
@@ -80,7 +74,7 @@ const Footer = () => {
 
         {/* Brand name */}
         <div className="py-3 bg-dark text-white">
-          <div className="container mx-auto flex sm:justify-center justify-between text-center">
+          <div className="wrapper flex sm:justify-center justify-between text-center">
             <small>
               ChainEntities<span className="text-pink">.</span>
             </small>

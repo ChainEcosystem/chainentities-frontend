@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <>
       <header className="Header bg-blacked sm:py-5 py-3 relative z-50">
-        <div className="container flex mx-auto justify-center items-center">
+        <div className="container  mx-auto flex justify-center items-center">
           {/* Mobile Nav */}
           <p className="md:hidden">
             ChainEntities<span className="text-pink">.</span>
@@ -73,7 +73,7 @@ const Header = () => {
           isMenuOpen && "MobileNav--activated"
         } md:hidden absolute bg-dark py-3 px-2 transition duration-200 w-full h-full bg-white z-20 transform`}
       >
-        <div className="container mx-auto flex flex-col justify-center text-white">
+        <div className="wrapper flex flex-col justify-center text-white">
           <div
             className="w-full py-3 flex items-center text-pink"
             onClick={() => {
