@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
+import React, { useState } from "react";
+import { useMoralis } from "react-moralis";
 import contract from "../json/contract.json";
 import socialMedias from "../json/socialMedia.json";
 import Image from "next/image";
@@ -7,7 +7,7 @@ import Image from "next/image";
 const Hero = () => {
   const env = "main";
 
-  const { Moralis, isInitialized } = useMoralis();
+  const { Moralis } = useMoralis();
 
   // Connection
   const [publicTotalMinted, setPublicTotalMinted] = useState(0);
