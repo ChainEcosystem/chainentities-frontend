@@ -9,6 +9,11 @@
   background-color: $dark-color;
   position: relative;
 
+  @media (max-width: 1300px) {
+    width: 300px;
+    height: 205px;
+  }
+
   &::after {
     position: absolute;
     top: -2px;
@@ -30,6 +35,24 @@
 
 .AboutBoxLong {
   width: 509px;
+}
+
+.AboutDotMidLine {
+  gap: 9px;
+  padding: 0 172px;
+  @media (max-width: 1300px) {
+    padding: 0 148px;
+    gap: 9.5px;
+  }
+  @media (max-width: 1230px) {
+    gap: 8.5px;
+  }
+  @media (max-width: 1130px) {
+    gap: 7.1px;
+  }
+  @media (max-width: 1030px) {
+    gap: 5.7px;
+  }
 }
 
 .AboutDotWrap {

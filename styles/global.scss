@@ -38,6 +38,14 @@ button {
   width: 92%;
   margin: 0 auto;
 
+  @media (min-width: 1300px) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: 1030px) {
+    width: 95%;
+  }
+
   // @media (min-width: 640px) {
   //   max-width: 640px;
   // }
@@ -49,10 +57,6 @@ button {
   // @media (min-width: 1024px) {
   //   max-width: 768px;
   // }
-
-  @media (min-width: 1300px) {
-    max-width: 1200px;
-  }
 }
 
 .ScreenContainer {

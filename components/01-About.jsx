@@ -54,10 +54,7 @@ const About = () => {
           ))}
         </div>
 
-        <div
-          className="flex items-center"
-          style={{ gap: "9px", padding: "0 172px" }}
-        >
+        <div className="AboutDotMidLine flex items-center">
           <div className="AboutDotBig relative mr-1">
             <Image
               src="/images/AboutDot.svg"
