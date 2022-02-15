@@ -4,7 +4,8 @@ import overviewBlocks from "../json/overviewBlocks.json";
 
 const Overview = () => {
   return (
-    <section className="OverviewSection pb-24">
+    <section className="OverviewSection pb-24 relative">
+      <div className="StarBg" />
       <div className="container mx-auto">
         <div className="flex justify-center items-center mb-6">
           <div className="TitleDivider_Left" />

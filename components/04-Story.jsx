@@ -20,7 +20,7 @@ const Story = () => {
             </div>
           </div>
 
-          <div className="col-span-3 flex flex-col justify-center md:pl-16 md:mb-0 mb-7">
+          <div className="bg-blacked col-span-3 flex flex-col justify-center md:pl-16 md:mb-0 mb-7">
             <div
               className="font-bold text-blue mb-6"
               style={{ fontSize: "37px", lineHeight: "37px" }}

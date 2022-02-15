@@ -14,7 +14,8 @@
   width: 2px;
   border-radius: 50%;
 
-  .AboutSection & {
+  .AboutSection &,
+  .OverviewSection & {
     top: 70%;
     left: 50%;
     background-color: white;
@@ -26,13 +27,8 @@
       -22vw 38vh 0px 0px #fff;
   }
 
+  .RoadmapSection &,
   .StorySection & {
-    top: 13%;
-    left: 45%;
-    background-color: white;
-  }
-
-  .RoadmapSection & {
     top: 45%;
     left: 55%;
     background-color: white;
@@ -53,7 +49,8 @@
       33vw -11vh 0px 0px #fff;
   }
 
-  .FooterSection & {
+  .FooterSection &,
+  .HeroSection & {
     top: 0%;
     left: 55%;
     background-color: white;
