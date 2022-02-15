@@ -1,6 +1,4 @@
 .HeroSection {
-  // height: calc(100vh - 64px);
-  padding-top: 57px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,17 +33,9 @@
   width: 384px;
   height: 373px;
 
-  @media (max-width: 800px) {
-    width: 324px;
-    height: 303px;
-  }
-
-  @media (max-width: 641px) {
-    height: 233px;
-  }
-
-  @media (max-width: 350px) {
-    width: 310px;
+  @media (max-width: 1023.98px) {
+    // width: 324px;
+    // height: 303px;
   }
 }
 

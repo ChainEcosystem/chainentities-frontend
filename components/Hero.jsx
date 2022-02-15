@@ -131,23 +131,23 @@ const Hero = () => {
       </div>
       {/* Notification - end */}
 
-      <section className="HeroSection relative">
+      <section className="HeroSection relative lg:pt-14 pt-5">
         <div className="StarBg" />
-        <div className="wrapper grid grid-cols-2 xl:gap-32 justify-center items-center">
-          <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5">
-            <big className="text-primary mb-1 md:text-left text-center">
+        <div className="wrapper grid lg:grid-cols-2 grid-cols-1 xl:gap-32 justify-center items-center">
+          <div className="lg:text-left text-center flex flex-col justify-center lg:items-start items-center md:my-0 my-5">
+            <big className="text-primary lg:mb-1 mb-4">
               ChainEntities - an utopia in the metaverse
             </big>
-            <h2 className="md:text-left text-center">
+            <h2>
               The biggest and unique ecosystem in the blockchain gaming industry
             </h2>
 
-            <div className="mt-4 md:text-left text-center lsmall">
+            <div className="mt-4 lsmall">
               Play-to-earn decentralized virtual-world,
               <br /> marketplace, native token.
             </div>
 
-            <div className="sm:flex hidden mt-10 mb-8">
+            <div className="sm:flex hidden mt-4">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -165,7 +165,7 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="flex gap-5">
+            <div className="lg:flex hidden gap-5">
               {socialMedias.map((social, index) => (
                 <a
                   rel="noopener noreferrer"
@@ -188,8 +188,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative flex justify-end">
-            {/* Notification - start */}
+          <div className="relative flex lg:justify-end justify-center">
+            {/* Mint Box Message - start */}
             {mintBoxMsg.show && (
               <div
                 style={{ bottom: "-76px" }}
@@ -229,9 +229,9 @@ const Hero = () => {
                 )}
               </div>
             )}
-            {/* Notification - end */}
+            {/* Mint Box Message - end */}
 
-            <div className="MintBoxContainer">
+            <div className="MintBoxContainer lg:mt-0 mt-6">
               <div className="MintBox">
                 <big className="block">ChainEntities Minted</big>
 
