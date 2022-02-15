@@ -147,7 +147,7 @@ const Hero = () => {
               <br /> marketplace, native token.
             </div>
 
-            <div className="sm:flex hidden mt-10">
+            <div className="sm:flex hidden lg:mt-10 mt-4">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
