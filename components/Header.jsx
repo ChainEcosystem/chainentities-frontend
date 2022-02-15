@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <>
       <header className="Header bg-blacked sm:py-5 py-3 relative z-50">
-        <div className="container  mx-auto flex justify-center items-center">
+        <div className="wrapper flex justify-center items-center">
           {/* Mobile Nav */}
           <p className="md:hidden">
             ChainEntities<span className="text-pink">.</span>
