@@ -133,9 +133,9 @@ const Hero = () => {
       </div>
       {/* Notification - end */}
 
-      <div className="container mx-auto">
-        <section className="HeroSection grid grid-cols-2 xl:gap-32 justify-center items-center">
-          <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5 lg:pr-24 md:pr-12">
+      <section className="HeroSection">
+        <div className="container mx-auto grid grid-cols-2 xl:gap-32 justify-center items-center">
+          <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5">
             <big className="text-primary mb-1 md:text-left text-center">
               ChainEntities - an utopia in the metaverse
             </big>
@@ -195,7 +195,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative flex justify-end">
             {/* Notification - start */}
             {mintBoxMsg.show && (
               <div
@@ -355,8 +355,8 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 };
