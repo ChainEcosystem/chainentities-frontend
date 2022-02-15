@@ -5,19 +5,22 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="AboutSection py-24 relative">
+    <section className="AboutSection lg:py-24 py-14 relative">
       <div className="StarBg" />
 
       <div className="wrapper">
-        <div className="flex justify-center items-center mb-14">
+        <div className="flex justify-center items-center lg:mb-14 mb-4">
           <div className="TitleDivider_Left" />
-          <h1 className="font-bold text-primary mx-7">What is ChainEntities</h1>
+          <h1 className="font-bold text-primary mx-7 text-center">
+            What is
+            <br className="lg:hidden" /> ChainEntities
+          </h1>
           <div className="TitleDivider_Right" />
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex lg:flex-row flex-col lg:gap-0 gap-4 lg:justify-between justify-center lg:items-start items-center">
           {aboutShortBlocks.map((block, index) => (
-            <div key={`about${index}`}>
+            <div className="lg:w-auto w-full" key={`about${index}`}>
               <div className="AboutBox">
                 <div className="flex flex-col justify-center items-center text-center">
                   <Image
@@ -32,7 +35,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center items-center mt-4">
+              <div className="lg:flex hidden flex-col justify-center items-center mt-4">
                 {[...Array(4)].map((arr, index) => (
                   <div
                     className="AboutDotWrap AboutDotDown"
@@ -54,7 +57,7 @@ const About = () => {
           ))}
         </div>
 
-        <div className="AboutDotMidLine flex items-center">
+        <div className="lg:flex hidden AboutDotMidLine items-center">
           <div className="AboutDotBig relative mr-1">
             <Image
               src="/images/AboutDot.svg"
@@ -112,8 +115,8 @@ const About = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <div>
-            <div className="flex flex-col justify-center items-center mb-4">
+          <div className="lg:w-auto w-full">
+            <div className="lg:flex hidden flex-col justify-center items-center mb-4">
               {[...Array(4)].map((arr, index) => (
                 <div
                   className="AboutDotWrap AboutDotUp"
@@ -132,7 +135,7 @@ const About = () => {
               ))}
             </div>
 
-            <div className="AboutBoxLong">
+            <div className="AboutBoxLong lg:mt:0 mt-4">
               <div className="flex flex-col justify-center items-center text-center">
                 <Image
                   unselectable="on"
