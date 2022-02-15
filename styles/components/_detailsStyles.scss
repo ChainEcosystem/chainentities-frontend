@@ -13,6 +13,9 @@
   @media (max-width: 1260px) {
     width: 500px;
   }
+  @media (max-width: 1180px) {
+    width: 440px;
+  }
 
   &:hover {
     box-shadow: 0 0 12px #de59ff, 0 0 6px #7ad1ec75;
@@ -49,18 +52,22 @@
   }
 }
 
-.DetailMap {
+.DetailMap,
+.DetailModelsContainer {
   height: 268px;
   width: 536px;
 
   @media (max-width: 1260px) {
     width: 500px;
   }
+  @media (max-width: 1180px) {
+    width: 440px;
+  }
 }
 
 .DetailModelsContainer {
-  width: 536px;
-  @media (max-width: 1260px) {
-    width: 500px;
+  height: auto;
+  @media (max-width: 1180px) {
+    gap: 14px;
   }
 }

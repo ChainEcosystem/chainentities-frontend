@@ -14,7 +14,7 @@ const Team = () => {
         </div>
 
         {/* Part 1: Images */}
-        <div className="md:grid flex flex-col grid-cols-3 md:items-start items-center justify-center gap-y-8 gap-x-56">
+        <div className="md:grid flex flex-col grid-cols-3 md:items-start items-center justify-center gap-y-8 xl:gap-x-56 lg:gap-x-40 gap-x-32">
           {teamMembers.map((member, index) => (
             <div
               className="flex flex-col justify-center items-center md:mb-0 mb-6"

@@ -34,7 +34,7 @@ const Overview = () => {
                   <p className="text-blue mt-2">{block.title}</p>
                   <small className="mt-2">{block.description}</small>
                   <div className="h-full w-full flex items-end">
-                    <div className="w-full h-20 relative mt-3">
+                    <div className="w-full h-20 relative xl:mt-3">
                       <Image
                         className="pointer-events-none"
                         src={`/images/${block.buttonSrc}.svg`}
