@@ -10,6 +10,10 @@
   text-align: center;
   transition: 0.2s;
 
+  @media (max-width: 1279.98px) {
+    width: 500px;
+  }
+
   &:hover {
     box-shadow: 0 0 12px #de59ff, 0 0 6px #7ad1ec75;
   }
@@ -42,5 +46,24 @@
 
   &--active {
     background: $divider-color;
+  }
+}
+
+.DetailMap {
+  height: 268px;
+  width: 536px;
+
+  @media (max-width: 1279.98px) {
+    width: 500px;
+  }
+}
+
+.DetailModel {
+  position: relative;
+  width: 220px;
+  height: 252px;
+
+  @media (max-width: 1279.98px) {
+    width: 200px;
   }
 }

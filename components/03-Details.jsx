@@ -40,10 +40,7 @@ const Detail = () => {
             {activeTabIndex === 0 && (
               <div className="flex gap-7 items-center">
                 <div>
-                  <div
-                    className="relative"
-                    style={{ width: "536px", height: "268px" }}
-                  >
+                  <div className="DetailMap relative">
                     <Image
                       className="pointer-events-none"
                       src="/images/MetaDetail1.svg"
