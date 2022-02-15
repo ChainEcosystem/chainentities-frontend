@@ -89,6 +89,11 @@ const Header = () => {
             <Image height={38} width={38} src="/images/IconCE.svg" alt="" />
           </div>
 
+          <div
+            className="w-full bg-divider mb-1"
+            style={{ height: "1px" }}
+          ></div>
+
           {navItems.map((navItem, index) => (
             <div className="w-full py-3" key={`mobNavItem${index}`}>
               <div>
