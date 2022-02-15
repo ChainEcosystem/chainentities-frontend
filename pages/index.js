@@ -67,7 +67,7 @@ const Home = () => {
           style={{ display: "none" }}
           onClick={handleScrollToTop}
         >
-          <Image src="/images/VectorUp.svg" height={25} width={25} alt="" />
+          <Image src="/images/VectorUp.svg" height={23.5} width={18} alt="" />
         </div>
 
         {/* header */}
