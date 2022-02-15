@@ -136,17 +136,23 @@ const Hero = () => {
       <div className="container mx-auto">
         <section className="HeroSection grid grid-cols-2 xl:gap-32 justify-center items-center">
           <div className="flex flex-col justify-center md:items-start items-center md:my-0 my-5 lg:pr-24 md:pr-12">
-            <h2 className="font-bold text-primary mb-1 md:text-left text-center">
+            <big className="text-primary mb-1 md:text-left text-center">
               ChainEntities - an utopia in the metaverse
-            </h2>
-            <h1 className="md:text-left text-center">
+            </big>
+            <div
+              className="md:text-left text-center"
+              style={{ fontSize: "37px", lineHeight: "37px" }}
+            >
               The biggest and unique ecosystem in the blockchain gaming industry
-            </h1>
+            </div>
 
-            <p className="mt-4 md:text-left text-center">
-              Play-to-earn decentralized virtual-world, marketplace, native
-              token.
-            </p>
+            <div
+              className="mt-4 md:text-left text-center"
+              style={{ fontSize: "22px", lineHeight: "22px" }}
+            >
+              Play-to-earn decentralized virtual-world,
+              <br /> marketplace, native token.
+            </div>
 
             <div className="sm:flex hidden mt-10 mb-8">
               <a
