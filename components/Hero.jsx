@@ -147,7 +147,7 @@ const Hero = () => {
               <br /> marketplace, native token.
             </div>
 
-            <div className="sm:flex hidden mt-4">
+            <div className="sm:flex hidden mt-10">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -165,7 +165,7 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="lg:flex hidden gap-5">
+            <div className="lg:flex hidden gap-5 mt-8">
               {socialMedias.map((social, index) => (
                 <a
                   rel="noopener noreferrer"
