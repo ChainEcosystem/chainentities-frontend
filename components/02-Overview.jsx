@@ -21,23 +21,27 @@ const Overview = () => {
           {overviewBlocks.map((block, index) => (
             <div key={`overview${index}`}>
               <div className="OverviewBox">
-                <div className="flex flex-col justify-center items-start">
-                  <Image
-                    className="pointer-events-none"
-                    src={`/images/${block.source}.svg`}
-                    alt=""
-                    height={32}
-                    width={32}
-                  />
-                  <p className="text-blue mt-2">{block.title}</p>
-                  <small className="mt-2">{block.description}</small>
-                  <div className="w-full h-20 relative mt-3">
+                <div className="h-full flex flex-col justify-center items-start">
+                  <div className="flex">
                     <Image
                       className="pointer-events-none"
-                      src={`/images/${block.buttonSrc}.svg`}
+                      src={`/images/${block.source}.svg`}
                       alt=""
-                      layout="fill"
+                      height={32}
+                      width={32}
                     />
+                  </div>
+                  <p className="text-blue mt-2">{block.title}</p>
+                  <small className="mt-2">{block.description}</small>
+                  <div className="h-full w-full flex items-end">
+                    <div className="w-full h-20 relative mt-3">
+                      <Image
+                        className="pointer-events-none"
+                        src={`/images/${block.buttonSrc}.svg`}
+                        alt=""
+                        layout="fill"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -45,7 +49,10 @@ const Overview = () => {
           ))}
         </div>
 
-        <div className="OverviewBox flex-col mt-8" style={{ width: "100%" }}>
+        <div
+          className="OverviewBox flex-col mt-8"
+          style={{ width: "100%", height: "unset" }}
+        >
           <div className="w-full">
             <p className="text-blue mb-2">More content coming soon...</p>
           </div>
