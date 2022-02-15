@@ -25,9 +25,12 @@ button {
 }
 
 .whiteHoverFill {
-  fill: #de59ff;
+  fill: $pink-color;
+  color: $pink-color;
+  transition: 0.2s;
   &:hover {
     fill: white;
+    color: white;
   }
 }
 

@@ -13,7 +13,7 @@ const Overview = () => {
         </div>
 
         <h2 className="text-center mb-14">
-          An ecosystem with a continuous development towards perfection
+          An ecosystem with a continuous development <br /> towards perfection
         </h2>
 
         <div className="flex justify-between">

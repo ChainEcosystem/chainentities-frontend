@@ -21,8 +21,8 @@ const Team = () => {
               key={`teamMember${index}`}
             >
               <Image
-                height={250}
-                width={250}
+                height={170}
+                width={170}
                 src={`/images/Team${index + 1}.svg`}
                 alt=""
               />

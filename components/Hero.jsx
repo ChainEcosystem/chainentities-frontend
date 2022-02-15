@@ -158,7 +158,7 @@ const Hero = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://discord.gg/5qRS9KThV2"
+                href="https://opensea.io/collection/chainentities"
                 className="btn-primary NavItemSpacing"
               >
                 Opensea
@@ -226,7 +226,7 @@ const Hero = () => {
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://discord.gg/5qRS9KThV2"
+                      href="https://opensea.io/collection/chainentities"
                       className="text-pink cursor-pointer"
                     >
                       opensea

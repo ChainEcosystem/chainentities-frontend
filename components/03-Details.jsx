@@ -120,7 +120,14 @@ const Detail = () => {
                     race, gender, etc.) that will be carried in the metaverse to
                     a 3D model in the form of the same traits. The 3D in-game
                     models are created in{" "}
-                    <span className="text-pink">MetaHuman Creator</span>{" "}
+                    <a
+                      href="https://www.unrealengine.com/en-US/metahuman-creator"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink whiteHoverFill"
+                    >
+                      MetaHuman Creator
+                    </a>{" "}
                     software.
                   </div>
 
