@@ -42,18 +42,29 @@ const Header = () => {
 
           {/* menu burger */}
           <div className="lg:hidden ml-auto">
-            <div className="w-10 h-10 relative cursor-pointer">
+            {isMenuOpen ? (
               <Image
-                layout="fill"
-                src={`/images/${
-                  isMenuOpen ? "VectorCrossColor" : "VectorMenu"
-                }.svg`}
+                height={14}
+                width={14}
+                className="cursor-pointer"
+                src="/images/VectorCrossColor.svg"
                 onClick={() => {
-                  setIsMenuOpen((open) => !open);
+                  setIsMenuOpen(false);
                 }}
                 alt=""
               />
-            </div>
+            ) : (
+              <Image
+                height={15.76}
+                width={22.76}
+                className="cursor-pointer"
+                src="/images/VectorMenu.svg"
+                onClick={() => {
+                  setIsMenuOpen(true);
+                }}
+                alt=""
+              />
+            )}
           </div>
         </div>
       </header>
