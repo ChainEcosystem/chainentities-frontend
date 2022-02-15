@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useMoralis } from "react-moralis";
-import contract from "../json/contract.json";
+import contract from "../json/mainContract.json";
 import socialMedias from "../json/socialMedia.json";
 import Image from "next/image";
 
 const Hero = () => {
-  const env = "main";
-
   const { Moralis } = useMoralis();
 
   // Connection
@@ -43,8 +41,8 @@ const Hero = () => {
       }
 
       const result = await Moralis.executeFunction({
-        contractAddress: contract[env].address,
-        abi: contract[env].ABI,
+        contractAddress: contract.address,
+        abi: contract.ABI,
         functionName: "totalSupply",
       });
 
@@ -80,10 +78,10 @@ const Hero = () => {
     setIsMinting(true);
     try {
       await Moralis.executeFunction({
-        contractAddress: contract[env].address,
+        contractAddress: contract.address,
         functionName: "mint",
-        abi: contract[env].ABI,
-        msgValue: Moralis.Units.ETH(mintCount * +contract[env].cost),
+        abi: contract.ABI,
+        msgValue: Moralis.Units.ETH(mintCount * +contract.cost),
         params: { _mintAmount: mintCount },
       });
     } catch (err) {
@@ -253,7 +251,7 @@ const Hero = () => {
                 <big className="block">
                   {mintCount} Entity costs{" "}
                   <span className="text-blue">
-                    {+mintCount * +contract[env].cost}
+                    {+mintCount * +contract.cost}
                   </span>{" "}
                   Matic
                 </big>
