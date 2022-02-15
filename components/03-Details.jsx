@@ -86,10 +86,7 @@ const Detail = () => {
             {activeTabIndex === 1 && (
               <div className="flex gap-7 items-center">
                 <div>
-                  <div
-                    className="flex justify-between"
-                    style={{ width: "536px" }}
-                  >
+                  <div className="DetailModelsContainer flex justify-between">
                     <Image
                       src="/images/MetaDetail2-1.svg"
                       height={252}

@@ -1,3 +1,9 @@
+.OverviewBox {
+  @extend .AboutBox;
+  height: unset;
+  width: 350px;
+}
+
 .OverviewBg {
   position: absolute;
   height: 100%;

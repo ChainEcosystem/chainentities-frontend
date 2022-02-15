@@ -20,7 +20,7 @@ const Overview = () => {
         <div className="flex justify-between">
           {overviewBlocks.map((block, index) => (
             <div key={`overview${index}`}>
-              <div className="AboutBox">
+              <div className="OverviewBox">
                 <div className="flex flex-col justify-center items-start">
                   <Image
                     className="pointer-events-none"
@@ -45,7 +45,7 @@ const Overview = () => {
           ))}
         </div>
 
-        <div className="AboutBox flex-col mt-8" style={{ width: "100%" }}>
+        <div className="OverviewBox flex-col mt-8" style={{ width: "100%" }}>
           <div className="w-full">
             <p className="text-blue mb-2">More content coming soon...</p>
           </div>

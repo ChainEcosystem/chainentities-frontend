@@ -29,7 +29,7 @@ const Team = () => {
               <h2 className="text-blue mb-2 mt-3 text-center whitespace-nowrap">
                 {member.name}
               </h2>
-              <p className="text-center px-4">{member.role}</p>
+              <p className="text-center xl:px-4">{member.role}</p>
             </div>
           ))}
         </div>
