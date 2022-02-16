@@ -144,7 +144,7 @@ const Hero = () => {
 
             <div className="mt-4 lsmall">
               Play-to-earn decentralized virtual-world,
-              <br /> marketplace, native token.
+              <br className="sm:inline hidden" /> marketplace, native token.
             </div>
 
             <div className="sm:flex hidden lg:mt-10 mt-4">
