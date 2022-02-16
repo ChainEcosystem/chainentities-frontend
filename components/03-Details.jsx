@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import Image from "next/image";
 import metaDetails from "../json/metaDetails.json";
 
@@ -166,9 +166,8 @@ const Detail = () => {
         {/* < 1024px version */}
         <div className="lg:hidden w-full rounded-lg">
           {metaDetails.tabs.map((tab, index) => (
-            <>
+            <Fragment key={`metaDetailTab-${index}`}>
               <div
-                key={`metaDetailTab-${index}`}
                 className={`bg-dark p-5 flex lg:flex-row flex-col lg:justify-between justify-center items-center lg:h-28 w-full rounded-t-lg lg:gap-0 gap-4 ${
                   index === 1 && activeTabIndex === 1 ? "pt-0" : ""
                 }`}
@@ -213,7 +212,7 @@ const Detail = () => {
                   <ContentModels />
                 </div>
               )}
-            </>
+            </Fragment>
           ))}
         </div>
       </div>
