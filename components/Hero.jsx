@@ -229,7 +229,7 @@ const Hero = () => {
                 <hr className="MintBox__Divider sm:block hidden" />
 
                 <big className="block">
-                  {mintCount} Entity costs{" "}
+                  {mintCount} {mintCount > 1 ? "Entities" : "Entity"} costs{" "}
                   <span className="text-blue">
                     {+mintCount * +contract.cost}
                   </span>{" "}
