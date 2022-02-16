@@ -53,12 +53,12 @@ const Home = () => {
     <>
       <Head>
         <meta name="theme-color" content="#1F1B25" />
-        <title>ChainEntities - the metaverse from your dreams</title>
+        <title>ChainEntities - an utopia in the metaverse</title>
         <meta
           name="description"
-          content="A revolutionary metaverse game, with a unique purpose"
+          content="Play-to-earn decentralized virtual-world, marketplace, native token"
         />
-        <link rel="icon" href="/images/icon.png" />
+        <link rel="icon" href="/images/Logo.svg" />
       </Head>
 
       <main className="ContentContainer">
