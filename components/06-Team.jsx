@@ -14,22 +14,34 @@ const Team = () => {
         </div>
 
         {/* Part 1: Images */}
-        <div className="md:grid flex flex-col grid-cols-3 md:items-start items-center justify-center gap-y-8 xl:gap-x-56 lg:gap-x-40 gap-x-32">
+        <div className="grid lg:grid-cols-3 grid-cols-2 md:items-start items-center justify-center gap-y-8 xl:gap-x-56 lg:gap-x-40 gap-x-10">
           {teamMembers.map((member, index) => (
             <div
-              className="flex flex-col justify-center items-center md:mb-0 mb-6"
+              className="flex flex-col lg:h-auto h-full lg:justify-center items-center md:mb-0 mb-6"
               key={`teamMember${index}`}
             >
-              <Image
-                height={170}
-                width={170}
-                src={`/images/Team${index + 1}.svg`}
-                alt=""
-              />
-              <h2 className="text-blue mb-2 mt-3 text-center whitespace-nowrap">
+              <div className="lg:flex hidden">
+                <Image
+                  height={170}
+                  width={170}
+                  src={`/images/Team${index + 1}.svg`}
+                  alt=""
+                />
+              </div>
+              <div className="lg:hidden flex">
+                <Image
+                  height={140}
+                  width={140}
+                  src={`/images/Team${index + 1}.svg`}
+                  alt=""
+                />
+              </div>
+              <h2 className="text-blue mb-2 mt-3 text-center sm:whitespace-nowrap">
                 {member.name}
               </h2>
-              <p className="text-center xl:px-4">{member.role}</p>
+              <p className="text-center xl:px-4 lg:px-0 sm:px-8">
+                {member.role}
+              </p>
             </div>
           ))}
         </div>
@@ -43,8 +55,8 @@ const Team = () => {
             </big>
           </div>
 
-          <div className="grid sm:grid-cols-2 grid-cols-1 my-4">
-            <ul className="col-span-1 grid sm:grid-cols-2 grid-cols-1 grid-rows-3 gap-x-6 text-white">
+          <div className="grid lg:grid-cols-2 grid-cols-1 lg:my-4 my-5">
+            <ul className="col-span-1 grid lg:grid-cols-2 grid-cols-1 grid-rows-3 gap-x-6 text-white lg:gap-y-0 gap-1">
               <li>Web3 developer</li>
               <li>FullStack Developer</li>
               <li>Community manager x2</li>
