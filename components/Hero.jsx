@@ -216,50 +216,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative flex lg:justify-end justify-center">
-            {/* Mint Box Message - start */}
-            {mintBoxMsg.show && (
-              <div
-                style={{ bottom: "-76px" }}
-                className="absolute rounded-lg w-full bg-divider text-white p-4"
-              >
-                {mintBoxMsg.type === "error" ? (
-                  <span className="mt-1 xsmall">
-                    Sorry, something went wrong,{" "}
-                    <span
-                      className="text-pink transition duration-200 cursor-pointer hover:text-white"
-                      onClick={() => {
-                        if (typeof window === "undefined") {
-                          return;
-                        }
-                        window.location.reload();
-                      }}
-                    >
-                      refresh
-                    </span>{" "}
-                    the page and try again!
-                  </span>
-                ) : (
-                  <span className="mt-1 xsmall">
-                    Congratulations! You’ve got Your own Entity
-                    <br />
-                    Visit{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://opensea.io/collection/chainentities"
-                      className="text-pink cursor-pointer"
-                    >
-                      opensea
-                    </a>{" "}
-                    to view it!
-                  </span>
-                )}
-              </div>
-            )}
-            {/* Mint Box Message - end */}
-
-            <div className="MintBoxContainer lg:mt-0 mt-6">
+          <div className="flex lg:justify-end justify-center">
+            <div className="MintBoxContainer relative lg:mt-0 mt-6">
               <div className="MintBox">
                 <big className="sm:block hidden">ChainEntities Minted</big>
 
@@ -392,6 +350,48 @@ const Hero = () => {
                   </span>
                 </div>
               </div>
+
+              {/* Mint Box Message - start */}
+              {mintBoxMsg.show && (
+                <div
+                  style={{ bottom: "-65px" }}
+                  className="flex absolute rounded-lg left-0 right-0 bg-divider text-white p-4"
+                >
+                  {mintBoxMsg.type === "error" ? (
+                    <span className="mt-1 xsmall">
+                      Sorry, something went wrong,{" "}
+                      <span
+                        className="text-pink transition duration-200 cursor-pointer hover:text-white"
+                        onClick={() => {
+                          if (typeof window === "undefined") {
+                            return;
+                          }
+                          window.location.reload();
+                        }}
+                      >
+                        refresh
+                      </span>{" "}
+                      the page and try again!
+                    </span>
+                  ) : (
+                    <span className="mt-1 xsmall">
+                      Congratulations! You’ve got Your own Entity
+                      <br />
+                      Visit{" "}
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://opensea.io/collection/chainentities"
+                        className="text-pink cursor-pointer"
+                      >
+                        opensea
+                      </a>{" "}
+                      to view it!
+                    </span>
+                  )}
+                </div>
+              )}
+              {/* Mint Box Message - end */}
             </div>
           </div>
         </div>
