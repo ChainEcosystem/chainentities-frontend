@@ -43,9 +43,12 @@ const Team = () => {
                 <small>{member.name}</small>
               </div>
 
-              <p className="text-center xl:px-4 lg:px-0 sm:px-8">
+              <p className="sm:block hidden text-center xl:px-4 lg:px-0 px-8">
                 {member.role}
               </p>
+              <div className="sm:hidden text-base text-center">
+                {member.role}
+              </div>
             </div>
           ))}
         </div>
