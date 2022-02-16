@@ -16,10 +16,10 @@ const Team = () => {
         </div>
 
         {/* Part 1: Images */}
-        <div className="grid lg:grid-cols-3 grid-cols-2 md:items-start items-center justify-center gap-y-8 xl:gap-x-56 lg:gap-x-40 gap-x-10">
+        <div className="grid lg:grid-cols-3 grid-cols-2 md:items-start items-center justify-center sm:gap-y-20 gap-y-8 xl:gap-x-56 lg:gap-x-40 gap-x-10">
           {teamMembers.map((member, index) => (
             <div
-              className="flex flex-col lg:h-auto h-full lg:justify-center items-center md:mb-0 mb-6"
+              className="flex flex-col lg:h-auto h-full lg:justify-center items-center"
               key={`teamMember${index}`}
             >
               <div className="lg:flex hidden">
@@ -56,7 +56,7 @@ const Team = () => {
         </div>
 
         {/* Part 2: Note */}
-        <div className="TeamNoteBox mt-8">
+        <div className="TeamNoteBox sm:mt-14 mt-6">
           <div className="text-blue">
             <big>
               We’ve got a few more niche experts, but they asked to keep their
