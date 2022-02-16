@@ -11,7 +11,7 @@ const About = () => {
       <div className="wrapper">
         <div className="flex justify-center items-center lg:mb-14 mb-4">
           <div className="TitleDivider_Left" />
-          <h1 className="font-bold text-primary mx-7 text-center">
+          <h1 className="whitespace-nowrap font-bold text-primary sm:mx-7 mx-5 text-center">
             What is
             <br className="lg:hidden" /> ChainEntities
           </h1>

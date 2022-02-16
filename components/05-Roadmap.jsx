@@ -7,7 +7,9 @@ const Roadmap = () => {
       <div className="wrapper">
         <div className="flex justify-center items-center lg:mb-10 mb-6">
           <div className="TitleDivider_Left" />
-          <h1 className="font-bold text-primary mx-7 text-center">Roadmap</h1>
+          <h1 className="whitespace-nowrap font-bold text-primary sm:mx-7 mx-5 text-center">
+            Roadmap
+          </h1>
           <div className="TitleDivider_Right" />
         </div>
       </div>

@@ -116,7 +116,7 @@ const Detail = () => {
       <div className="wrapper">
         <div className="flex justify-center items-center lg:mb-8 mb-4">
           <div className="TitleDivider_Left" />
-          <h1 className="font-bold text-primary mx-7 z-50 text-center">
+          <h1 className="whitespace-nowrap font-bold text-primary sm:mx-7 mx-5 z-50 text-center">
             Meta-details
           </h1>
           <div className="TitleDivider_Right" />
