@@ -11,7 +11,7 @@ const FAQ = () => {
       <div className="wrapper">
         <div className="flex justify-center items-center md:mb-10 mb-6">
           <div className="TitleDivider_Left" />
-          <h1 className="font-bold text-primary mx-7">FAQ</h1>
+          <h1 className="font-bold text-primary mx-7 text-center">FAQ</h1>
           <div className="TitleDivider_Right" />
         </div>
 
@@ -31,22 +31,24 @@ const FAQ = () => {
               trigger={
                 <div className="flex justify-between sm:items-center font-bold">
                   <big className="text-blue">{faq.title}</big>
-                  <div className="Collapsible__Button">
-                    {openedTabs.includes(index) ? (
-                      <Image
-                        height={22}
-                        width={10}
-                        src="/images/VectorArrowDown.svg"
-                        alt=""
-                      />
-                    ) : (
-                      <Image
-                        height={22}
-                        width={10}
-                        src="/images/VectorArrowUp.svg"
-                        alt=""
-                      />
-                    )}
+                  <div>
+                    <div className="Collapsible__Button">
+                      {openedTabs.includes(index) ? (
+                        <Image
+                          height={22}
+                          width={10}
+                          src="/images/VectorArrowDown.svg"
+                          alt=""
+                        />
+                      ) : (
+                        <Image
+                          height={22}
+                          width={10}
+                          src="/images/VectorArrowUp.svg"
+                          alt=""
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
               }
