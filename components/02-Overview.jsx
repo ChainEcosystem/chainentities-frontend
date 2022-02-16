@@ -4,7 +4,7 @@ import overviewBlocks from "../json/overviewBlocks.json";
 
 const Overview = () => {
   return (
-    <section className="OverviewSection pb-24 relative">
+    <section className="OverviewSection lg:pb-24 pb-14 relative">
       <div className="StarBg" />
       <div className="wrapper">
         <div className="flex justify-center items-center mb-6">
@@ -13,15 +13,15 @@ const Overview = () => {
           <div className="TitleDivider_Right" />
         </div>
 
-        <h3 className="text-center mb-14">
+        <h3 className="text-center lg:mb-14 mb-6">
           An ecosystem with a continuous development <br /> towards perfection
         </h3>
 
-        <div className="flex justify-between">
+        <div className="flex lg:flex-row flex-col lg:justify-between justify-center lg:items-start items-center lg:gap-0 gap-4">
           {overviewBlocks.map((block, index) => (
-            <div key={`overview${index}`}>
+            <div key={`overview${index}`} className="lg:w-auto w-full">
               <div className="OverviewBox">
-                <div className="h-full flex flex-col justify-center items-start">
+                <div className="lg:w-auto w-full lg:h-full h-auto flex flex-col justify-center items-start">
                   <div className="flex">
                     <Image
                       className="pointer-events-none"
@@ -31,10 +31,14 @@ const Overview = () => {
                       width={32}
                     />
                   </div>
-                  <p className="text-blue mt-2">{block.title}</p>
-                  <small className="mt-2">{block.description}</small>
+                  <p className="text-blue" style={{ marginTop: "10px" }}>
+                    {block.title}
+                  </p>
+                  <small className="mt-2" style={{ marginTop: "10px" }}>
+                    {block.description}
+                  </small>
                   <div className="h-full w-full flex items-end">
-                    <div className="w-full h-20 relative xl:mt-3">
+                    <div className="OverviewBtnImg relative xl:mt-3">
                       <Image
                         className="pointer-events-none"
                         src={`/images/${block.buttonSrc}.svg`}
@@ -50,7 +54,7 @@ const Overview = () => {
         </div>
 
         <div
-          className="OverviewBox flex-col mt-8"
+          className="OverviewBox flex-col lg:mt-8 mt-4"
           style={{ width: "100%", height: "unset" }}
         >
           <div className="w-full">
