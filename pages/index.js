@@ -76,7 +76,7 @@ const Home = () => {
         <About />
 
         <div className="relative">
-          <div className="OverviewBg"></div>
+          <div className="OverviewBg pointer-events-none"></div>
           <Overview />
           <Detail />
         </div>
