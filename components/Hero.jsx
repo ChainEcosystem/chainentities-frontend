@@ -142,9 +142,9 @@ const Hero = () => {
               ChainEntities - an utopia in the metaverse
             </div>
 
-            <h2>
+            <div style={{ fontSize: "37px", lineHeight: "37px" }}>
               The biggest and unique ecosystem in the blockchain gaming industry
-            </h2>
+            </div>
 
             <div className="sm:block hidden mt-4 lsmall">
               Play-to-earn decentralized virtual-world,

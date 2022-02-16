@@ -36,9 +36,13 @@ const Team = () => {
                   alt=""
                 />
               </div>
-              <h2 className="text-blue mb-2 mt-3 text-center sm:whitespace-nowrap">
+              <h2 className="sm:block hidden text-blue mb-2 mt-3 text-center whitespace-nowrap">
                 {member.name}
               </h2>
+              <div className="sm:hidden text-blue mb-2 mt-3 text-center">
+                <small>{member.name}</small>
+              </div>
+
               <p className="text-center xl:px-4 lg:px-0 sm:px-8">
                 {member.role}
               </p>
