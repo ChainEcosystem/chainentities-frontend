@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import teamMembers from "../json/teamMembers.json";
+import Interweave from "interweave";
 
 const Team = () => {
   return (
@@ -46,10 +47,10 @@ const Team = () => {
               </div>
 
               <p className="sm:block hidden text-center xl:px-4 lg:px-0 px-8">
-                {member.role}
+                <Interweave content={member.role} />
               </p>
-              <div className="sm:hidden text-base text-center">
-                {member.role}
+              <div className="sm:hidden text-base text-center leading-4">
+                <Interweave content={member.role} />
               </div>
             </div>
           ))}
