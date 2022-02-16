@@ -184,7 +184,11 @@ const Hero = () => {
                   onMouseLeave={() => setHoveredSocial("")}
                   key={`heroSocial-${index}`}
                 >
-                  {social.name === hoveredSocial ? (
+                  <div
+                    className={`${
+                      social.name === hoveredSocial ? "flex" : "hidden"
+                    }`}
+                  >
                     <Image
                       height={42}
                       width={41}
@@ -192,14 +196,21 @@ const Hero = () => {
                       src={`/images/Hero${social.name}Color.svg`}
                       alt=""
                     />
-                  ) : (
+                  </div>
+
+                  <div
+                    className={`${
+                      social.name === hoveredSocial ? "hidden" : "flex"
+                    }`}
+                  >
                     <Image
                       height={42}
                       width={41}
+                      priority
                       src={`/images/Hero${social.name}.svg`}
                       alt=""
                     />
-                  )}
+                  </div>
                 </a>
               ))}
             </div>
