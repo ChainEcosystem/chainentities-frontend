@@ -65,7 +65,7 @@ const Story = () => {
               <span className="text-blue">prove Your identity.</span>
             </div>
 
-            <div className="xsmall text-primary lg:mt-4 mt-6">
+            <div className="lsmall text-primary lg:mt-4 mt-6">
               Your NFT - Your style!
             </div>
           </div>

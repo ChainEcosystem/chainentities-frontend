@@ -81,7 +81,7 @@ const Header = () => {
               <div>
                 <span className="whiteHoverFill lsmall">Profile</span>
               </div>
-              <div className="xsmall" style={{ marginTop: "2px" }}>
+              <div style={{ marginTop: "2px", fontSize: "18px" }}>
                 coming soon
               </div>
             </div>
@@ -99,7 +99,7 @@ const Header = () => {
               <div>
                 <span className="whiteHoverFill lsmall">{navItem.name}</span>
               </div>
-              <div className="xsmall" style={{ marginTop: "2px" }}>
+              <div style={{ marginTop: "2px", fontSize: "18px" }}>
                 coming soon
               </div>
             </div>

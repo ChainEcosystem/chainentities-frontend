@@ -52,6 +52,11 @@ small {
 .xsmall {
   font-size: 18px;
   line-height: 18px;
+
+  @media (max-width: 639.98px) {
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 
 big {
