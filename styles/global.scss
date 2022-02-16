@@ -48,18 +48,10 @@ button {
   }
 }
 
-.wrapper-lg {
+.wrapper-sm {
   width: 95%;
 
   @media (max-width: 641px) {
-    width: 100%;
-  }
-}
-
-.wrapper-lg {
-  width: 95%;
-
-  @media (max-width: 1023.98px) {
     width: 100%;
   }
 }

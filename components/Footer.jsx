@@ -7,8 +7,8 @@ const Footer = () => {
     <div className="FooterSection relative">
       <div className="StarBg" />
       {/* CTA */}
-      <div className="wrapper wrapper-lg">
-        <div className="bg-dark text-center py-10 lg:mb-10 px-4">
+      <div className="wrapper">
+        <div className="bg-dark text-center py-10 lg:mb-10">
           <h1 className="font-bold text-primary mb-6 text-center">
             We - for the community,
             <br />
