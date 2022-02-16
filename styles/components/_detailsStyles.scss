@@ -16,9 +16,17 @@
   @media (max-width: 1180px) {
     width: 440px;
   }
+  @media (max-width: 1023.98px) {
+    width: 100%;
+    height: auto;
+    padding: 24px 20px;
+    justify-content: space-between;
+  }
 
   &:hover {
-    box-shadow: 0 0 12px #de59ff, 0 0 6px #7ad1ec75;
+    @media (min-width: 640px) {
+      box-shadow: 0 0 12px #de59ff, 0 0 6px #7ad1ec75;
+    }
   }
 
   &::after {
@@ -46,9 +54,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: inherit;
 
   &--active {
     background: $divider-color;
+  }
+
+  @media (max-width: 1023.98px) {
+    justify-content: space-between;
   }
 }
 
@@ -62,6 +75,10 @@
   }
   @media (max-width: 1180px) {
     width: 440px;
+  }
+  @media (max-width: 1023.98px) {
+    height: 154px;
+    width: 100%;
   }
 }
 

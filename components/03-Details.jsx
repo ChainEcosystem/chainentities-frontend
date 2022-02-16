@@ -5,16 +5,16 @@ import metaDetails from "../json/metaDetails.json";
 const Detail = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   return (
-    <section className="pb-24">
+    <section className="lg:pb-24 pb-14">
       <div className="wrapper">
-        <div className="flex justify-center items-center mb-8">
+        <div className="flex justify-center items-center lg:mb-8 mb-4">
           <div className="TitleDivider_Left" />
           <h1 className="font-bold text-primary mx-7 z-50">Meta-details</h1>
           <div className="TitleDivider_Right" />
         </div>
 
         <div className="w-full rounded-lg">
-          <div className="bg-dark p-5 flex justify-between items-center h-28 w-full rounded-t-lg">
+          <div className="bg-dark p-5 flex lg:flex-row flex-col lg:justify-between justify-center items-center lg:h-28 w-full rounded-t-lg lg:gap-0 gap-4">
             {metaDetails.tabs.map((tab, index) => (
               <div
                 key={`metaDetailTab-${index}`}
@@ -31,6 +31,17 @@ const Detail = () => {
                   }`}
                 >
                   <h3>{tab}</h3>
+
+                  <div className="lg:hidden flex">
+                    <Image
+                      src={`/images/VectorArrow${
+                        activeTabIndex === index ? "Up" : "Down"
+                      }Pink.svg`}
+                      alt=""
+                      height={19}
+                      width={19}
+                    />
+                  </div>
                 </div>
               </div>
             ))}
@@ -38,8 +49,8 @@ const Detail = () => {
 
           <div className="bg-divider p-5 rounded-b-lg">
             {activeTabIndex === 0 && (
-              <div className="flex gap-7 items-center">
-                <div>
+              <div className="flex lg:flex-row flex-col lg:gap-7 gap-8 items-center">
+                <div className="lg:w-auto w-full">
                   <div className="DetailMap relative">
                     <Image
                       className="pointer-events-none"
@@ -56,14 +67,14 @@ const Detail = () => {
                   </div>
 
                   <div
-                    className="bg-light w-full my-2"
-                    style={{ height: "1px" }}
+                    className="bg-light w-full lg:my-2 my-4"
+                    style={{ height: "2px" }}
                   />
 
-                  <div className="flex gap-14">
+                  <div className="flex lg:flex-row flex-col lg:gap-14 gap-6">
                     {metaDetails.metaverseMap.contents.map((content, index) => (
                       <div key={`metaverseMapContent${index}`}>
-                        <div>
+                        <div className="mb-2">
                           <big className="text-blue">{content.title}</big>
                         </div>
                         <div className="xsmall">{content.description}</div>
@@ -72,8 +83,8 @@ const Detail = () => {
                   </div>
 
                   <div
-                    className="bg-light w-full my-2"
-                    style={{ height: "1px" }}
+                    className="bg-light w-full lg:my-2 my-4"
+                    style={{ height: "2px" }}
                   />
 
                   <div className="xsmall text-blue">
@@ -84,7 +95,7 @@ const Detail = () => {
             )}
 
             {activeTabIndex === 1 && (
-              <div className="flex gap-7 items-center">
+              <div className="flex lg:flex-row flex-col lg:gap-7 gap-9 items-center">
                 <div>
                   <div className="DetailModelsContainer flex justify-between">
                     <Image
@@ -127,7 +138,7 @@ const Detail = () => {
 
                   <div
                     className="bg-light w-full my-4"
-                    style={{ height: "1px" }}
+                    style={{ height: "2px" }}
                   />
 
                   <div className="lsmall">
@@ -141,7 +152,7 @@ const Detail = () => {
 
                   <div
                     className="bg-light w-full my-4"
-                    style={{ height: "1px" }}
+                    style={{ height: "2px" }}
                   />
 
                   <div className="xsmall text-blue">
