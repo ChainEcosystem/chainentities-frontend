@@ -23,7 +23,7 @@ const Story = () => {
             </div>
           </div>
 
-          <div className="bg-blacked col-span-3 flex flex-col justify-center xl:pl-20 pl-14 md:mb-0 mb-7">
+          <div className="bg-blacked col-span-3 flex flex-col justify-center xl:pl-20 lg:pl-14">
             <h2 className="font-bold text-blue mb-6">New life systems</h2>
 
             <div className="lsmall">
@@ -46,8 +46,8 @@ const Story = () => {
         </div>
 
         {/* Part 2: ChainEntities is Future */}
-        <div className="md:grid flex flex-col justify-center items-center md:text-left text-center grid-cols-5 mt-20">
-          <div className="col-span-3 flex flex-col justify-center xl:pr-40 lg:pr-32 md:mb-0 mb-7">
+        <div className="lg:grid flex flex-col justify-center items-center lg:text-left text-center grid-cols-5 lg:mt-20 mt-12">
+          <div className="col-span-3 flex flex-col justify-center xl:pr-40 lg:pr-32">
             <h2 className="text-blue mb-6">ChainEntities - future identity </h2>
 
             <div className="lsmall">
@@ -58,45 +58,44 @@ const Story = () => {
               <span className="text-blue">ChainEntities.</span>
             </div>
 
-            <div className="lsmall mt-4">
+            <div className="lsmall lg:mt-4 mt-6">
               After linking with an Entity, You get marked in the city’s
               blockchain with a unique “styled” ERC-721 token. Afterwards,
               Entities are used for almost everything to{" "}
               <span className="text-blue">prove Your identity.</span>
             </div>
 
-            <div className="xsmall text-primary mt-4">
+            <div className="xsmall text-primary lg:mt-4 mt-6">
               Your NFT - Your style!
             </div>
           </div>
           <div className="col-span-2 flex justify-end items-center relative">
-            <Image
-              width={527}
-              height={493}
-              src="/images/Story2.svg"
-              className="md:w-auto w-64"
-              alt=""
-            />
+            <div className="lg:flex hidden">
+              <Image width={527} height={493} src="/images/Story2.svg" alt="" />
+            </div>
+            <div className="lg:hidden mt-8">
+              <Image width={347} height={315} src="/images/Story2.svg" alt="" />
+            </div>
           </div>
         </div>
 
         {/* Part 3: Why Polygon blockchain? */}
-        <div className="md:grid flex flex-col-reverse justify-center items-center md:text-left text-center grid-cols-5 mt-6">
+        <div className="lg:grid flex flex-col-reverse justify-center items-center lg:text-left text-center grid-cols-5 lg:mt-6 mt-12">
           <div className="col-span-2 flex items-center justify-start relative h-full">
-            <div className="md:block hidden">
+            <div className="lg:block hidden">
               <Image width={547} height={366} src="/images/Story3.svg" alt="" />
             </div>
-            <div className="md:hidden">
+            <div className="lg:hidden mt-6">
               <Image
-                width={256}
-                height={256}
-                src="/images/HeroImage3_Mobile.png"
+                width={343}
+                height={150}
+                src="/images/Story3Mobile.svg"
                 alt=""
               />
             </div>
           </div>
 
-          <div className="col-span-3 flex flex-col justify-center xl:pl-20 pl-14">
+          <div className="col-span-3 flex flex-col justify-center xl:pl-20 lg:pl-14">
             <h2 className="text-blue mb-6">Why Polygon blockchain?</h2>
 
             <div className="lsmall">
