@@ -7,8 +7,8 @@ const Footer = () => {
     <div className="FooterSection relative">
       <div className="StarBg" />
       {/* CTA */}
-      <div className="wrapper">
-        <div className="bg-dark text-center py-10 mb-10">
+      <div className="wrapper wrapper-lg">
+        <div className="bg-dark text-center py-10 lg:mb-10">
           <h1 className="font-bold text-primary mb-6">
             We - for the community,
             <br />
@@ -32,12 +32,16 @@ const Footer = () => {
       </div>
 
       <footer>
-        <div className="bg-dark w-full" style={{ height: "1px" }} />
+        <div
+          className="lg:block hidden bg-dark w-full"
+          style={{ height: "2px" }}
+        />
         <div className="wrapper">
-          <div className="grid sm:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
-            <div className="col-span-1 flex sm:justify-start justify-center lsmall">
-              <div className="sm:text-left text-center whitespace-nowrap">
-                Contacts:{" "}
+          <div className="grid lg:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
+            <div className="col-span-1 flex lg:justify-start justify-center lsmall">
+              <div className="lg:text-left text-center lg:whitespace-nowrap">
+                Contacts:
+                <br className="lg:hidden" />
                 <a
                   href="mailto:chainecosystem@gmail.com"
                   className="transition duration-200 text-pink hover:text-white"
@@ -47,11 +51,11 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="sm:inline-block hidden col-span-1 text-center lsmall">
+            <div className="lg:inline-block hidden col-span-1 text-center lsmall">
               All rights reserved.
             </div>
 
-            <div className="col-span-1 flex sm:justify-end justify-center sm:mt-0 mt-5 gap-7">
+            <div className="col-span-1 flex lg:justify-end justify-center lg:mt-0 mt-9 gap-7">
               {socials.map((social, index) => (
                 <a
                   className="SocialIcon"
@@ -60,12 +64,23 @@ const Footer = () => {
                   href={social.link}
                   key={`footerSocial${index}`}
                 >
-                  <Image
-                    height={20}
-                    width={20}
-                    src={`/images/Vector${social.name}.svg`}
-                    alt=""
-                  />
+                  <div className="lg:flex hidden">
+                    <Image
+                      height={20}
+                      width={20}
+                      src={`/images/Vector${social.name}.svg`}
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="lg:hidden flex">
+                    <Image
+                      height={26}
+                      width={26}
+                      src={`/images/Vector${social.name}.svg`}
+                      alt=""
+                    />
+                  </div>
                 </a>
               ))}
             </div>
@@ -73,13 +88,13 @@ const Footer = () => {
         </div>
 
         {/* Brand name */}
-        <div className="py-3 bg-dark text-white">
-          <div className="wrapper flex sm:justify-center justify-between text-center">
+        <div className="py-3 bg-dark text-white lg:mt-0 mt-1">
+          <div className="wrapper flex lg:justify-center justify-between text-center">
             <small>
               ChainEntities<span className="text-pink">.</span>
             </small>
 
-            <small className="sm:hidden">All rights reserved.</small>
+            <small className="lg:hidden">All rights reserved.</small>
           </div>
         </div>
       </footer>

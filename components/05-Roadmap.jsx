@@ -12,7 +12,7 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <div className="ScreenContainer wrapper">
+      <div className="wrapper-sm wrapper">
         <div className="overflow-hidden flex items-center justify-center relative">
           <div className="sm:grid flex sm:max-w-none max-w-full sm:overflow-x-hidden overflow-x-scroll md:grid-cols-3 sm:grid-cols-2 sm:grid-rows-2 sm:grid-flow-row md:gap-10 sm:gap-5 sm:justify-center sm:items-center sm:justify-items-center sm:py-0 py-3">
             {/* Box 1 */}

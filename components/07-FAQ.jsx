@@ -7,7 +7,7 @@ const FAQ = () => {
   const [openedTabs, setOpenedTabs] = useState([]);
 
   return (
-    <section className="py-24">
+    <section className="lg:py-24 py-14">
       <div className="wrapper">
         <div className="flex justify-center items-center md:mb-10 mb-6">
           <div className="TitleDivider_Left" />
@@ -15,7 +15,7 @@ const FAQ = () => {
           <div className="TitleDivider_Right" />
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col sm:gap-4 gap-6">
           {FAQs.map((faq, index) => (
             <Collapsible
               key={`faq${index}`}
@@ -29,7 +29,7 @@ const FAQ = () => {
                 );
               }}
               trigger={
-                <div className="flex justify-between items-center font-bold">
+                <div className="flex justify-between sm:items-center font-bold">
                   <big className="text-blue">{faq.title}</big>
                   <div className="Collapsible__Button">
                     {openedTabs.includes(index) ? (
@@ -64,7 +64,7 @@ const FAQ = () => {
                     />
                   </div>
                 </div>
-                <p className="ml-1">
+                <p className="ml-2">
                   {faq.answer}{" "}
                   {faq.finalWord && (
                     <span className="text-primary">

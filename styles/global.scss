@@ -46,24 +46,20 @@ button {
   @media (max-width: 1030px) {
     width: 95%;
   }
-
-  // @media (min-width: 640px) {
-  //   max-width: 640px;
-  // }
-
-  // @media (min-width: 768px) {
-  //   max-width: 768px;
-  // }
-
-  // @media (min-width: 1024px) {
-  //   max-width: 768px;
-  // }
 }
 
-.ScreenContainer {
+.wrapper-lg {
   width: 95%;
 
   @media (max-width: 641px) {
+    width: 100%;
+  }
+}
+
+.wrapper-lg {
+  width: 95%;
+
+  @media (max-width: 1023.98px) {
     width: 100%;
   }
 }
