@@ -154,6 +154,18 @@ li {
   }
 }
 
+.btn-primary {
+  @media (max-width: 639.98px) {
+    padding: 12px 25px;
+  }
+}
+
+.btn-secondary {
+  @media (max-width: 639.98px) {
+    padding: 12px 18px;
+  }
+}
+
 #scroll-top-btn {
   padding: 0 !important;
   height: 50px;
