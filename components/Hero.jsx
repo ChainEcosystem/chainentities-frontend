@@ -134,7 +134,7 @@ const Hero = () => {
       <section className="HeroSection relative lg:pt-14 pt-5">
         <div className="StarBg" />
         <div className="wrapper grid lg:grid-cols-2 grid-cols-1 xl:gap-32 justify-center items-center">
-          <div className="lg:text-left text-center flex flex-col justify-center lg:items-start items-center md:my-0 my-5">
+          <div className="lg:text-left text-center flex flex-col justify-center lg:items-start items-center">
             <big className="text-primary lg:mb-1 mb-4">
               ChainEntities - an utopia in the metaverse
             </big>
@@ -152,7 +152,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://opensea.io/collection/chainentities"
-                className="btn-primary NavItemSpacing"
+                className="btn-primary mr-6"
               >
                 Opensea
               </a>
@@ -233,14 +233,14 @@ const Hero = () => {
 
             <div className="MintBoxContainer lg:mt-0 mt-6">
               <div className="MintBox">
-                <big className="block">ChainEntities Minted</big>
+                <big className="sm:block hidden">ChainEntities Minted</big>
 
                 {/* Minted count */}
-                <span className="font-bold text-primary mt-3 text-4xl">
+                <span className="sm:block hidden font-bold text-primary mt-3 text-4xl">
                   {connectedWallet ? publicTotalMinted : "-"}/4444
                 </span>
 
-                <hr className="MintBox__Divider" />
+                <hr className="MintBox__Divider sm:block hidden" />
 
                 <big className="block">
                   {mintCount} Entity costs{" "}
@@ -249,7 +249,28 @@ const Hero = () => {
                   </span>{" "}
                   Matic
                 </big>
-                <small className="text-divider block mt-1">
+
+                <hr className="MintBox__Divider sm:hidden block" />
+
+                <div className="sm:hidden flex">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://opensea.io/collection/chainentities"
+                    className="btn-primary mr-5"
+                  >
+                    Opensea
+                  </a>
+                  <a
+                    href="/files/litepaper.pdf"
+                    target="_blank"
+                    className="btn-secondary"
+                  >
+                    Litepaper
+                  </a>
+                </div>
+
+                <small className="text-divider sm:block hidden mt-1">
                   Excluding gas fees
                 </small>
 
@@ -320,7 +341,7 @@ const Hero = () => {
                 </div>
 
                 {/* Connection warning */}
-                <div className="flex items-start mt-4">
+                <div className="sm:flex hidden items-start mt-4">
                   <div className="mr-3">
                     <Image
                       height={22}
@@ -330,10 +351,7 @@ const Hero = () => {
                     />
                   </div>
 
-                  <span className="xsmall sm:hidden">
-                    Please visit Web version of the site, to mint an Entity
-                  </span>
-                  <span className="xsmall sm:block hidden">
+                  <span className="xsmall">
                     Please make sure You are connected to the{" "}
                     <span
                       className="transition duration-200 text-pink cursor-pointer hover:text-white"
