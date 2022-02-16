@@ -67,6 +67,11 @@ small {
 big {
   font-size: 29px;
   line-height: 29px;
+
+  @media (max-width: 639.98px) {
+    font-size: 26px;
+    line-height: 26px;
+  }
 }
 
 h2 {

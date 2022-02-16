@@ -142,10 +142,15 @@ const Hero = () => {
               The biggest and unique ecosystem in the blockchain gaming industry
             </h2>
 
-            <div className="mt-4 lsmall">
+            <div className="sm:block hidden mt-4 lsmall">
               Play-to-earn decentralized virtual-world,
-              <br className="sm:inline hidden" /> marketplace, native token.
+              <br /> marketplace, native token.
             </div>
+
+            <p className="sm:hidden mt-4">
+              Play-to-earn decentralized virtual-world, marketplace, native
+              token.
+            </p>
 
             <div className="sm:flex hidden lg:mt-10 mt-4">
               <a
