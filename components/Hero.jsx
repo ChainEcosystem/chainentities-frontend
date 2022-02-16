@@ -184,14 +184,22 @@ const Hero = () => {
                   onMouseLeave={() => setHoveredSocial("")}
                   key={`heroSocial-${index}`}
                 >
-                  <Image
-                    height={42}
-                    width={41}
-                    src={`/images/Hero${social.name}${
-                      social.name === hoveredSocial ? "Color" : ""
-                    }.svg`}
-                    alt=""
-                  />
+                  {social.name === hoveredSocial ? (
+                    <Image
+                      height={42}
+                      width={41}
+                      priority
+                      src={`/images/Hero${social.name}Color.svg`}
+                      alt=""
+                    />
+                  ) : (
+                    <Image
+                      height={42}
+                      width={41}
+                      src={`/images/Hero${social.name}.svg`}
+                      alt=""
+                    />
+                  )}
                 </a>
               ))}
             </div>
