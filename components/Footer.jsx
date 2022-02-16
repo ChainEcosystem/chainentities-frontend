@@ -16,18 +16,24 @@ const Footer = () => {
           </h1>
 
           <button
-            className="btn-primary"
+            className="sm:inline-block hidden btn-primary"
             onClick={() => {
-              if (typeof window === "undefined") {
-                return;
-              }
-              window.scrollTo({
-                top: 0,
-              });
+              if (typeof window === "undefined") return;
+              window.scrollTo(0, 0);
+              history.replaceState({}, null, "/");
             }}
           >
             Proceed to mint
           </button>
+
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://opensea.io/collection/chainentities"
+            className="btn-primary sm:hidden"
+          >
+            Opensea
+          </a>
         </div>
       </div>
 
