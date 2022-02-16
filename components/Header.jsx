@@ -79,9 +79,20 @@ const Header = () => {
           <div className="w-full py-3 flex justify-between items-center">
             <div>
               <div>
-                <span className="whiteHoverFill lsmall">Profile</span>
+                <span
+                  className="whiteHoverFill"
+                  style={{ fontSize: "22px", lineHeight: "22px" }}
+                >
+                  Profile
+                </span>
               </div>
-              <div style={{ marginTop: "2px", fontSize: "18px" }}>
+              <div
+                style={{
+                  marginTop: "2px",
+                  fontSize: "18px",
+                  lineHeight: "18px",
+                }}
+              >
                 coming soon
               </div>
             </div>
@@ -97,7 +108,12 @@ const Header = () => {
           {navItems.map((navItem, index) => (
             <div className="w-full py-3" key={`mobNavItem${index}`}>
               <div>
-                <span className="whiteHoverFill lsmall">{navItem.name}</span>
+                <span
+                  className="whiteHoverFill"
+                  style={{ fontSize: "22px", lineHeight: "22px" }}
+                >
+                  {navItem.name}
+                </span>
               </div>
               <div style={{ marginTop: "2px", fontSize: "18px" }}>
                 coming soon
@@ -108,7 +124,10 @@ const Header = () => {
           <div className="h-full flex flex-col justify-end">
             <hr className="MintBox__Divider" />
 
-            <div className="my-6 lsmall">
+            <div
+              className="my-6"
+              style={{ fontSize: "22px", lineHeight: "22px" }}
+            >
               Contacts:{" "}
               <a
                 href="mailto:chainecosystem@gmail.com"

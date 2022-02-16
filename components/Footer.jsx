@@ -38,7 +38,10 @@ const Footer = () => {
         />
         <div className="wrapper">
           <div className="grid lg:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
-            <div className="col-span-1 flex lg:justify-start justify-center lsmall">
+            <div
+              className="col-span-1 flex lg:justify-start justify-center"
+              style={{ fontSize: "22px", lineHeight: "22px" }}
+            >
               <div className="lg:text-left text-center lg:whitespace-nowrap">
                 Contacts:
                 <br className="lg:hidden" />

@@ -42,6 +42,11 @@ button,
 .lsmall {
   font-size: 22px;
   line-height: 22px;
+
+  @media (max-width: 639.98px) {
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 
 small {
