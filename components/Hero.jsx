@@ -104,7 +104,7 @@ const Hero = () => {
     <>
       {/* Notification - start */}
       <div
-        className={`flex justify-center transition duration-300 fixed left-0 z-50 w-full -top-10 transform ${
+        className={`sm:flex hidden justify-center transition duration-300 fixed left-0 z-50 w-full -top-10 transform ${
           connectionNotification.show ? "translate-y-20" : ""
         } `}
       >
