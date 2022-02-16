@@ -23,6 +23,7 @@ const Hero = () => {
   const [mintBoxMsg, setMintBoxMsg] = useState({
     show: false,
     type: "error",
+    isBalanceErr: false,
   });
 
   const [hoveredSocial, setHoveredSocial] = useState("");
@@ -90,13 +91,13 @@ const Hero = () => {
     }
   }
 
-  function _showMintBoxMsg(type) {
-    setMintBoxMsg({ show: true, type });
+  function _showMintBoxMsg(type, isBalanceErr) {
+    setMintBoxMsg({ show: true, type, isBalanceErr });
   }
 
   function _mintBoxErrHandling(err) {
     if (err.code === 4001) return;
-    _showMintBoxMsg("error");
+    _showMintBoxMsg("error", err.code === -32603);
     console.log(err);
   }
 
@@ -131,7 +132,7 @@ const Hero = () => {
       </div>
       {/* Notification - end */}
 
-      <section className="HeroSection relative lg:pt-14 pt-5">
+      <section className="HeroSection relative lg:pt-14 pt-5 lg:pb-24 pb-14">
         <div className="StarBg" />
         <div className="wrapper grid lg:grid-cols-2 grid-cols-1 xl:gap-32 justify-center items-center">
           <div className="lg:text-left text-center flex flex-col justify-center lg:items-start items-center">
@@ -358,21 +359,31 @@ const Hero = () => {
                   className="flex absolute rounded-lg left-0 right-0 bg-divider text-white p-4"
                 >
                   {mintBoxMsg.type === "error" ? (
-                    <span className="mt-1 xsmall">
-                      Sorry, something went wrong,{" "}
-                      <span
-                        className="text-pink transition duration-200 cursor-pointer hover:text-white"
-                        onClick={() => {
-                          if (typeof window === "undefined") {
-                            return;
-                          }
-                          window.location.reload();
-                        }}
-                      >
-                        refresh
-                      </span>{" "}
-                      the page and try again!
-                    </span>
+                    <>
+                      {mintBoxMsg.isBalanceErr ? (
+                        <span className="mt-1 xsmall">
+                          Insufficient funds. To mint an Entity top-up Your
+                          wallet with at least{" "}
+                          <span className="text-blue">29 MATIC + gas</span>
+                        </span>
+                      ) : (
+                        <span className="mt-1 xsmall">
+                          Sorry, something went wrong,{" "}
+                          <span
+                            className="text-pink transition duration-200 cursor-pointer hover:text-white"
+                            onClick={() => {
+                              if (typeof window === "undefined") {
+                                return;
+                              }
+                              window.location.reload();
+                            }}
+                          >
+                            refresh
+                          </span>{" "}
+                          the page and try again!
+                        </span>
+                      )}
+                    </>
                   ) : (
                     <span className="mt-1 xsmall">
                       Congratulations! You’ve got Your own Entity

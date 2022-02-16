@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="AboutSection lg:py-24 py-14 relative">
+    <section className="AboutSection lg:pb-24 pb-14 relative">
       <div className="StarBg" />
 
       <div className="wrapper">
