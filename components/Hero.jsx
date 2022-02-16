@@ -135,9 +135,13 @@ const Hero = () => {
         <div className="StarBg" />
         <div className="wrapper grid lg:grid-cols-2 grid-cols-1 xl:gap-32 justify-center items-center">
           <div className="lg:text-left text-center flex flex-col justify-center lg:items-start items-center">
-            <big className="text-primary lg:mb-1 mb-4">
+            <div
+              className="text-primary lg:mb-1 mb-4"
+              style={{ fontSize: "29px", lineHeight: "29px" }}
+            >
               ChainEntities - an utopia in the metaverse
-            </big>
+            </div>
+
             <h2>
               The biggest and unique ecosystem in the blockchain gaming industry
             </h2>
