@@ -13,14 +13,17 @@ const Story = () => {
         </div>
 
         {/* Part 1: New life systems */}
-        <div className="md:grid flex flex-col-reverse justify-center items-center grid-cols-5 md:pt-10 pt-14 md:text-left text-center">
-          <div className="col-span-2 h-full">
-            <div className="md:w-auto w-64 h-full relative">
+        <div className="lg:grid flex flex-col-reverse justify-center items-center grid-cols-5  lg:text-left text-center">
+          <div className="col-span-2 h-full lg:mt-0 mt-8">
+            <div className="lg:flex hidden">
               <Image height={400} width={529} src="/images/Story1.png" alt="" />
+            </div>
+            <div className="lg:hidden">
+              <Image height={343} width={343} src="/images/Story1.png" alt="" />
             </div>
           </div>
 
-          <div className="bg-blacked col-span-3 flex flex-col justify-center md:pl-16 md:mb-0 mb-7">
+          <div className="bg-blacked col-span-3 flex flex-col justify-center xl:pl-20 pl-14 md:mb-0 mb-7">
             <h2 className="font-bold text-blue mb-6">New life systems</h2>
 
             <div className="lsmall">
@@ -31,7 +34,7 @@ const Story = () => {
               , started the building of private cross-race city clusters.
             </div>
 
-            <div className="mt-4 lsmall">
+            <div className="lg:mt-4 mt-6 lsmall">
               ...Because of multiple nations, none of the races are ruling big
               metropolises, so it won’t affect impartial decision-making by that
               nation in power. Instead of one authority, there is a
@@ -43,8 +46,8 @@ const Story = () => {
         </div>
 
         {/* Part 2: ChainEntities is Future */}
-        <div className="md:grid flex flex-col justify-center items-center md:text-left text-center grid-cols-5 md:pt-20 pt-14">
-          <div className="col-span-3 flex flex-col justify-center md:pr-24 md:mb-0 mb-7">
+        <div className="md:grid flex flex-col justify-center items-center md:text-left text-center grid-cols-5 mt-20">
+          <div className="col-span-3 flex flex-col justify-center xl:pr-40 lg:pr-32 md:mb-0 mb-7">
             <h2 className="text-blue mb-6">ChainEntities - future identity </h2>
 
             <div className="lsmall">
@@ -78,7 +81,7 @@ const Story = () => {
         </div>
 
         {/* Part 3: Why Polygon blockchain? */}
-        <div className="md:grid flex flex-col-reverse justify-center items-center md:text-left text-center grid-cols-5 pt-7">
+        <div className="md:grid flex flex-col-reverse justify-center items-center md:text-left text-center grid-cols-5 mt-6">
           <div className="col-span-2 flex items-center justify-start relative h-full">
             <div className="md:block hidden">
               <Image width={547} height={366} src="/images/Story3.svg" alt="" />
@@ -93,7 +96,7 @@ const Story = () => {
             </div>
           </div>
 
-          <div className="col-span-3 flex flex-col justify-center md:pl-24">
+          <div className="col-span-3 flex flex-col justify-center xl:pl-20 pl-14">
             <h2 className="text-blue mb-6">Why Polygon blockchain?</h2>
 
             <div className="lsmall">
