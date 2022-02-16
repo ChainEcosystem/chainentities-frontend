@@ -1,15 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import navItems from "../json/navItems.json";
 import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const listener = document.addEventListener("scroll", () => {
+      setHasScrolled(window.scrollY > 100);
+    });
+    return () => {
+      document.removeEventListener("scroll", listener);
+    };
+  }, []);
 
   return (
     <>
-      <header className="Header bg-blacked sm:py-5 py-3 relative z-50">
+      <header
+        className={`Header transition duration-200 bg-blacked sm:py-5 py-3 fixed left-0 right-0 top-0 z-50 ${
+          hasScrolled && !isMenuOpen ? "opacity-70" : ""
+        } hover:opacity-100`}
+      >
         <div className="wrapper flex justify-center items-center">
-          <big className="flex items-center font-bold text-white">
+          <big
+            className="flex items-center font-bold text-white cursor-pointer"
+            onClick={() => {
+              if (typeof window === "undefined") return;
+              window.scrollTo(0, 0);
+              history.replaceState({}, null, "/");
+            }}
+          >
             <div className="mt-1 mr-3">
               <Image height={40} width={40} src="/images/Logo.svg" alt="" />
             </div>
@@ -41,11 +62,11 @@ const Header = () => {
           </div>
 
           {/* menu burger */}
-          <div className="lg:hidden ml-auto">
-            {isMenuOpen ? (
+          <div className="lg:hidden flex ml-auto">
+            <div className={`${isMenuOpen ? "flex" : "hidden"}`}>
               <Image
-                height={14}
-                width={14}
+                height={18}
+                width={18}
                 className="cursor-pointer"
                 src="/images/VectorCrossColor.svg"
                 onClick={() => {
@@ -53,7 +74,8 @@ const Header = () => {
                 }}
                 alt=""
               />
-            ) : (
+            </div>
+            <div className={`${isMenuOpen ? "hidden" : "flex"}`}>
               <Image
                 height={15.76}
                 width={22.76}
@@ -64,7 +86,7 @@ const Header = () => {
                 }}
                 alt=""
               />
-            )}
+            </div>
           </div>
         </div>
       </header>
@@ -73,7 +95,7 @@ const Header = () => {
       <div
         className={`MobileNav ${
           isMenuOpen && "MobileNav--activated"
-        } lg:hidden absolute bg-dark transition duration-200 w-full h-full bg-white z-20 transform`}
+        } lg:hidden fixed bg-dark transition duration-200 top-0 left-0 right-0 bottom-0 bg-white z-20 transform`}
       >
         <div className="wrapper flex flex-col justify-center text-white h-full">
           <div className="w-full py-3 flex justify-between items-center">

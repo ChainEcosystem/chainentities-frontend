@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 93.97px;
 
-  @media (max-width: 768px) {
-    height: max-content;
-    flex-direction: column;
+  @media (max-width: 639.98px) {
+    margin-top: 76.88px;
   }
 }
 

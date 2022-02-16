@@ -1,11 +1,17 @@
 .Header {
   border-bottom: 1px solid $divider-color;
   box-shadow: 0 0 10px $dark-color;
+  z-index: 9999;
 }
 
 .MobileNav {
-  height: calc(100vh - 94px);
+  z-index: 9998;
   transform: translateY(-100vh);
+  margin-top: 93.97px;
+
+  @media (max-width: 639.98px) {
+    margin-top: 76.88px;
+  }
 
   &--activated {
     transform: translateY(0);
