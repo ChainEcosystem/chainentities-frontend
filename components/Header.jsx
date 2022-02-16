@@ -24,7 +24,7 @@ const Header = () => {
               {navItems.map((navItem, index) => (
                 <div className="flex flex-col" key={`navItem${index}`}>
                   <span className="text-xs">Coming soon</span>
-                  <small className="text-pink">{navItem.name}</small>
+                  <span className="lsmall text-pink">{navItem.name}</span>
                 </div>
               ))}
             </nav>
@@ -33,7 +33,7 @@ const Header = () => {
             <div className="flex">
               <div className="flex flex-col mr-1">
                 <span className="text-xs">Coming soon</span>
-                <small className="text-pink">Profile</small>
+                <span className="lsmall text-pink">Profile</span>
               </div>
 
               <Image height={38} width={38} src="/images/IconCE.svg" alt="" />

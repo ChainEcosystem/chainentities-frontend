@@ -270,9 +270,9 @@ const Hero = () => {
                   </a>
                 </div>
 
-                <small className="text-divider sm:block hidden mt-1">
+                <span className="lsmall text-divider sm:block hidden mt-1">
                   Excluding gas fees
-                </small>
+                </span>
 
                 <div className="sm:flex hidden items-center mt-8">
                   <>

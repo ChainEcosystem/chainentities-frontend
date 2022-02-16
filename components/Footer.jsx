@@ -90,9 +90,9 @@ const Footer = () => {
         {/* Brand name */}
         <div className="py-3 bg-dark text-white lg:mt-0 mt-1">
           <div className="wrapper flex lg:justify-center justify-between text-center">
-            <small>
+            <span className="lsmall">
               ChainEntities<span className="text-pink">.</span>
-            </small>
+            </span>
 
             <small className="lg:hidden">All rights reserved.</small>
           </div>
