@@ -13,9 +13,16 @@ const Overview = () => {
           <div className="TitleDivider_Right" />
         </div>
 
-        <h3 className="text-center lg:mb-14 mb-6">
-          An ecosystem with a continuous development <br /> towards perfection
+        <h3 className="sm:block hidden text-center lg:mb-14 mb-6">
+          An ecosystem with a continuous development{" "}
+          <br className="md:inline hidden" /> towards perfection
         </h3>
+
+        <div className="sm:hidden text-center mb-6">
+          <big>
+            An ecosystem with a continuous development towards perfection
+          </big>
+        </div>
 
         <div className="flex lg:flex-row flex-col lg:justify-between justify-center lg:items-start items-center lg:gap-0 gap-4">
           {overviewBlocks.map((block, index) => (

@@ -87,6 +87,11 @@ h1 {
 h3 {
   font-size: 33px;
   line-height: 33px;
+
+  @media (max-width: 639.98px) {
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 .text {
