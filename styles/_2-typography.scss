@@ -87,6 +87,11 @@ h2 {
 h1 {
   font-size: 40px;
   line-height: 40px;
+
+  @media (max-width: 639.98px) {
+    font-size: 37px;
+    line-height: 37px;
+  }
 }
 
 h3 {
