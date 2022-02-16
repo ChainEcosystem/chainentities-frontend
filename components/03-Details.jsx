@@ -169,11 +169,19 @@ const Detail = () => {
             <Fragment key={`metaDetailTab-${index}`}>
               <div
                 className={`bg-dark p-5 flex lg:flex-row flex-col lg:justify-between justify-center items-center lg:h-28 w-full rounded-t-lg lg:gap-0 gap-4 ${
-                  index === 1 && activeTabIndex === 1 ? "pt-0" : ""
+                  index === 1 && [1, ""].includes(activeTabIndex) ? "pt-0" : ""
                 }`}
               >
                 <div
-                  onClick={() => setActiveTabIndex(index)}
+                  onClick={() =>
+                    setActiveTabIndex((prevIndex) => {
+                      if (prevIndex === index) {
+                        return "";
+                        return;
+                      }
+                      return index;
+                    })
+                  }
                   className="DetailTab cursor-pointer"
                 >
                   {/* placeholder */}
