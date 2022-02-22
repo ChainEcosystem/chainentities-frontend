@@ -76,7 +76,7 @@ const Team = () => {
           </div>
 
           <div className="text-primary xsmall">
-            Thank to all for being a valuable member of the team.
+            Thanks to all for being a valuable member of the team.
           </div>
         </div>
       </div>
