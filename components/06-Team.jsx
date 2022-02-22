@@ -60,8 +60,7 @@ const Team = () => {
         <div className="TeamNoteBox sm:mt-14 mt-6">
           <div className="text-blue">
             <big>
-              We’ve got a few more niche experts, but they asked to keep their
-              identity anonymous.
+              We’ve got a few more experts contributing to the project:
             </big>
           </div>
 
