@@ -48,10 +48,6 @@ const Roadmap = () => {
                   <li>Website launch</li>
                   <li>1’st 2D Pixel Ticket collection launch</li>
                   <li>Public minting launch</li>
-                  <li>
-                    Community 200 NFT’s giveaway{" "}
-                    <span className="text-blue">(January)</span>
-                  </li>
                   <li>Social media marketing strategy</li>
                 </ul>
               </div>
