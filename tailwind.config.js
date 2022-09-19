@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         "blue-color": "#7ad1ec",
+        "pink-color": "#DE59FF",
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],
