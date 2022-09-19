@@ -1,31 +1,65 @@
+// @font-face {
+//   font-family: "DisposableDroid";
+//   src: url("./fonts/DisposableDroidBB.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "DisposableDroid";
+//   src: url("./fonts/DisposableDroidBB_bld.ttf") format("truetype");
+//   font-weight: bold;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "DisposableDroid";
+//   src: url("./fonts/DisposableDroidBB_ital.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: italic;
+// }
+
+// @font-face {
+//   font-family: "DisposableDroid";
+//   src: url("./fonts/DisposableDroidBB_bldital.ttf") format("truetype");
+//   font-weight: bold;
+//   font-style: italic;
+// }
+
 @font-face {
-  font-family: "DisposableDroid";
-  src: url("./fonts/DisposableDroidBB.ttf") format("truetype");
+  font-family: "Exan";
+  src: url("./fonts/Exan-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "DisposableDroid";
-  src: url("./fonts/DisposableDroidBB_bld.ttf") format("truetype");
+  font-family: "Jost";
+  src: url("./fonts/Jost-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("./fonts/Jost-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "DisposableDroid";
-  src: url("./fonts/DisposableDroidBB_ital.ttf") format("truetype");
+  font-family: "Jost";
+  src: url("./fonts/Jost-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "DisposableDroid";
-  src: url("./fonts/DisposableDroidBB_bldital.ttf") format("truetype");
+  font-family: "Jost";
+  src: url("./fonts/Jost-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
 }
-
 p,
 button,
 .btn-secondary,
