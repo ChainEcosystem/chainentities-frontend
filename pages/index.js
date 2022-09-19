@@ -11,6 +11,7 @@ import Story from "../components/04-Story";
 import Roadmap from "../components/05-Roadmap";
 import Team from "../components/06-Team";
 import FAQ from "../components/07-FAQ";
+import Newsletter from "../components/landingPage/Newsletter";
 
 const Home = () => {
   useEffect(() => {
@@ -74,6 +75,7 @@ const Home = () => {
         <Header />
         <Hero />
         <About />
+        <Newsletter />
 
         <div className="relative">
           <div className="OverviewBg pointer-events-none"></div>
