@@ -3,7 +3,7 @@ const buttonGradient =
 
 export default function Newsletter() {
   return (
-    <section>
+    <section className="mb-20 md:mb-28">
       <div className="wrapper">
         <div className="border-2 border-pink-color rounded-lg bg-[url('/images/landingPage/Newsletter/newsletter-bg.png')] h-[410px] bg-cover">
           <div className="w-full h-full flex flex-col justify-center items-center space-y-8 p-4">

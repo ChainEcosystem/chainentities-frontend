@@ -66,6 +66,7 @@ function AboutCard({ icon, title, subtitle, description }) {
       <div className="relative xl:mt-3 w-full min-h-[80px] mb-4">
         <Image
           className="pointer-events-none"
+          object="cover"
           layout="fill"
           src={title}
           alt=""

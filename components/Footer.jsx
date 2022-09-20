@@ -1,41 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import socials from "../json/socialMedia.json";
+import Newsletter from "./landingPage/Newsletter";
 
 const Footer = () => {
   return (
     <div className="FooterSection relative">
       <div className="StarBg" />
       {/* CTA */}
-      <div className="wrapper">
-        <div className="bg-dark text-center py-10 lg:mb-10">
-          <h1 className="font-bold text-primary mb-6 text-center">
-            We - for the community,
-            <br />
-            community - for the future.
-          </h1>
-
-          <button
-            className="sm:inline-block hidden btn-primary"
-            onClick={() => {
-              if (typeof window === "undefined") return;
-              window.scrollTo(0, 0);
-              history.replaceState({}, null, "/");
-            }}
-          >
-            Proceed to mint
-          </button>
-
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://opensea.io/collection/chainentities"
-            className="btn-primary sm:hidden"
-          >
-            Opensea
-          </a>
-        </div>
-      </div>
+      <Newsletter />
 
       <footer>
         <div
