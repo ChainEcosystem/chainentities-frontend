@@ -4,7 +4,7 @@ const buttonGradient =
 
 export default function Hero() {
   return (
-    <section className="HeroSection relative lg:pb-24 pb-14 ">
+    <section className="HeroSection relative lg:pb-24 pb-14">
       <div className="h-[566px] w-full opacity-30 z-10">
         <Image layout="fill" src={"/images/landingPage/Hero/render_hero.jpg"} />
       </div>
