@@ -41,11 +41,11 @@ export function MetaDetails() {
     <section className="AboutSection lg:pb-24 pb-14 relative">
       <div className="StarBg" />
       <div className="wrapper">
-        <div className="flex justify-center items-center lg:mb-10 mb-4">
+        <div className="flex justify-center items-center mb-10">
           <div className="TitleDivider_Left" />
-          <h1 className="whitespace-nowrap font-bold sm:mx-7 mx-5 text-center text-xl md:text-2xl uppercase text-blue-color font-exan">
+          <h3 className="text-center text-xl md:text-2xl whitespace-nowrap font-exan sm:mx-7 mx-5 text-transparent bg-clip-text bg-blue-color">
             Meta-details
-          </h1>
+          </h3>
           <div className="TitleDivider_Right" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-10 gap-6">
@@ -90,7 +90,10 @@ function MetaCard({
   return (
     <div
       onClick={onClick}
-      className={`min-h-[268px] cursor-pointer transition duration-300 ease-in-out border-2 border-pink-color rounded-lg p-2.5 bg-transparent ${
+      style={{
+        transition: "margin ease-in-out 1s,z-index 0s 1s",
+      }}
+      className={`min-h-[268px] cursor-pointer transition-all duration-300 ease-in-out border-2 border-pink-color rounded-lg p-2.5 bg-transparent ${
         selected ? selectedStyle : unselectedStyle
       }`}
     >

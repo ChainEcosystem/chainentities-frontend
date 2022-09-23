@@ -3,16 +3,17 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Hero from "../components/Hero";
+import Hero from "../components/landingPage/Hero";
 import About from "../components/landingPage/About";
 import Overview from "../components/02-Overview";
 import Detail from "../components/03-Details";
 import Story from "../components/04-Story";
-import Roadmap from "../components/05-Roadmap";
 import Team from "../components/06-Team";
 import FAQ from "../components/07-FAQ";
-import Newsletter from "../components/landingPage/Newsletter";
+
 import { MetaDetails } from "../components/landingPage/MetaDetails";
+import CoreTeam from "../components/landingPage/CoreTeam";
+import Roadmap from "../components/landingPage/Roadmap";
 
 const Home = () => {
   useEffect(() => {
@@ -77,16 +78,8 @@ const Home = () => {
         <Hero />
         <About />
         <MetaDetails />
-        <div className="relative">
-          <div className="OverviewBg pointer-events-none"></div>
-          <Overview />
-          <Detail />
-        </div>
-
-        <Story />
         <Roadmap />
-        <Team />
-        <FAQ />
+        <CoreTeam />
         <Footer />
       </main>
     </>
