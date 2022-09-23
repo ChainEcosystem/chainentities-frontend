@@ -39,8 +39,15 @@ export function MetaDetails() {
 
   return (
     <section className="AboutSection lg:pb-24 pb-14 relative">
+      <div className="absolute left-0 top-[-180px] md:top-[-200px] z-0">
+        <Image
+          src={"/images/landingPage/MetaDetails/MetaDetailsTicket.png"}
+          height={500}
+          width={400}
+        />
+      </div>
       <div className="StarBg" />
-      <div className="wrapper">
+      <div className="wrapper z-20">
         <div className="flex justify-center items-center mb-10">
           <div className="TitleDivider_Left" />
           <h3 className="text-center text-xl md:text-2xl whitespace-nowrap font-exan sm:mx-7 mx-5 text-transparent bg-clip-text bg-blue-color">

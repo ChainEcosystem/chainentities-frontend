@@ -84,9 +84,20 @@ function slideRenderer(params) {
 export default function Roadmap() {
   const [index, onChangeIndex] = useState(1);
   return (
-    <section className="AboutSection lg:pb-24 pb-24 relative overflow-hidden">
-      <div className="StarBg" />
-      <div className="wrapper">
+    <section
+      className="AboutSection mb-24 relative overflow-hidden bg-cover min-h-[406px] bg-center no-repeat"
+      style={{
+        background: 'url("/images/landingPage/Roadmap/ellipse.svg")',
+        backgroundSize: "cover",
+      }}
+    >
+      <div
+        className="z-10 absolute left-0 top-0 w-full h-full"
+        style={{
+          background: "rgba(31,27,37,0.8)",
+        }}
+      />
+      <div className="z-20 wrapper absolute left-[50%] translate-x-[-50%] top-0 w-full h-full">
         <div className="flex justify-center items-center mb-14">
           <div className="TitleDivider_Left" />
           <h3 className="text-center text-xl md:text-2xl whitespace-nowrap font-exan sm:mx-7 mx-5 text-transparent bg-clip-text bg-blue-color">
