@@ -97,9 +97,6 @@ function MetaCard({
   return (
     <div
       onClick={onClick}
-      style={{
-        transition: "margin ease-in-out 1s,z-index 0s 1s",
-      }}
       className={`min-h-[268px] cursor-pointer transition-all duration-300 ease-in-out border-2 border-pink-color rounded-lg p-2.5 bg-transparent ${
         selected ? selectedStyle : unselectedStyle
       }`}
@@ -116,9 +113,11 @@ function MetaCard({
       {selected && (
         <div className={`bg-cover ${backgroundImage} h-full rounded-lg`}>
           <div className="h-full w-full flex flex-col bg-black bg-opacity-60 p-5 rounded-lg">
-            <h4 className="font-jost text-blue-color mb-3 text-lg">{title}</h4>
-            <p className="text-base min-h-[100px]">{description}</p>
-            <div className="pt-4">
+            <h4 className="font-jost text-blue-color mb-3 text-lg fadeIn">
+              {title}
+            </h4>
+            <p className="text-base min-h-[100px] fadeIn">{description}</p>
+            <div className="pt-4 fadeIn">
               <Image {...imageSize} src={iconImage} />
             </div>
           </div>

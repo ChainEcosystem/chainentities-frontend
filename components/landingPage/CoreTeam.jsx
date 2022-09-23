@@ -70,7 +70,7 @@ export default function CoreTeam() {
             />
           ))}
         </div>
-        <div className="lg:hidden block relative">
+        <div className="lg:hidden block relative z-20">
           <div
             className="absolute left-0 top-0 h-full flex flex-row justify-center items-center p-5 hover:bg-opacity-75 duration-300 "
             onClick={() => onChangeIndex((i) => i - 1)}
