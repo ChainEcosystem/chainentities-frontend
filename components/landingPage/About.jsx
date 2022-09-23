@@ -35,9 +35,9 @@ export default function About() {
       <div className="wrapper">
         <div className="flex justify-center items-center lg:mb-10 mb-4">
           <div className="TitleDivider_Left" />
-          <h1 className="whitespace-nowrap font-bold sm:mx-7 mx-5 text-center text-xl md:text-2xl uppercase text-blue-color font-exan">
+          <h3 className="text-center text-xl md:text-2xl whitespace-nowrap font-exan sm:mx-7 mx-5 text-transparent bg-clip-text bg-blue-color">
             What is ChainEntities
-          </h1>
+          </h3>
           <div className="TitleDivider_Right" />
         </div>
         <h3 className="text-center lg:mb-10 mb-6 text-base">
