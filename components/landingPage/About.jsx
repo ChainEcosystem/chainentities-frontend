@@ -30,7 +30,7 @@ const aboutData = [
 
 export default function About() {
   return (
-    <section className="AboutSection lg:pb-24 pb-14 relative mt-[-120px]">
+    <section className="AboutSection lg:pb-24 pb-14 relative mt-[-120px]  z-30">
       <div className="StarBg" />
       <div className="wrapper">
         <div className="flex justify-center items-center lg:mb-10 mb-4">

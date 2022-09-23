@@ -43,6 +43,13 @@ export default function CoreTeam() {
   const [index, onChangeIndex] = useState(0);
   return (
     <section className="TeamSection relative mb-28 p-0">
+      <div className="absolute right-0 top-[-300px] md:top-[-300px] z-10">
+        <Image
+          src={"/images/landingPage/Roadmap/RoadmapTicket.png"}
+          height={500}
+          width={400}
+        />
+      </div>
       <div className="StarBg" />
       <div className="wrapper" style={{ width: "100%" }}>
         <div className="flex justify-center items-center lg:mb-20 mb-4">
