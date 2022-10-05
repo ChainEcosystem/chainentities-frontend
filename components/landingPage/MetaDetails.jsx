@@ -44,6 +44,7 @@ export function MetaDetails() {
           src={"/images/landingPage/MetaDetails/MetaDetailsTicket.png"}
           height={500}
           width={400}
+          alt=""
         />
       </div>
       <div className="StarBg" />
@@ -103,7 +104,7 @@ function MetaCard({
     >
       {!selected && (
         <div
-          className={`bg-cover ${backgroundImage} h-full p-5 rounded-lg flex flex-col relative`}
+          className={`bg-cover bg-center ${backgroundImage} h-full p-5 rounded-lg flex flex-col relative`}
         >
           <div className="absolute top-0 left-0 rounded-t-lg w-full text-center p-4 backdrop-blur bg-[#DE59FFB2]/30">
             <h4 className="font-jost text-blue-color text-lg">{title}</h4>
@@ -118,7 +119,7 @@ function MetaCard({
             </h4>
             <p className="text-base min-h-[100px] fadeIn">{description}</p>
             <div className="pt-4 fadeIn">
-              <Image {...imageSize} src={iconImage} />
+              <Image {...imageSize} src={iconImage} alt="" />
             </div>
           </div>
         </div>
