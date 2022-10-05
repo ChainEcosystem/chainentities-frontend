@@ -105,7 +105,7 @@ export default function Roadmap() {
           </h3>
           <div className="TitleDivider_Right" />
         </div>
-        <ol class="items-start hidden w-full min-w-[100vw] md:min-w-[90vw] lg:min-w-[87vw] md:flex ">
+        <ol className="items-start hidden w-full min-w-[100vw] md:min-w-[90vw] lg:min-w-[87vw] md:flex ">
           {roadMap.map(({ title, items, hasEtc, icon }, index) => (
             <RoadMapTile
               hasEtc={hasEtc}
@@ -135,7 +135,7 @@ export default function Roadmap() {
 
 const RoadMapTile = ({ title, items, hasEtc, icon }) => {
   return (
-    <li class="relative mb-6 sm:mb-0 w-full items-center flex flex-col">
+    <li className="relative mb-6 sm:mb-0 w-full items-center flex flex-col">
       <div className="flex flex-col items-center">
         <div className="flex flex-row gap-x-3">
           <p className="text-center whitespace-nowrap font-exan text-base text-transparent bg-clip-text bg-gradient-to-r from-blue-color to-pink-color">
@@ -152,8 +152,8 @@ const RoadMapTile = ({ title, items, hasEtc, icon }) => {
         <div className="h-[40px] w-[1px] bg-gradient-to-r from-[#514B58] to-[#c4c4c4] my-3" />
       </div>
 
-      <div class="flex items-center w-full">
-        <div class="w-full bg-[#4D4557] h-0.5" />
+      <div className="flex items-center w-full">
+        <div className="w-full bg-[#4D4557] h-0.5" />
         <Image
           src={`/images/landingPage/Roadmap/ellipsis.svg`}
           className="pointer-events-none"
@@ -161,11 +161,11 @@ const RoadMapTile = ({ title, items, hasEtc, icon }) => {
           width={20}
           alt=""
         />
-        <div class="w-full bg-[#4D4557] h-0.5" />
+        <div className="w-full bg-[#4D4557] h-0.5" />
       </div>
-      <div class="mt-8 w-full items-center px-2 text-center gap-y-3 flex flex-col">
+      <div className="mt-8 w-full items-center px-2 text-center gap-y-3 flex flex-col">
         {items.map((item, i) => (
-          <p key={i} class="text-base font-jost">
+          <p key={i} className="text-base font-jost">
             {item}
           </p>
         ))}
