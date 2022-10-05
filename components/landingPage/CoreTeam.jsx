@@ -48,6 +48,7 @@ export default function CoreTeam() {
           src={"/images/landingPage/Roadmap/RoadmapTicket.png"}
           height={500}
           width={400}
+          alt=""
         />
       </div>
       <div className="StarBg" />
