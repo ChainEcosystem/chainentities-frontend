@@ -5,7 +5,7 @@ const buttonGradient =
 export default function Newsletter() {
   return (
     <section className="mb-20 md:mb-28 relative">
-      <div className="absolute md:left-0 left-[-10px] top-[-250px] z-0 ">
+      <div className="absolute md:left-0 left-[-10px] top-[-250px] z-0 pointer-events-none">
         <Image
           src={"/images/landingPage/Newsletter/NewsletterTicket.png"}
           height={500}
