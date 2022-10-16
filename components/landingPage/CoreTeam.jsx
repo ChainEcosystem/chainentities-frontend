@@ -43,12 +43,12 @@ export default function CoreTeam() {
   const [index, onChangeIndex] = useState(0);
   return (
     <section className="TeamSection relative mb-28 p-0">
-      <div className="absolute right-0 top-[-300px] md:top-[-300px] z-10">
+      <div className="absolute right-0 top-[-200px] md:top-[-200px] z-10">
         <Image
           src={"/images/landingPage/Roadmap/RoadmapTicket.png"}
-          height={500}
-          width={400}
-          alt=""
+          objectFit="cover"
+          height={300}
+          width={300}
         />
       </div>
       <div className="StarBg" />

@@ -76,11 +76,22 @@ const Home = () => {
         {/* header */}
         <Header />
         <Hero />
-        <About />
-        <MetaDetails />
-        <Roadmap />
-        <CoreTeam />
-        <Footer />
+        <div
+          className="w-full flex flex-col"
+          style={{
+            background: 'url("/images/landingPage/lines.png")',
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPositionY: "200px",
+          }}
+        >
+          <About />
+          <MetaDetails />
+          <Roadmap />
+          <CoreTeam />
+
+          <Footer />
+        </div>
       </main>
     </>
   );

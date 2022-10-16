@@ -5,22 +5,16 @@ const buttonGradient =
 export default function Hero() {
   return (
     <section className="HeroSection relative lg:pb-24 pb-14">
-      <div className="h-[566px] w-full opacity-30 z-10">
+      <div className="h-[566px] w-full z-10">
         <Image
+          src={"/images/landingPage/Hero/render_hero.png"}
+          objectFit="cover"
           layout="fill"
-          src={"/images/landingPage/Hero/render_hero.jpg"}
-          alt=""
         />
       </div>
-      <div
-        className="z-20 absolute left-0 top-0 w-full h-full"
-        style={{
-          background:
-            "radial-gradient(75.18% 75.18% at 50% 24.82%, rgba(0, 0, 0, 0) 0%, #1F1B25 100%)",
-        }}
-      />
       <div className="opacity-100 absolute top-0 left-0 w-full h-full flex flex-row items-center justify-center z-30">
-        <div className="flex flex-col gap-y-8 items-center">
+        <div className="flex flex-col gap-y-8 items-center py-9 md:px-40 px-9 relative z-10">
+          <div className="border border-[#7AD1EC] blur absolute h-full w-full top-0 left-0" />
           <h2 className="text-center whitespace-nowrap font-exan text-2xl md:text-[40px] text-transparent bg-clip-text bg-pink-color tracking-[0.4em]">
             ChainEntities
           </h2>
