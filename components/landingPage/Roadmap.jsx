@@ -87,16 +87,11 @@ export default function Roadmap() {
     <section
       className="AboutSection mb-24 relative overflow-hidden bg-cover min-h-[406px] bg-center no-repeat"
       style={{
-        background: 'url("/images/landingPage/Roadmap/ellipse.svg")',
+        background: 'url("/images/landingPage/Roadmap/ellipse.png")',
         backgroundSize: "cover",
       }}
     >
-      <div
-        className="z-10 absolute left-0 top-0 w-full h-full"
-        style={{
-          background: "rgba(31,27,37,0.8)",
-        }}
-      />
+      <div className="z-10 absolute left-0 top-0 w-full h-full" />
       <div className="z-20 wrapper absolute left-[50%] translate-x-[-50%] top-0 w-full h-full">
         <div className="flex justify-center items-center mb-14">
           <div className="TitleDivider_Left" />
@@ -143,6 +138,7 @@ const RoadMapTile = ({ title, items, hasEtc, icon }) => {
           </p>
           <Image
             className="pointer-events-none"
+            objectFit="contain"
             height={20}
             width={20}
             src={icon}

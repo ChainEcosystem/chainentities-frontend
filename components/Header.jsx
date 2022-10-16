@@ -103,7 +103,7 @@ const Header = () => {
               <div>
                 <span
                   className="whiteHoverFill"
-                  style={{ fontSize: "22px", lineHeight: "22px" }}
+                  style={{ fontSize: "16px", lineHeight: "22px" }}
                 >
                   Profile
                 </span>
@@ -111,7 +111,7 @@ const Header = () => {
               <div
                 style={{
                   marginTop: "2px",
-                  fontSize: "18px",
+                  fontSize: "16px",
                   lineHeight: "18px",
                 }}
               >
@@ -132,7 +132,7 @@ const Header = () => {
               <div>
                 <span
                   className="whiteHoverFill"
-                  style={{ fontSize: "22px", lineHeight: "22px" }}
+                  style={{ fontSize: "16px", lineHeight: "22px" }}
                 >
                   {navItem.name}
                 </span>
@@ -148,7 +148,7 @@ const Header = () => {
 
             <div
               className="my-6"
-              style={{ fontSize: "22px", lineHeight: "22px" }}
+              style={{ fontSize: "16px", lineHeight: "22px" }}
             >
               Contacts:{" "}
               <a

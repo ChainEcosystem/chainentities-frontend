@@ -42,9 +42,9 @@ export function MetaDetails() {
       <div className="absolute left-0 top-[-180px] md:top-[-200px] z-0">
         <Image
           src={"/images/landingPage/MetaDetails/MetaDetailsTicket.png"}
-          height={500}
-          width={400}
-          alt=""
+          objectFit="cover"
+          height={300}
+          width={300}
         />
       </div>
       <div className="StarBg" />
@@ -93,37 +93,45 @@ function MetaCard({
   onClick,
   title,
 }) {
-  const unselectedStyle = "col-span-1 md:col-span-3 bg-blue-400";
-  const selectedStyle = "col-span-1 md:col-span-4 bg-red-300";
+  const unselectedStyle = "col-span-1 md:col-span-3";
+  const selectedStyle = "col-span-1 md:col-span-4";
   return (
     <div
-      onClick={onClick}
-      className={`min-h-[268px] cursor-pointer transition-all duration-300 ease-in-out border-2 border-pink-color rounded-lg p-2.5 bg-transparent ${
+      className={`${
         selected ? selectedStyle : unselectedStyle
-      }`}
+      } min-h-[268px] p-[2px] rounded-lg`}
+      style={{
+        background:
+          "linear-gradient(90deg, #7AD1EC 0%, #78C6ED 6.25%, #76BAEE 12.5%, #74AEEF 18.75%, #72A1F0 25%, #7094F2 31.25%, #6E85F3 37.5%, #6C77F4 43.75%, #6D6AF5 50%, #7868F6 56.25%, #8566F7 62.5%, #9264F9 68.75%, #A062FA 75%, #AF5FFB 81.25%, #BE5DFC 87.5%, #CE5BFE 93.75%, #DE59FF 100%)",
+      }}
     >
-      {!selected && (
-        <div
-          className={`bg-cover bg-center ${backgroundImage} h-full p-5 rounded-lg flex flex-col relative`}
-        >
-          <div className="absolute top-0 left-0 rounded-t-lg w-full text-center p-4 backdrop-blur bg-[#DE59FFB2]/30">
-            <h4 className="font-jost text-blue-color text-lg">{title}</h4>
-          </div>
-        </div>
-      )}
-      {selected && (
-        <div className={`bg-cover ${backgroundImage} h-full rounded-lg`}>
-          <div className="h-full w-full flex flex-col bg-black bg-opacity-60 p-5 rounded-lg">
-            <h4 className="font-jost text-blue-color mb-3 text-lg fadeIn">
-              {title}
-            </h4>
-            <p className="text-base min-h-[100px] fadeIn">{description}</p>
-            <div className="pt-4 fadeIn">
-              <Image {...imageSize} src={iconImage} alt="" />
+      <div
+        className={`h-full cursor-pointer transition-all duration-300 ease-in-out rounded-lg p-2.5 bg-transparent  bg-black`}
+        onClick={onClick}
+      >
+        {!selected && (
+          <div
+            className={`bg-cover ${backgroundImage} h-full p-5 rounded-lg flex flex-col relative`}
+          >
+            <div className="absolute top-0 left-0 rounded-t-lg w-full text-center p-4 backdrop-blur bg-[#DE59FFB2]/30">
+              <h4 className="font-jost text-blue-color text-lg">{title}</h4>
             </div>
           </div>
-        </div>
-      )}
+        )}
+        {selected && (
+          <div className={`bg-cover ${backgroundImage} h-full rounded-lg`}>
+            <div className="h-full w-full flex flex-col bg-black bg-opacity-60 p-5 rounded-lg">
+              <h4 className="font-jost text-blue-color mb-3 text-lg fadeIn">
+                {title}
+              </h4>
+              <p className="text-base min-h-[100px] fadeIn">{description}</p>
+              <div className="pt-4 fadeIn">
+                <Image {...imageSize} src={iconImage} />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
