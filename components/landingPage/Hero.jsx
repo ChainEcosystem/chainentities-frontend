@@ -14,7 +14,7 @@ export default function Hero() {
         />
       </div>
       <div className="opacity-100 absolute top-0 left-0 w-full h-full flex flex-row items-center justify-center z-30">
-        <div className="flex flex-col gap-y-8 items-center py-9 md:px-40 px-9 relative z-10">
+        <div className="flex flex-col gap-y-8 items-center py-9 md:px-40 px-9 relative z-10 mb-7">
           <div className="border border-[#7AD1EC] blur absolute h-full w-full top-0 left-0 z-0" />
           <h2 className="text-center whitespace-nowrap font-exan text-2xl md:text-[40px] text-transparent bg-clip-text bg-pink-color tracking-[0.4em]">
             ChainEntities
