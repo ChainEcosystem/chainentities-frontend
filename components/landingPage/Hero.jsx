@@ -10,6 +10,7 @@ export default function Hero() {
           src={"/images/landingPage/Hero/render_hero.png"}
           objectFit="cover"
           layout="fill"
+          alt=""
         />
       </div>
       <div className="opacity-100 absolute top-0 left-0 w-full h-full flex flex-row items-center justify-center z-30">

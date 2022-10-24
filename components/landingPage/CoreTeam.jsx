@@ -49,6 +49,7 @@ export default function CoreTeam() {
           objectFit="cover"
           height={300}
           width={300}
+          alt=""
         />
       </div>
       <div className="StarBg" />
