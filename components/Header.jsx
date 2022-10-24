@@ -31,12 +31,7 @@ const Header = () => {
               history.replaceState({}, null, "/");
             }}
           >
-            <div className="mt-1 mr-3">
-              <Image height={40} width={40} src="/images/Logo.svg" alt="" />
-            </div>
-            <span>
-              ChainEntities<span className="text-pink">.</span>
-            </span>
+            <Image src="/images/LogoBrand.svg" alt="" height={40} width={214} />
           </big>
 
           {/* Desktop nav content*/}
