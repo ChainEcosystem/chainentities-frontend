@@ -11,6 +11,7 @@ export default function Newsletter() {
           objectFit="cover"
           height={300}
           width={300}
+          alt=""
         />
       </div>
       <div className="wrapper z-20">

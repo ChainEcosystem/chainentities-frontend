@@ -45,6 +45,7 @@ export function MetaDetails() {
           objectFit="cover"
           height={300}
           width={300}
+          alt=""
         />
       </div>
       <div className="StarBg" />
@@ -126,7 +127,7 @@ function MetaCard({
               </h4>
               <p className="text-base min-h-[100px] fadeIn">{description}</p>
               <div className="pt-4 fadeIn">
-                <Image {...imageSize} src={iconImage} />
+                <Image {...imageSize} src={iconImage} alt="" />
               </div>
             </div>
           </div>
