@@ -24,7 +24,7 @@ export default function Newsletter() {
         >
           <div className="bg-[url('/images/landingPage/Newsletter/newsletter-bg.png')] h-[410px] bg-cover rounded-lg">
             <div className="w-full h-full flex flex-col justify-center items-center space-y-8 p-4">
-              <h1 className="whitespace-nowrap font-bold sm:mx-7 mx-5 text-center text-xl md:text-2xl uppercase text-blue-color font-exan">
+              <h1 className="whitespace-nowrap font-bold sm:mx-7 mx-5 text-center text-xl md:text-2xl text-blue-color font-exan">
                 Subscribe to our <br className="block md:hidden" />
                 newsletter
               </h1>
