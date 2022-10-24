@@ -21,9 +21,8 @@ const Footer = () => {
               className="col-span-1 flex lg:justify-start justify-center"
               style={{ fontSize: "22px", lineHeight: "22px" }}
             >
-              <div className="lg:text-left text-center lg:whitespace-nowrap">
-                Contacts:
-                <br className="lg:hidden" />
+              <div className="lg:text-left text-center lg:whitespace-nowrap lsmall">
+                Contacts: <br className="lg:hidden" />
                 <a
                   href="mailto:chainecosystem@gmail.com"
                   className="transition duration-200 text-pink hover:text-white"
@@ -70,7 +69,10 @@ const Footer = () => {
         </div>
 
         {/* Brand name */}
-        <div className="py-3 bg-dark text-white lg:mt-0 mt-1">
+        <div
+          className="py-3 text-white lg:mt-0 mt-1"
+          style={{ background: "rgba(38, 19, 43, 0.5)" }}
+        >
           <div className="wrapper flex lg:justify-center justify-between text-center">
             <span className="lsmall">
               ChainEntities<span className="text-pink">.</span>

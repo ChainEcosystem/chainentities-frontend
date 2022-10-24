@@ -54,7 +54,10 @@ export default function Newsletter() {
                   Subscribe
                 </button>
 
-                <h3 className="text-center text-base text-gray-300">
+                <h3
+                  className="text-center text-base"
+                  style={{ color: "#B8AEC7" }}
+                >
                   *We promise not to spam you
                 </h3>
               </div>
