@@ -98,7 +98,7 @@ const Footer = () => {
               className="col-span-1 flex lg:justify-start justify-center"
               style={{ fontSize: "22px", lineHeight: "22px" }}
             >
-              <div className="lg:text-left text-center lg:whitespace-nowrap lsmall">
+              <div className="lg:text-left text-center lg:whitespace-nowrap text-base">
                 Contacts: <br className="lg:hidden" />
                 <a
                   href="mailto:chainecosystem@gmail.com"
@@ -109,7 +109,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="lg:inline-block hidden col-span-1 text-center lsmall">
+            <div className="lg:inline-block hidden col-span-1 text-center text-base">
               All rights reserved.
             </div>
 

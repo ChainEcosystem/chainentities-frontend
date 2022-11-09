@@ -1,8 +1,13 @@
+import { useState } from "react";
 import Image from "next/image";
 const buttonGradient =
   "linear-gradient(90deg, #7AD1EC 0%, #78C6ED 6.25%, #76BAEE 12.5%, #74AEEF 18.75%, #72A1F0 25%, #7094F2 31.25%, #6E85F3 37.5%, #6C77F4 43.75%, #6D6AF5 50%, #7868F6 56.25%, #8566F7 62.5%, #9264F9 68.75%, #A062FA 75%, #AF5FFB 81.25%, #BE5DFC 87.5%, #CE5BFE 93.75%, #DE59FF 100%)";
 
 export default function Newsletter() {
+  const [isSubbed, setIsSubbed] = useState(false);
+  function handleSubscribe() {
+    setIsSubbed(true);
+  }
   return (
     <section className="mb-20 md:mb-28 relative">
       <div className="absolute md:left-0 left-[-10px] top-[-130px] z-0 ">
@@ -42,16 +47,24 @@ export default function Newsletter() {
                   />
                   <button
                     className="text-base text-white py-3 px-6 rounded-lg hidden md:block hover:opacity-80 duration-200"
-                    style={{ background: buttonGradient }}
+                    style={{
+                      background: isSubbed ? "#4ACAA4" : buttonGradient,
+                      pointerEvents: isSubbed ? "none" : "unset",
+                    }}
+                    onClick={handleSubscribe}
                   >
-                    Subscribe
+                    Subscribe{isSubbed ? "d" : ""}
                   </button>
                 </div>
                 <button
                   className="text-base text-white py-3 px-6 rounded-lg md:hidden block hover:opacity-80 duration-200"
-                  style={{ background: buttonGradient }}
+                  style={{
+                    background: isSubbed ? "#4ACAA4" : buttonGradient,
+                    pointerEvents: isSubbed ? "none" : "unset",
+                  }}
+                  onClick={handleSubscribe}
                 >
-                  Subscribe
+                  Subscribe{isSubbed ? "d" : ""}
                 </button>
 
                 <h3
