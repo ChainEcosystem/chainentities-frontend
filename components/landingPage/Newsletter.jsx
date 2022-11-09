@@ -5,7 +5,8 @@ const buttonGradient =
 
 export default function Newsletter() {
   const [isSubbed, setIsSubbed] = useState(false);
-  function handleSubscribe() {
+  function handleSubscribe(e) {
+    e.preventDefault();
     setIsSubbed(true);
   }
   return (
@@ -38,20 +39,24 @@ export default function Newsletter() {
                 <br className="hidden md:block" />
                 directly in your inbox
               </h3>
-              <div className="flex flex-col space-y-3 w-full">
+              <form
+                className="flex flex-col space-y-3 w-full"
+                onSubmit={handleSubscribe}
+              >
                 <div className="text-black bg-white p-0 md:p-[4px] w-full md:w-[487px] flex flex-row m-auto rounded-lg">
                   <input
                     className="outline-none border-none py-3 px-5 w-full rounded-lg"
                     placeholder="example@gmail.com"
-                    type={"text"}
+                    type={"email"}
+                    required={true}
                   />
                   <button
                     className="text-base text-white py-3 px-6 rounded-lg hidden md:block hover:opacity-80 duration-200"
+                    type="submit"
                     style={{
                       background: isSubbed ? "#4ACAA4" : buttonGradient,
                       pointerEvents: isSubbed ? "none" : "unset",
                     }}
-                    onClick={handleSubscribe}
                   >
                     Subscribe{isSubbed ? "d" : ""}
                   </button>
@@ -62,7 +67,7 @@ export default function Newsletter() {
                     background: isSubbed ? "#4ACAA4" : buttonGradient,
                     pointerEvents: isSubbed ? "none" : "unset",
                   }}
-                  onClick={handleSubscribe}
+                  type="submit"
                 >
                   Subscribe{isSubbed ? "d" : ""}
                 </button>
@@ -73,7 +78,7 @@ export default function Newsletter() {
                 >
                   *We promise not to spam you
                 </h3>
-              </div>
+              </form>
             </div>
           </div>
         </div>
