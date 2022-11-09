@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@walletconnect/web3-provider": "^1.7.1",
     "@web3auth/web3auth": "^0.2.4",
     "autoprefixer": "^10.4.2",
