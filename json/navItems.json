@@ -1,11 +1,19 @@
 [
   {
-    "name": "Marketplace"
+    "name": "Whitepaper",
+    "link": "/files/litepaper.pdf"
+  },
+
+  {
+    "name": "Marketplace",
+    "isComing": true
   },
   {
-    "name": "Events"
+    "name": "Events",
+    "isComing": true
   },
   {
-    "name": "News"
+    "name": "News",
+    "isComing": true
   }
 ]

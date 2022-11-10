@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import navItems from "../json/navItems.json";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +40,21 @@ const Header = () => {
             <nav className="flex gap-8">
               {navItems.map((navItem, index) => (
                 <div className="flex flex-col" key={`navItem${index}`}>
-                  <span className="text-xs">Coming soon</span>
-                  <span className="lsmall text-pink">{navItem.name}</span>
+                  {navItem.isComing ? (
+                    <>
+                      <span className="text-xs">Coming soon</span>
+                      <span className="lsmall text-pink">{navItem.name}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-xs invisible">.</span>
+                      <Link href={navItem.link} passHref>
+                        <span className="lsmall text-pink transition duration-200 hover:text-white cursor-pointer">
+                          {navItem.name}
+                        </span>
+                      </Link>
+                    </>
+                  )}
                 </div>
               ))}
             </nav>
