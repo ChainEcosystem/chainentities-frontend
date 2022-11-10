@@ -48,11 +48,14 @@ const Header = () => {
                   ) : (
                     <>
                       <span className="text-xs invisible">.</span>
-                      <Link href={navItem.link} passHref>
-                        <span className="lsmall text-pink transition duration-200 hover:text-white cursor-pointer">
-                          {navItem.name}
-                        </span>
-                      </Link>
+                      <a
+                        href={navItem.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="lsmall text-pink transition duration-200 hover:text-white cursor-pointer"
+                      >
+                        {navItem.name}
+                      </a>
                     </>
                   )}
                 </div>
