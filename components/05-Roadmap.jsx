@@ -87,7 +87,7 @@ const Roadmap = () => {
                   <li>
                     Native token deploy and airdrop{" "}
                     <a
-                      href="/files/litepaper.pdf"
+                      href="/files/whitepaper.pdf"
                       target="_blank"
                       className="text-pink transition duration-200 hover:text-white"
                     >
