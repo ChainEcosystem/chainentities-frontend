@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import navItems from "../json/navItems.json";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const listener = document.addEventListener("scroll", () => {
@@ -30,6 +32,7 @@ const Header = () => {
               if (typeof window === "undefined") return;
               window.scrollTo(0, 0);
               history.replaceState({}, null, "/");
+              router.push("/");
             }}
           >
             <Image src="/images/LogoBrand.svg" alt="" height={40} width={214} />
