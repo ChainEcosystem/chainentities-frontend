@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import { useState } from "react";
 import HeaderFooterLayout from "../layout/HeaderFooterLayout";
@@ -154,7 +155,7 @@ function TicketSection({
                 </button>
               </div>
               <div className="flex flex-row md:items-center items-start space-x-3.5">
-                <img src="/images/landingPage/Roadmap/Done.svg" />
+                <img src="/images/landingPage/Roadmap/Done.svg" alt="" />
                 <div>
                   Please make sure You are connected to the{" "}
                   <span className="text-[#DE59FF]">Polygon Network</span>
