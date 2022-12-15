@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@thirdweb-dev/react": "^3.6.7",
+    "@thirdweb-dev/sdk": "^3.6.7",
     "autoprefixer": "^10.4.2",
+    "ethers": "^5.7.2",
     "interweave": "^12.9.0",
     "next": "12.0.8",
     "postcss": "^8.4.6",
