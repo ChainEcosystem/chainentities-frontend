@@ -1,7 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderFooterLayout from "../layout/HeaderFooterLayout";
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useSwitchNetwork,
+  useNetwork,
+} from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 const buttonGradient =
   "linear-gradient(90deg, #7AD1EC 0%, #78C6ED 6.25%, #76BAEE 12.5%, #74AEEF 18.75%, #72A1F0 25%, #7094F2 31.25%, #6E85F3 37.5%, #6C77F4 43.75%, #6D6AF5 50%, #7868F6 56.25%, #8566F7 62.5%, #9264F9 68.75%, #A062FA 75%, #AF5FFB 81.25%, #BE5DFC 87.5%, #CE5BFE 93.75%, #DE59FF 100%)";
 
@@ -51,21 +59,41 @@ const useCounter = ({ min, max, initialValue }) => {
 
 function TicketSection({
   mintSupply = "200 / 4444",
-  condition = "default",
   mintPrice = "59 Matic",
   totalSupply = "4444",
 }) {
+  const { address, isConnected } = useAccount();
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  });
+  const { chain } = useNetwork();
+  const { switchNetwork, isLoading } = useSwitchNetwork();
+  const { disconnect } = useDisconnect();
+
   const { value, increment, decrement } = useCounter({
     initialValue: 1,
     max: 11,
     min: 1,
   });
 
+  const [condition, setCondition] = useState("successful");
+
+  async function buttonFunction() {
+    if (!isConnected) {
+      connect();
+      return;
+    }
+    disconnect();
+  }
+
+  useEffect(() => {
+    if (isConnected && switchNetwork && chain?.id !== 137) {
+      switchNetwork(137);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chain, isConnected]);
+
   const condValue = {
-    default: {
-      buttonTitle: "Connect Wallet",
-      buttonFunction: () => {},
-    },
     successful: {
       buttonTitle: "Mint",
       buttonFunction: () => {},
@@ -149,9 +177,9 @@ function TicketSection({
                 <button
                   className="text-base text-white py-4 rounded-lg hover:opacity-80 duration-200 w-full"
                   style={{ background: buttonGradient }}
-                  onClick={condValue?.buttonFunction}
+                  onClick={buttonFunction}
                 >
-                  {condValue?.buttonTitle}
+                  {isConnected ? "Mint" : "Connect Wallet"}
                 </button>
               </div>
               <div className="flex flex-row md:items-center items-start space-x-3.5">
