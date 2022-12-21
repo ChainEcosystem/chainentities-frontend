@@ -2,14 +2,17 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import HeaderFooterLayout from "../layout/HeaderFooterLayout";
+import { ethers } from "ethers";
 import {
   useAccount,
   useConnect,
-  useDisconnect,
   useSwitchNetwork,
   useNetwork,
+  useContractWrite,
+  usePrepareContractWrite,
 } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
+import mainContract from "../json/mainContract.json";
 const buttonGradient =
   "linear-gradient(90deg, #7AD1EC 0%, #78C6ED 6.25%, #76BAEE 12.5%, #74AEEF 18.75%, #72A1F0 25%, #7094F2 31.25%, #6E85F3 37.5%, #6C77F4 43.75%, #6D6AF5 50%, #7868F6 56.25%, #8566F7 62.5%, #9264F9 68.75%, #A062FA 75%, #AF5FFB 81.25%, #BE5DFC 87.5%, #CE5BFE 93.75%, #DE59FF 100%)";
 
@@ -68,22 +71,39 @@ function TicketSection({
   });
   const { chain } = useNetwork();
   const { switchNetwork, isLoading } = useSwitchNetwork();
-  const { disconnect } = useDisconnect();
-
   const { value, increment, decrement } = useCounter({
     initialValue: 1,
     max: 11,
     min: 1,
   });
 
-  const [condition, setCondition] = useState("successful");
+  const { config } = usePrepareContractWrite({
+    address: mainContract.address,
+    abi: mainContract.ABI,
+    chainId: 137,
+    functionName: "mint",
+    overrides: {
+      value: ethers.utils.parseEther(String(+mainContract.cost * value)),
+      gasLimit: 1300000,
+    },
+    args: [value],
+  });
+  const { writeAsync } = useContractWrite(config);
+
+  const [condition, setCondition] = useState("normal");
 
   async function buttonFunction() {
     if (!isConnected) {
       connect();
       return;
     }
-    disconnect();
+
+    try {
+      await writeAsync();
+      setCondition("successful");
+    } catch {
+      setCondition("insufficient");
+    }
   }
 
   useEffect(() => {
@@ -94,9 +114,8 @@ function TicketSection({
   }, [chain, isConnected]);
 
   const condValue = {
+    normal: {},
     successful: {
-      buttonTitle: "Mint",
-      buttonFunction: () => {},
       description: (
         <div className="p-4">
           Congratulations! You’ve got your own Entity Visit{" "}
@@ -105,12 +124,12 @@ function TicketSection({
       ),
     },
     insufficient: {
-      buttonTitle: "Mint",
-      buttonFunction: () => {},
       description: (
         <div className="p-4">
           Insufficient funds. To mint a ticket top-up your wallet with at least
-          <span className="text-[#7AD1EC] ml-2">59 MATIC + gas</span>
+          <span className="text-[#7AD1EC] ml-2">
+            {+mainContract.cost * value} MATIC + gas
+          </span>
         </div>
       ),
     },
@@ -175,6 +194,7 @@ function TicketSection({
                   </button>
                 </div>
                 <button
+                  // disabled={isConnected && !write}
                   className="text-base text-white py-4 rounded-lg hover:opacity-80 duration-200 w-full"
                   style={{ background: buttonGradient }}
                   onClick={buttonFunction}
