@@ -136,7 +136,8 @@ function TicketSection({
   }[condition];
 
   return (
-    <div className="col-span-1">
+    <div className="MintPage col-span-1">
+      <div className="StarBg" />
       <div className="bg-[#514B58] border-[#3F3A45] border rounded-lg">
         <div className=" bg-[#2A2630] rounded-lg z-[-100]">
           <div
