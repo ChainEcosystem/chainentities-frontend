@@ -88,9 +88,11 @@ function TicketSection({
     },
     args: [value],
   });
-  const { writeAsync } = useContractWrite(config);
-
-  const [condition, setCondition] = useState("normal");
+  const {
+    write: mint,
+    isSuccess: isMintSuccess,
+    error,
+  } = useContractWrite(config);
 
   async function buttonFunction() {
     if (!isConnected) {
@@ -98,12 +100,7 @@ function TicketSection({
       return;
     }
 
-    try {
-      await writeAsync();
-      setCondition("successful");
-    } catch {
-      setCondition("insufficient");
-    }
+    mint?.();
   }
 
   useEffect(() => {
@@ -112,28 +109,6 @@ function TicketSection({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chain, isConnected]);
-
-  const condValue = {
-    normal: {},
-    successful: {
-      description: (
-        <div className="p-4">
-          Congratulations! You’ve got your own Entity Visit{" "}
-          <span className="text-[#DE59FF]">opensea</span> to view it!
-        </div>
-      ),
-    },
-    insufficient: {
-      description: (
-        <div className="p-4">
-          Insufficient funds. To mint a ticket top-up your wallet with at least
-          <span className="text-[#7AD1EC] ml-2">
-            {+mainContract.cost * value} MATIC + gas
-          </span>
-        </div>
-      ),
-    },
-  }[condition];
 
   return (
     <div className="MintPage col-span-1">
@@ -213,11 +188,21 @@ function TicketSection({
             </div>
           </div>
         </div>
-        {condValue?.description && (
-          <div className="bg-[#514B58] rounded-b-lg w-full">
-            {condValue?.description}
-          </div>
-        )}
+        <div className="bg-[rgb(81,75,88)] rounded-b-lg w-full">
+          {isMintSuccess ? (
+            <div className="p-4">
+              Congratulations! You’ve got your own Entity Visit{" "}
+              <span className="text-[#DE59FF]">opensea</span> to view it!
+            </div>
+          ) : null}
+
+          {/* <div className="p-4">
+          Insufficient funds. To mint a ticket top-up your wallet with at least
+          <span className="text-[#7AD1EC] ml-2">
+            {+mainContract.cost * value} MATIC + gas
+          </span>
+        </div> */}
+        </div>
       </div>
     </div>
   );
