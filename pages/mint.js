@@ -10,6 +10,7 @@ import {
   useNetwork,
   useContractWrite,
   usePrepareContractWrite,
+  useContractRead,
 } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import mainContract from "../json/mainContract.json";
@@ -61,7 +62,7 @@ const useCounter = ({ min, max, initialValue }) => {
 };
 
 function TicketSection({
-  mintSupply = "200 / 4444",
+  mintSupply = "200 / 4444", // needs to be dynamic
   mintPrice = "59 Matic",
   totalSupply = "4444",
 }) {
@@ -75,6 +76,12 @@ function TicketSection({
     initialValue: 1,
     max: 11,
     min: 1,
+  });
+
+  const { data: supplyData } = useContractRead({
+    address: mainContract.address,
+    abi: mainContract.ABI,
+    functionName: "totalSupply",
   });
 
   const { config } = usePrepareContractWrite({
@@ -133,7 +140,12 @@ function TicketSection({
               <div className="flex flex-row divide-x divide-[#514B58]">
                 {[
                   { title: "Total Supply:", value: totalSupply },
-                  { title: "Mint Supply:", value: mintSupply },
+                  {
+                    title: "Mint Supply:",
+                    value: supplyData
+                      ? `${parseInt(supplyData)} / 4444`
+                      : mintSupply,
+                  },
                   { title: "Mint Price:", value: mintPrice },
                 ].map(({ title, value }, i) => (
                   <div
