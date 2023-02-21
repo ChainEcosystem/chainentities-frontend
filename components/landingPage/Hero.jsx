@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 const buttonGradient =
   "linear-gradient(90deg, #7AD1EC 0%, #78C6ED 6.25%, #76BAEE 12.5%, #74AEEF 18.75%, #72A1F0 25%, #7094F2 31.25%, #6E85F3 37.5%, #6C77F4 43.75%, #6D6AF5 50%, #7868F6 56.25%, #8566F7 62.5%, #9264F9 68.75%, #A062FA 75%, #AF5FFB 81.25%, #BE5DFC 87.5%, #CE5BFE 93.75%, #DE59FF 100%)";
 
 export default function Hero() {
+  const router = useRouter();
   return (
     <section className="HeroSection relative lg:pb-24 pb-14">
       <div className="h-[566px] w-full z-10">
@@ -29,6 +31,7 @@ export default function Hero() {
           <button
             className="text-base text-white py-3 px-6 rounded-lg hover:opacity-80 duration-200 w-fit mt-4 z-10"
             style={{ background: buttonGradient }}
+            onClick={() => router.push("/mint")}
           >
             Mint Page
           </button>

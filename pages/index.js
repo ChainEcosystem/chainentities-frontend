@@ -1,19 +1,14 @@
-import { useEffect } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Hero from "../components/landingPage/Hero";
-import About from "../components/landingPage/About";
-import Overview from "../components/02-Overview";
-import Detail from "../components/03-Details";
-import Story from "../components/04-Story";
-import Team from "../components/06-Team";
-import FAQ from "../components/07-FAQ";
-
 import { MetaDetails } from "../components/landingPage/MetaDetails";
+import Newsletter from "../components/landingPage/Newsletter";
+import HeaderFooterLayout from "../layout/HeaderFooterLayout";
 import CoreTeam from "../components/landingPage/CoreTeam";
 import Roadmap from "../components/landingPage/Roadmap";
+import About from "../components/landingPage/About";
+import Hero from "../components/landingPage/Hero";
+
+import React, { useEffect } from "react";
+import Image from "next/image";
+import Head from "next/head";
 
 const Home = () => {
   useEffect(() => {
@@ -63,8 +58,8 @@ const Home = () => {
         />
         <link rel="icon" href="/images/Logo.svg" />
       </Head>
-
-      <main className="ContentContainer">
+      <HeaderFooterLayout>
+        <React.Fragment />
         <div
           id="scroll-top-btn"
           style={{ display: "none" }}
@@ -72,9 +67,6 @@ const Home = () => {
         >
           <Image src="/images/VectorUp.svg" height={23.5} width={18} alt="" />
         </div>
-
-        {/* header */}
-        <Header />
         <Hero />
         <div
           className="w-full flex flex-col"
@@ -89,10 +81,13 @@ const Home = () => {
           <MetaDetails />
           <Roadmap />
           <CoreTeam />
-
-          <Footer />
+          <div className="FooterSection relative z-0 bg-transparent">
+            <div className="StarBg" />
+            <Newsletter />
+          </div>
         </div>
-      </main>
+        <React.Fragment />
+      </HeaderFooterLayout>
     </>
   );
 };

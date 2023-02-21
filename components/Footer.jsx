@@ -82,68 +82,62 @@ const socials = [
 
 const Footer = () => {
   return (
-    <div className="FooterSection relative">
-      <div className="StarBg" />
-      {/* CTA */}
-      <Newsletter />
-
-      <footer>
-        <div
-          className="lg:block hidden bg-dark w-full"
-          style={{ height: "2px" }}
-        />
-        <div className="wrapper">
-          <div className="grid lg:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
-            <div
-              className="col-span-1 flex lg:justify-start justify-center"
-              style={{ fontSize: "22px", lineHeight: "22px" }}
-            >
-              <div className="lg:text-left text-center lg:whitespace-nowrap text-base">
-                Contacts: <br className="lg:hidden" />
-                <a
-                  href="mailto:chainecosystem@gmail.com"
-                  className="transition duration-200 text-pink hover:text-white"
-                >
-                  chainecosystem@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="lg:inline-block hidden col-span-1 text-center text-base">
-              All rights reserved.
-            </div>
-
-            <div className="col-span-1 flex lg:justify-end justify-center lg:mt-0 mt-9 gap-7 items-center">
-              {socials.map(({ link, Component }, index) => (
-                <a
-                  className="SocialIcon flex items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={link}
-                  key={`footerSocial${index}`}
-                >
-                  <Component />
-                </a>
-              ))}
+    <footer>
+      <div
+        className="lg:block hidden bg-dark w-full"
+        style={{ height: "2px" }}
+      />
+      <div className="wrapper">
+        <div className="grid lg:grid-cols-3 grid-cols-1 items-center w-100 text-white py-8">
+          <div
+            className="col-span-1 flex lg:justify-start justify-center"
+            style={{ fontSize: "22px", lineHeight: "22px" }}
+          >
+            <div className="lg:text-left text-center lg:whitespace-nowrap text-base">
+              Contacts: <br className="lg:hidden" />
+              <a
+                href="mailto:chainecosystem@gmail.com"
+                className="transition duration-200 text-pink hover:text-white"
+              >
+                chainecosystem@gmail.com
+              </a>
             </div>
           </div>
-        </div>
 
-        {/* Brand name */}
-        <div
-          className="py-3 text-white lg:mt-0 mt-1"
-          style={{ background: "rgba(38, 19, 43, 0.5)" }}
-        >
-          <div className="wrapper flex lg:justify-center justify-between text-center">
-            <span className="text-base">
-              ChainEntities<span className="text-pink">.</span>
-            </span>
+          <div className="lg:inline-block hidden col-span-1 text-center text-base">
+            All rights reserved.
+          </div>
 
-            <span className="lg:hidden text-base">All rights reserved.</span>
+          <div className="col-span-1 flex lg:justify-end justify-center lg:mt-0 mt-9 gap-7 items-center">
+            {socials.map(({ link, Component }, index) => (
+              <a
+                className="SocialIcon flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={link}
+                key={`footerSocial${index}`}
+              >
+                <Component />
+              </a>
+            ))}
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+
+      {/* Brand name */}
+      <div
+        className="py-3 text-white lg:mt-0 mt-1"
+        style={{ background: "rgba(38, 19, 43, 0.5)" }}
+      >
+        <div className="wrapper flex lg:justify-center justify-between text-center">
+          <span className="text-base">
+            ChainEntities<span className="text-pink">.</span>
+          </span>
+
+          <span className="lg:hidden text-base">All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
   );
 };
 
